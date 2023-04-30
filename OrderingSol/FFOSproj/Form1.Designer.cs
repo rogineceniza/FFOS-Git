@@ -138,14 +138,14 @@
             this.panel2.Controls.Add(this.imageBox);
             this.panel2.Location = new System.Drawing.Point(27, 169);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 591);
+            this.panel2.Size = new System.Drawing.Size(946, 538);
             this.panel2.TabIndex = 1;
             // 
             // sizeBox
             // 
             this.sizeBox.AllowDrop = true;
             this.sizeBox.FormattingEnabled = true;
-            this.sizeBox.Location = new System.Drawing.Point(524, 246);
+            this.sizeBox.Location = new System.Drawing.Point(503, 256);
             this.sizeBox.Name = "sizeBox";
             this.sizeBox.Size = new System.Drawing.Size(360, 36);
             this.sizeBox.TabIndex = 13;
@@ -153,7 +153,7 @@
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(641, 439);
+            this.clearBtn.Location = new System.Drawing.Point(629, 408);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(105, 54);
@@ -165,7 +165,7 @@
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(766, 439);
+            this.saveBtn.Location = new System.Drawing.Point(758, 408);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(105, 54);
@@ -176,7 +176,7 @@
             // 
             // upload
             // 
-            this.upload.Location = new System.Drawing.Point(229, 347);
+            this.upload.Location = new System.Drawing.Point(206, 255);
             this.upload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.upload.Name = "upload";
             this.upload.Size = new System.Drawing.Size(105, 47);
@@ -187,7 +187,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(114, 347);
+            this.deletebtn.Location = new System.Drawing.Point(97, 255);
             this.deletebtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(105, 47);
@@ -198,14 +198,14 @@
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(524, 304);
+            this.priceBox.Location = new System.Drawing.Point(503, 314);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(360, 37);
             this.priceBox.TabIndex = 9;
             // 
             // description_txt
             // 
-            this.description_txt.Location = new System.Drawing.Point(524, 109);
+            this.description_txt.Location = new System.Drawing.Point(503, 119);
             this.description_txt.Multiline = true;
             this.description_txt.Name = "description_txt";
             this.description_txt.Size = new System.Drawing.Size(360, 90);
@@ -213,7 +213,7 @@
             // 
             // name_txt
             // 
-            this.name_txt.Location = new System.Drawing.Point(524, 42);
+            this.name_txt.Location = new System.Drawing.Point(503, 52);
             this.name_txt.Name = "name_txt";
             this.name_txt.Size = new System.Drawing.Size(360, 37);
             this.name_txt.TabIndex = 6;
@@ -221,7 +221,7 @@
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(370, 304);
+            this.price.Location = new System.Drawing.Point(349, 314);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(62, 28);
             this.price.TabIndex = 5;
@@ -230,7 +230,7 @@
             // size
             // 
             this.size.AutoSize = true;
-            this.size.Location = new System.Drawing.Point(370, 235);
+            this.size.Location = new System.Drawing.Point(349, 245);
             this.size.Name = "size";
             this.size.Size = new System.Drawing.Size(54, 28);
             this.size.TabIndex = 4;
@@ -239,7 +239,7 @@
             // description
             // 
             this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(362, 112);
+            this.description.Location = new System.Drawing.Point(341, 122);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(131, 28);
             this.description.TabIndex = 3;
@@ -248,7 +248,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(362, 45);
+            this.name.Location = new System.Drawing.Point(341, 55);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(85, 28);
             this.name.TabIndex = 2;
@@ -267,9 +267,9 @@
             // 
             this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox.Location = new System.Drawing.Point(25, 45);
+            this.imageBox.Location = new System.Drawing.Point(30, 45);
             this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(309, 296);
+            this.imageBox.Size = new System.Drawing.Size(281, 204);
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
             // 
@@ -278,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1054, 846);
+            this.ClientSize = new System.Drawing.Size(992, 742);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

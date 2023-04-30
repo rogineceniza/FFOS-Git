@@ -91,6 +91,13 @@ namespace FFOSproj
         {
              imageBox.Image = null;
         }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(vScrollBar1_Scroll);
+        }
+
+        
     }
 }
 
