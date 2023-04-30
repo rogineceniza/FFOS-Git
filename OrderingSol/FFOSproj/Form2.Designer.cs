@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.showPB = new System.Windows.Forms.DataGridView();
             this.viewPizza_btn = new System.Windows.Forms.Button();
+            this.showPB = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showPB)).BeginInit();
             this.SuspendLayout();
@@ -45,17 +45,6 @@
             this.panel1.Size = new System.Drawing.Size(1060, 644);
             this.panel1.TabIndex = 0;
             // 
-            // showPB
-            // 
-            this.showPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showPB.Location = new System.Drawing.Point(3, 3);
-            this.showPB.Name = "showPB";
-            this.showPB.RowHeadersWidth = 62;
-            this.showPB.RowTemplate.Height = 28;
-            this.showPB.Size = new System.Drawing.Size(821, 638);
-            this.showPB.TabIndex = 0;
-            this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
-            // 
             // viewPizza_btn
             // 
             this.viewPizza_btn.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +56,17 @@
             this.viewPizza_btn.UseVisualStyleBackColor = true;
             this.viewPizza_btn.Click += new System.EventHandler(this.datagrid_btn_Click);
             // 
+            // showPB
+            // 
+            this.showPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showPB.Location = new System.Drawing.Point(3, 3);
+            this.showPB.Name = "showPB";
+            this.showPB.RowHeadersWidth = 62;
+            this.showPB.RowTemplate.Height = 28;
+            this.showPB.Size = new System.Drawing.Size(821, 638);
+            this.showPB.TabIndex = 0;
+            this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -76,7 +76,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "VIEW Inventory";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.showPB)).EndInit();
             this.ResumeLayout(false);
