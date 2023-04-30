@@ -50,10 +50,25 @@
             this.name = new System.Windows.Forms.Label();
             this.pizzaPicLabel = new System.Windows.Forms.Label();
             this.imageBox = new System.Windows.Forms.PictureBox();
+            this.brg_imagebox = new System.Windows.Forms.PictureBox();
+            this.size_bvrg = new System.Windows.Forms.ComboBox();
+            this.bvrg_clear = new System.Windows.Forms.Button();
+            this.bvrg_save = new System.Windows.Forms.Button();
+            this.price_bvrg = new System.Windows.Forms.TextBox();
+            this.description_bvrg = new System.Windows.Forms.TextBox();
+            this.name_bvrg = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.del_bvrg = new System.Windows.Forms.Button();
+            this.upload_bvrg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brg_imagebox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +137,20 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.upload_bvrg);
+            this.panel2.Controls.Add(this.del_bvrg);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.size_bvrg);
+            this.panel2.Controls.Add(this.bvrg_clear);
+            this.panel2.Controls.Add(this.bvrg_save);
+            this.panel2.Controls.Add(this.price_bvrg);
+            this.panel2.Controls.Add(this.description_bvrg);
+            this.panel2.Controls.Add(this.name_bvrg);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.brg_imagebox);
             this.panel2.Controls.Add(this.sizeBox);
             this.panel2.Controls.Add(this.clearBtn);
             this.panel2.Controls.Add(this.saveBtn);
@@ -138,14 +167,14 @@
             this.panel2.Controls.Add(this.imageBox);
             this.panel2.Location = new System.Drawing.Point(27, 169);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 538);
+            this.panel2.Size = new System.Drawing.Size(946, 747);
             this.panel2.TabIndex = 1;
             // 
             // sizeBox
             // 
             this.sizeBox.AllowDrop = true;
             this.sizeBox.FormattingEnabled = true;
-            this.sizeBox.Location = new System.Drawing.Point(503, 256);
+            this.sizeBox.Location = new System.Drawing.Point(503, 191);
             this.sizeBox.Name = "sizeBox";
             this.sizeBox.Size = new System.Drawing.Size(360, 36);
             this.sizeBox.TabIndex = 13;
@@ -153,7 +182,7 @@
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(629, 408);
+            this.clearBtn.Location = new System.Drawing.Point(630, 306);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(105, 54);
@@ -165,7 +194,7 @@
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(758, 408);
+            this.saveBtn.Location = new System.Drawing.Point(758, 306);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(105, 54);
@@ -198,14 +227,14 @@
             // 
             // priceBox
             // 
-            this.priceBox.Location = new System.Drawing.Point(503, 314);
+            this.priceBox.Location = new System.Drawing.Point(503, 233);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(360, 37);
             this.priceBox.TabIndex = 9;
             // 
             // description_txt
             // 
-            this.description_txt.Location = new System.Drawing.Point(503, 119);
+            this.description_txt.Location = new System.Drawing.Point(503, 95);
             this.description_txt.Multiline = true;
             this.description_txt.Name = "description_txt";
             this.description_txt.Size = new System.Drawing.Size(360, 90);
@@ -221,7 +250,7 @@
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(349, 314);
+            this.price.Location = new System.Drawing.Point(349, 242);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(62, 28);
             this.price.TabIndex = 5;
@@ -230,7 +259,7 @@
             // size
             // 
             this.size.AutoSize = true;
-            this.size.Location = new System.Drawing.Point(349, 245);
+            this.size.Location = new System.Drawing.Point(349, 191);
             this.size.Name = "size";
             this.size.Size = new System.Drawing.Size(54, 28);
             this.size.TabIndex = 4;
@@ -239,7 +268,7 @@
             // description
             // 
             this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(341, 122);
+            this.description.Location = new System.Drawing.Point(349, 98);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(131, 28);
             this.description.TabIndex = 3;
@@ -248,7 +277,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(341, 55);
+            this.name.Location = new System.Drawing.Point(349, 55);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(85, 28);
             this.name.TabIndex = 2;
@@ -273,12 +302,144 @@
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
             // 
+            // brg_imagebox
+            // 
+            this.brg_imagebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.brg_imagebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.brg_imagebox.Location = new System.Drawing.Point(30, 381);
+            this.brg_imagebox.Name = "brg_imagebox";
+            this.brg_imagebox.Size = new System.Drawing.Size(281, 204);
+            this.brg_imagebox.TabIndex = 14;
+            this.brg_imagebox.TabStop = false;
+            // 
+            // size_bvrg
+            // 
+            this.size_bvrg.AllowDrop = true;
+            this.size_bvrg.FormattingEnabled = true;
+            this.size_bvrg.Location = new System.Drawing.Point(503, 520);
+            this.size_bvrg.Name = "size_bvrg";
+            this.size_bvrg.Size = new System.Drawing.Size(360, 36);
+            this.size_bvrg.TabIndex = 24;
+            // 
+            // bvrg_clear
+            // 
+            this.bvrg_clear.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bvrg_clear.Location = new System.Drawing.Point(630, 635);
+            this.bvrg_clear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bvrg_clear.Name = "bvrg_clear";
+            this.bvrg_clear.Size = new System.Drawing.Size(105, 54);
+            this.bvrg_clear.TabIndex = 23;
+            this.bvrg_clear.Text = "Clear";
+            this.bvrg_clear.UseVisualStyleBackColor = true;
+            this.bvrg_clear.Click += new System.EventHandler(this.bvrg_clear_Click);
+            // 
+            // bvrg_save
+            // 
+            this.bvrg_save.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bvrg_save.Location = new System.Drawing.Point(758, 635);
+            this.bvrg_save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bvrg_save.Name = "bvrg_save";
+            this.bvrg_save.Size = new System.Drawing.Size(105, 54);
+            this.bvrg_save.TabIndex = 18;
+            this.bvrg_save.Text = "Save";
+            this.bvrg_save.UseVisualStyleBackColor = true;
+            this.bvrg_save.Click += new System.EventHandler(this.bvrg_save_Click);
+            // 
+            // price_bvrg
+            // 
+            this.price_bvrg.Location = new System.Drawing.Point(503, 562);
+            this.price_bvrg.Name = "price_bvrg";
+            this.price_bvrg.Size = new System.Drawing.Size(360, 37);
+            this.price_bvrg.TabIndex = 22;
+            // 
+            // description_bvrg
+            // 
+            this.description_bvrg.Location = new System.Drawing.Point(503, 424);
+            this.description_bvrg.Multiline = true;
+            this.description_bvrg.Name = "description_bvrg";
+            this.description_bvrg.Size = new System.Drawing.Size(360, 90);
+            this.description_bvrg.TabIndex = 21;
+            // 
+            // name_bvrg
+            // 
+            this.name_bvrg.Location = new System.Drawing.Point(503, 381);
+            this.name_bvrg.Name = "name_bvrg";
+            this.name_bvrg.Size = new System.Drawing.Size(360, 37);
+            this.name_bvrg.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(349, 571);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 28);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Price";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(349, 520);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 28);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Size";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(349, 427);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 28);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Description";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(349, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 28);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Name: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 350);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(177, 28);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Beverage Image";
+            // 
+            // del_bvrg
+            // 
+            this.del_bvrg.Location = new System.Drawing.Point(97, 591);
+            this.del_bvrg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.del_bvrg.Name = "del_bvrg";
+            this.del_bvrg.Size = new System.Drawing.Size(105, 47);
+            this.del_bvrg.TabIndex = 26;
+            this.del_bvrg.Text = "Delete";
+            this.del_bvrg.UseVisualStyleBackColor = true;
+            this.del_bvrg.Click += new System.EventHandler(this.del_bvrg_Click);
+            // 
+            // upload_bvrg
+            // 
+            this.upload_bvrg.Location = new System.Drawing.Point(206, 591);
+            this.upload_bvrg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.upload_bvrg.Name = "upload_bvrg";
+            this.upload_bvrg.Size = new System.Drawing.Size(105, 47);
+            this.upload_bvrg.TabIndex = 27;
+            this.upload_bvrg.Text = "Upload";
+            this.upload_bvrg.UseVisualStyleBackColor = true;
+            this.upload_bvrg.Click += new System.EventHandler(this.upload_bvrg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(992, 742);
+            this.ClientSize = new System.Drawing.Size(996, 969);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,6 +453,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brg_imagebox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,6 +481,20 @@
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.ComboBox sizeBox;
+        private System.Windows.Forms.PictureBox brg_imagebox;
+        private System.Windows.Forms.ComboBox size_bvrg;
+        private System.Windows.Forms.Button bvrg_clear;
+        private System.Windows.Forms.Button bvrg_save;
+        private System.Windows.Forms.TextBox price_bvrg;
+        private System.Windows.Forms.TextBox description_bvrg;
+        private System.Windows.Forms.TextBox name_bvrg;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button upload_bvrg;
+        private System.Windows.Forms.Button del_bvrg;
+        private System.Windows.Forms.Label label5;
     }
 }
 
