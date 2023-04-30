@@ -91,6 +91,7 @@
             this.update_pizza.TabIndex = 3;
             this.update_pizza.Text = "Update Pizza";
             this.update_pizza.UseVisualStyleBackColor = true;
+            this.update_pizza.Click += new System.EventHandler(this.update_pizza_Click);
             // 
             // Form2
             // 
