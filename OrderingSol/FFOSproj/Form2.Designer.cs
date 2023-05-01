@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.update_pizza = new System.Windows.Forms.Button();
+            this.del_pizza = new System.Windows.Forms.Button();
             this.viewPizza_btn = new System.Windows.Forms.Button();
             this.showPB = new System.Windows.Forms.DataGridView();
-            this.del_pizza = new System.Windows.Forms.Button();
-            this.update_pizza = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showPB)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1060, 644);
             this.panel1.TabIndex = 0;
+            // 
+            // update_pizza
+            // 
+            this.update_pizza.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_pizza.Location = new System.Drawing.Point(850, 174);
+            this.update_pizza.Name = "update_pizza";
+            this.update_pizza.Size = new System.Drawing.Size(179, 65);
+            this.update_pizza.TabIndex = 3;
+            this.update_pizza.Text = "Update Pizza";
+            this.update_pizza.UseVisualStyleBackColor = true;
+            this.update_pizza.Click += new System.EventHandler(this.update_pizza_Click);
+            // 
+            // del_pizza
+            // 
+            this.del_pizza.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.del_pizza.Location = new System.Drawing.Point(850, 281);
+            this.del_pizza.Name = "del_pizza";
+            this.del_pizza.Size = new System.Drawing.Size(179, 65);
+            this.del_pizza.TabIndex = 2;
+            this.del_pizza.Text = "Delete Pizza";
+            this.del_pizza.UseVisualStyleBackColor = true;
+            this.del_pizza.Click += new System.EventHandler(this.del_pizza_Click);
             // 
             // viewPizza_btn
             // 
@@ -70,28 +92,6 @@
             this.showPB.Size = new System.Drawing.Size(821, 638);
             this.showPB.TabIndex = 0;
             this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
-            // 
-            // del_pizza
-            // 
-            this.del_pizza.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.del_pizza.Location = new System.Drawing.Point(850, 281);
-            this.del_pizza.Name = "del_pizza";
-            this.del_pizza.Size = new System.Drawing.Size(179, 65);
-            this.del_pizza.TabIndex = 2;
-            this.del_pizza.Text = "Delete Pizza";
-            this.del_pizza.UseVisualStyleBackColor = true;
-            this.del_pizza.Click += new System.EventHandler(this.del_pizza_Click);
-            // 
-            // update_pizza
-            // 
-            this.update_pizza.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_pizza.Location = new System.Drawing.Point(850, 175);
-            this.update_pizza.Name = "update_pizza";
-            this.update_pizza.Size = new System.Drawing.Size(179, 65);
-            this.update_pizza.TabIndex = 3;
-            this.update_pizza.Text = "Update Pizza";
-            this.update_pizza.UseVisualStyleBackColor = true;
-            this.update_pizza.Click += new System.EventHandler(this.update_pizza_Click);
             // 
             // Form2
             // 

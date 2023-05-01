@@ -40,7 +40,7 @@ namespace FFOSproj
             try
             {
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price, Image) values('" + this.name_txt.Text + "','" + this.description_txt.Text+ "','" + this.sizeBox.Text + "','" + this.priceBox.Text + "','" + this.imageBox.Text +  "');";
+                string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text+ "','" + this.sizeBox.Text + "','" + this.priceBox.Text +/* "','" + this.imageBox.Text +  */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
@@ -64,7 +64,7 @@ namespace FFOSproj
             description_txt.Text = "";
             sizeBox.Text = "";
             priceBox.Text = "";
-            imageBox.Image = null;
+         //   imageBox.Image = null;
 
         }
 
@@ -102,7 +102,7 @@ namespace FFOSproj
             try
             {
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.beverage_table(Name, Description, Size, Price, Image) values('" + this.name_bvrg.Text + "','" + this.description_bvrg.Text + "','" + this.size_bvrg.Text + "','" + this.price_bvrg.Text + "','" + this.brg_imagebox.Text + "');";
+                string Query = "insert into pizza_db.beverage_table(Name, Description, Size, Price) values('" + this.name_bvrg.Text + "','" + this.description_bvrg.Text + "','" + this.size_bvrg.Text + "','" + this.price_bvrg.Text + /*"','" + this.brg_imagebox.Text + */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
@@ -126,10 +126,10 @@ namespace FFOSproj
             description_bvrg.Text = "";
             size_bvrg.Text = "";
             price_bvrg.Text = "";
-            brg_imagebox.Image = null;
+         //  brg_imagebox.Image = null;
         }
 
-        private void upload_bvrg_Click(object sender, EventArgs e)
+       /* private void upload_bvrg_Click(object sender, EventArgs e)
         {
             try
             {
@@ -151,9 +151,12 @@ namespace FFOSproj
         private void del_bvrg_Click(object sender, EventArgs e)
         {
             brg_imagebox.Image = null;
-        }
+        }*/
     }
 }
 
             
 
+//NOTE: images in db, deleted
+//Commented upload and delete (image)
+//Return image and uncomment 

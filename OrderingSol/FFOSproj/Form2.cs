@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace FFOSproj
 {
@@ -19,6 +21,12 @@ namespace FFOSproj
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
         MySqlDataAdapter da;
+
+       /* SqlConnection con = new SqlConnection("Data Source=.;localhost;port=3306;username=root;password=RteCh_0C#@11");
+        SqlCommand cmd;
+        SqlDataAdapter adapt;*/
+        //ID variable used in Updating and Deleting Record  
+        int ID = 0;
         public Form2()
         {
             InitializeComponent();
@@ -26,11 +34,6 @@ namespace FFOSproj
 
         private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
-
-
         }
 
         private void datagrid_btn_Click(object sender, EventArgs e)
@@ -44,14 +47,22 @@ namespace FFOSproj
 
                 DataSet dset = new DataSet();
 
-                adpt.Fill(dset);
+                 adpt.Fill(dset);
 
-                showPB.DataSource = dset.Tables[0];
+                 showPB.DataSource = dset.Tables[0];
+
+
+
 
             }
             con.Dispose();
 
-
+            /*con.Open();
+            DataTable dt = new DataTable();
+            var adapt = new SqlDataAdapter("select * from pizza_table", con);
+            adapt.Fill(dt);
+            showPB.DataSource = dt;
+            con.Dispose();*/
 
 
 
@@ -80,8 +91,6 @@ namespace FFOSproj
              }*/
 
 
-
-
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {
                 MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
@@ -102,7 +111,24 @@ namespace FFOSproj
 
         private void update_pizza_Click(object sender, EventArgs e)
         {
-
+          /*  if (txt_Name.Text != "" && txt_State.Text != "")
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
+              var  cmd = new SqlCommand("update tbl_Record set Name=@name,State=@state where ID=@id", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@id", ID);
+                cmd.Parameters.AddWithValue("@name", txt_Name.Text);
+                cmd.Parameters.AddWithValue("@state", txt_State.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+                con.Close();
+                DisplayData();
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }*/
         }
     }
 }
