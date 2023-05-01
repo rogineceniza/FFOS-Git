@@ -239,7 +239,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::FFOSproj.Properties.Resources.cokkkk;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(50, 58);
+            this.pictureBox3.Location = new System.Drawing.Point(37, 71);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(206, 172);
             this.pictureBox3.TabIndex = 2;
@@ -275,7 +275,7 @@
             // 
             this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
             this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pizza_image_picbox.Location = new System.Drawing.Point(50, 55);
+            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
             this.pizza_image_picbox.Name = "pizza_image_picbox";
             this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
             this.pizza_image_picbox.TabIndex = 0;
