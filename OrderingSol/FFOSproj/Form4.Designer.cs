@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(149, 33);
+            this.panel1.Location = new System.Drawing.Point(45, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(414, 626);
             this.panel1.TabIndex = 0;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 747);
+            this.ClientSize = new System.Drawing.Size(490, 672);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";

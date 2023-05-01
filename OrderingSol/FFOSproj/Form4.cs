@@ -17,16 +17,13 @@ namespace FFOSproj
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void admin_button_Click(object sender, EventArgs e)
         {
-            /*var myForm1 = new Form1();
-            myForm1.ShowDialog();
-            myForm1.Dispose();*/
+            var myForm4 = new Form5();
+            myForm4.ShowDialog();
+            myForm4.Dispose();
         }
     }
 }
