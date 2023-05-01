@@ -28,12 +28,16 @@ namespace FFOSproj
         {
             var myForm2 = new Form2();
             myForm2.ShowDialog();
-
             myForm2.Dispose();
-
+        }
+        private void viewBinventory_Click(object sender, EventArgs e)
+        {
+            var myForm3 = new Form3();
+            myForm3.ShowDialog();
+            myForm3.Dispose();
         }
 
-       
+
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
@@ -129,29 +133,37 @@ namespace FFOSproj
          //  brg_imagebox.Image = null;
         }
 
-       /* private void upload_bvrg_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.jpg";
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    brg_imagebox.Text = openFileDialog1.FileName;
-                    brg_imagebox.Image = Image.FromFile(openFileDialog1.FileName);
-                }
-                brg_imagebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        private void del_bvrg_Click(object sender, EventArgs e)
-        {
-            brg_imagebox.Image = null;
-        }*/
+
+
+
+
+
+
+
+        /* private void upload_bvrg_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                 openFileDialog1.Filter = "Image files | *.jpg";
+                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                 {
+                     brg_imagebox.Text = openFileDialog1.FileName;
+                     brg_imagebox.Image = Image.FromFile(openFileDialog1.FileName);
+                 }
+                 brg_imagebox.SizeMode = PictureBoxSizeMode.StretchImage;
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }
+         }
+
+         private void del_bvrg_Click(object sender, EventArgs e)
+         {
+             brg_imagebox.Image = null;
+         }*/
     }
 }
 
