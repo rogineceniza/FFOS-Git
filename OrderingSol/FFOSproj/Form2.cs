@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Data.SqlClient;
+using MySqlX.XDevAPI.Relational;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFOSproj
 {
@@ -22,30 +24,33 @@ namespace FFOSproj
         MySqlCommand command;
         MySqlDataAdapter da;
 
-       /* SqlConnection con = new SqlConnection("Data Source=.;localhost;port=3306;username=root;password=RteCh_0C#@11");
-        SqlCommand cmd;
-        SqlDataAdapter adapt;*/
+        /* SqlConnection con = new SqlConnection("Data Source=.;localhost;port=3306;username=root;password=RteCh_0C#@11");
+         SqlCommand cmd;
+         SqlDataAdapter adapt;*/
         //ID variable used in Updating and Deleting Record  
+
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private BindingSource bSource = new BindingSource();
+        private DataSet dataSet = new DataSet();
+        private DataTable table = new DataTable();
         int ID = 0;
         public Form2()
         {
             InitializeComponent();
         }
 
-        private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
+
 
         private void datagrid_btn_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
+            /* MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
 
-            string query = "select *from pizza_table";
+             string query = "select *from pizza_table";
 
-            using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
-            {
+             using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
+             {
 
-                DataSet dset = new DataSet();
+                 DataSet dset = new DataSet();
 
                  adpt.Fill(dset);
 
@@ -54,8 +59,19 @@ namespace FFOSproj
 
 
 
-            }
-            con.Dispose();
+             }
+             con.Dispose();*/
+
+            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";
+            MySqlConnection mysqlCon = new MySqlConnection(connectionString);
+            mysqlCon.Open();
+
+            //select command has to include the primary key column, otherwise update command will fail
+            //as it does not know exactly what row is updated.
+            MyDA.SelectCommand = new MySqlCommand("SELECT * from pizza_table", mysqlCon);
+            MyDA.Fill(table);
+            bSource.DataSource = table;
+            showPB.DataSource = bSource;
 
             /*con.Open();
             DataTable dt = new DataTable();
@@ -104,31 +120,17 @@ namespace FFOSproj
                     con.Open();
                     cmd.ExecuteNonQuery();
 
+
                 }
+
 
             }
         }
 
         private void update_pizza_Click(object sender, EventArgs e)
         {
-          /*  if (txt_Name.Text != "" && txt_State.Text != "")
-            {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
-              var  cmd = new SqlCommand("update tbl_Record set Name=@name,State=@state where ID=@id", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@name", txt_Name.Text);
-                cmd.Parameters.AddWithValue("@state", txt_State.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record Updated Successfully");
-                con.Close();
-                DisplayData();
-                ClearData();
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record to Update");
-            }*/
+            
+
         }
     }
 }

@@ -91,7 +91,6 @@
             this.showPB.RowTemplate.Height = 28;
             this.showPB.Size = new System.Drawing.Size(821, 638);
             this.showPB.TabIndex = 0;
-            this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
             // 
             // Form2
             // 

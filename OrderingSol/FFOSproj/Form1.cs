@@ -160,3 +160,4 @@ namespace FFOSproj
 //NOTE: images in db, deleted
 //Commented upload and delete (image)
 //Return image and uncomment 
+//Covered image picturebox with panel, remove after
