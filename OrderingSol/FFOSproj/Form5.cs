@@ -22,19 +22,17 @@ namespace FFOSproj
 
         public void username_admin_TextChanged(object sender, EventArgs e)
         {
-            var username = "";
         }
 
         public void password_admin_TextChanged(object sender, EventArgs e)
         {
-            var password = "";
         }
         public void login_admin_Click(object sender, EventArgs e)
         {
             var username = username_admin.Text;
             var password = password_admin.Text;
           
-            if (username == "qwe" && password == "qwe")
+            if (username == "admin123" && password == "admin123")
             {
                     var myForm1 = new Form1();
                     myForm1.ShowDialog();

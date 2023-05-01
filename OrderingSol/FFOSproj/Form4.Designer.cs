@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.admin_button = new System.Windows.Forms.Button();
             this.cashier_button = new System.Windows.Forms.Button();
+            this.admin_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,26 +61,16 @@
             this.panel1.Size = new System.Drawing.Size(414, 626);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // cashier_button
             // 
-            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 204);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(114, 325);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 34);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Are you the:";
+            this.cashier_button.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashier_button.Location = new System.Drawing.Point(120, 467);
+            this.cashier_button.Name = "cashier_button";
+            this.cashier_button.Size = new System.Drawing.Size(162, 59);
+            this.cashier_button.TabIndex = 5;
+            this.cashier_button.Text = "Cashier";
+            this.cashier_button.UseVisualStyleBackColor = true;
+            this.cashier_button.Click += new System.EventHandler(this.cashier_button_Click);
             // 
             // admin_button
             // 
@@ -93,15 +83,26 @@
             this.admin_button.UseVisualStyleBackColor = true;
             this.admin_button.Click += new System.EventHandler(this.admin_button_Click);
             // 
-            // cashier_button
+            // label2
             // 
-            this.cashier_button.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashier_button.Location = new System.Drawing.Point(120, 467);
-            this.cashier_button.Name = "cashier_button";
-            this.cashier_button.Size = new System.Drawing.Size(162, 59);
-            this.cashier_button.TabIndex = 5;
-            this.cashier_button.Text = "Cashier";
-            this.cashier_button.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(114, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 34);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Are you the:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(86, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(224, 204);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form4
             // 
