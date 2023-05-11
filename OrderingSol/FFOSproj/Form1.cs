@@ -44,17 +44,19 @@ namespace FFOSproj
             try
             {
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text+ "','" + this.sizeBox.Text + "','" + this.priceBox.Text +/* "','" + this.imageBox.Text +  */"');";
+                string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text + "','" + this.sizeBox.Text + "','" + this.priceBox.Text + /*"','" + this.brg_imagebox.Text + */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2); 
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();     
-                MessageBox.Show("Save Data");
+                MyReader2 = MyCommand2.ExecuteReader();
+                MessageBox.Show("Successfully Saved!");
                 while (MyReader2.Read())
                 {
                 }
                 MyConn2.Close();
+
+
             }
             catch (Exception ex)
             {
@@ -112,7 +114,7 @@ namespace FFOSproj
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Save Data");
+                MessageBox.Show("Successfully Saved!");
                 while (MyReader2.Read())
                 {
                 }

@@ -22,7 +22,7 @@ namespace FFOSproj
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
-        MySqlDataAdapter da;
+        //MySqlDataAdapter da;
 
         /* SqlConnection con = new SqlConnection("Data Source=.;localhost;port=3306;username=root;password=RteCh_0C#@11");
          SqlCommand cmd;
@@ -100,9 +100,50 @@ namespace FFOSproj
             }
         }
 
-        
+        private void update_pizza_btn_Click(object sender, EventArgs e)
+        {
+            //using MySql.Data.MySqlClient; 
 
+            /* string connectionString = "server=localhost;port=3306;database=pizza_db;uid=root;password=RteCh_0C#@11"; 
+
+             MySqlConnection connection = new MySqlConnection(connectionString); 
+
+             string query = "UPDATE pizza_table SET column1=@value1, column2=@value2 WHERE id=@id"; // replace with your own query
+
+             MySqlCommand command = new MySqlCommand(query, connection); // create a new MySqlCommand object
+
+             command.Parameters.AddWithValue("@value1", "new value 1"); // set the parameter values
+             command.Parameters.AddWithValue("@value2", "new value 2");
+             command.Parameters.AddWithValue("@id", 1);
+
+             try
+             {
+                 connection.Open(); // open the connection
+
+                 int rowsAffected = command.ExecuteNonQuery(); // execute the query and get the number of rows affected
+
+                 Console.WriteLine("Rows affected: " + rowsAffected);
+             }
+             catch (MySqlException ex)
+             {
+                 Console.WriteLine("Error: " + ex.Message);
+             }
+             finally
+             {
+                 connection.Close(); // close the connection
+             }*/
+
+            
+        }
+
+      
     }
 }
+        
+        
+
+    
+
+
 
     

@@ -52,7 +52,7 @@
             this.del_pizza.Name = "del_pizza";
             this.del_pizza.Size = new System.Drawing.Size(179, 65);
             this.del_pizza.TabIndex = 2;
-            this.del_pizza.Text = "Delete Pizza";
+            this.del_pizza.Text = "Delete Item";
             this.del_pizza.UseVisualStyleBackColor = true;
             this.del_pizza.Click += new System.EventHandler(this.del_pizza_Click);
             // 

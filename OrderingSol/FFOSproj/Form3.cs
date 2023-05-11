@@ -32,8 +32,6 @@ namespace FFOSproj
             MySqlConnection mysqlCon = new MySqlConnection(connectionString);
             mysqlCon.Open();
 
-            //select command has to include the primary key column, otherwise update command will fail
-            //as it does not know exactly what row is updated.
             MyDA.SelectCommand = new MySqlCommand("SELECT * from beverage_table", mysqlCon);
             MyDA.Fill(table);
             bSource.DataSource = table;
