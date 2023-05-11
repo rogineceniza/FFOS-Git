@@ -32,14 +32,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.login_admin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.password_cashier = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.exit_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.username_admin = new System.Windows.Forms.TextBox();
+            this.username_cashier = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,10 +71,11 @@
             this.login_admin.TabIndex = 8;
             this.login_admin.Text = "Login";
             this.login_admin.UseVisualStyleBackColor = true;
+            this.login_admin.Click += new System.EventHandler(this.login_admin_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.password_cashier);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(85, 438);
@@ -82,14 +83,14 @@
             this.panel3.Size = new System.Drawing.Size(505, 100);
             this.panel3.TabIndex = 7;
             // 
-            // textBox1
+            // password_cashier
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(114, 44);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(371, 53);
-            this.textBox1.TabIndex = 8;
+            this.password_cashier.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_cashier.Location = new System.Drawing.Point(114, 44);
+            this.password_cashier.Multiline = true;
+            this.password_cashier.Name = "password_cashier";
+            this.password_cashier.Size = new System.Drawing.Size(371, 53);
+            this.password_cashier.TabIndex = 8;
             // 
             // pictureBox3
             // 
@@ -136,7 +137,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.username_admin);
+            this.panel2.Controls.Add(this.username_cashier);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(85, 284);
             this.panel2.Name = "panel2";
@@ -153,14 +154,14 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
-            // username_admin
+            // username_cashier
             // 
-            this.username_admin.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_admin.Location = new System.Drawing.Point(114, 44);
-            this.username_admin.Multiline = true;
-            this.username_admin.Name = "username_admin";
-            this.username_admin.Size = new System.Drawing.Size(371, 53);
-            this.username_admin.TabIndex = 6;
+            this.username_cashier.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_cashier.Location = new System.Drawing.Point(114, 44);
+            this.username_cashier.Multiline = true;
+            this.username_cashier.Name = "username_cashier";
+            this.username_cashier.Size = new System.Drawing.Size(371, 53);
+            this.username_cashier.TabIndex = 6;
             // 
             // label1
             // 
@@ -203,10 +204,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox username_admin;
+        private System.Windows.Forms.TextBox username_cashier;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox password_cashier;
     }
 }

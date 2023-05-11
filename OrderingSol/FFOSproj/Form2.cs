@@ -136,7 +136,10 @@ namespace FFOSproj
             
         }
 
-      
+        private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
         
