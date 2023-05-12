@@ -14,50 +14,47 @@ namespace FFOSproj
 {
     public partial class Cashier_Formmmm : Form
     {
-        
-        public Cashier_Formmmm()
-        {
-            InitializeComponent();
 
-            vScrollBar1.Minimum = flowLayoutPanel1.VerticalScroll.Minimum;
-            vScrollBar1.Maximum = flowLayoutPanel1.VerticalScroll.Maximum;
-            vScrollBar1.Value = flowLayoutPanel1.VerticalScroll.Value;
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
+        MySqlCommand command;
+        MySqlDataAdapter da;
 
-         
-        }
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private BindingSource bSource = new BindingSource();
+        private DataSet dataSet = new DataSet();
+        private DataTable table = new DataTable();
+        int ID = 0;
 
       
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Clear();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Add(new Button() { Text = "Hello World!" });
 
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            Panel myPanel = new Panel();
-
-            myPanel.AutoScroll = true;
-
-            vScrollBar1.Maximum = 100;
-            vScrollBar1.Minimum = 0;
-            vScrollBar1.Value = 0;
-        }
-
-        private void vScrollBar1_Scroll_1(object sender, ScrollEventArgs e)
-        {
-            flowLayoutPanel1.Location = new Point(vScrollBar1.Value);
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public Cashier_Formmmm()
         {
 
+
+            InitializeComponent();
+            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";
+            MySqlConnection mysqlCon = new MySqlConnection(connectionString);
+            mysqlCon.Open();
+
+            MyDA.SelectCommand = new MySqlCommand("SELECT * from beverage_table", mysqlCon);
+            MyDA.Fill(table);
+            bSource.DataSource = table;
+            dataGridView1.DataSource = bSource;
+            mysqlCon.Close();
+
+          
+            mysqlCon.Open();
+            MyDA.SelectCommand = new MySqlCommand("SELECT * from pizza_table", mysqlCon);
+            MyDA.Fill(table);
+            bSource.DataSource = table;
+            dataGridView2.DataSource = bSource;
+            mysqlCon.Close();
+
+
         }
+
+
     }
 }

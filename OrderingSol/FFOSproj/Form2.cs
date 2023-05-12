@@ -22,13 +22,7 @@ namespace FFOSproj
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
-        //MySqlDataAdapter da;
-
-        /* SqlConnection con = new SqlConnection("Data Source=.;localhost;port=3306;username=root;password=RteCh_0C#@11");
-         SqlCommand cmd;
-         SqlDataAdapter adapt;*/
-        //ID variable used in Updating and Deleting Record  
-
+       
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         private BindingSource bSource = new BindingSource();
         private DataSet dataSet = new DataSet();

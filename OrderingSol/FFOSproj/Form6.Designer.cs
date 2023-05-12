@@ -89,6 +89,7 @@
             this.password_cashier.Location = new System.Drawing.Point(114, 44);
             this.password_cashier.Multiline = true;
             this.password_cashier.Name = "password_cashier";
+            this.password_cashier.PasswordChar = '*';
             this.password_cashier.Size = new System.Drawing.Size(371, 53);
             this.password_cashier.TabIndex = 8;
             // 
