@@ -14,47 +14,95 @@ namespace FFOSproj
 {
     public partial class Cashier_Formmmm : Form
     {
-
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
-        MySqlCommand command;
-        MySqlDataAdapter da;
-
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        private BindingSource bSource = new BindingSource();
-        private DataSet dataSet = new DataSet();
-        private DataTable table = new DataTable();
-        int ID = 0;
-
-      
-
-
+        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=P@ssw0rd;");
+        private DataTable dataTable = new DataTable();
 
         public Cashier_Formmmm()
         {
-
-
             InitializeComponent();
-            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";
-            MySqlConnection mysqlCon = new MySqlConnection(connectionString);
-            mysqlCon.Open();
-
-            MyDA.SelectCommand = new MySqlCommand("SELECT * from beverage_table", mysqlCon);
-            MyDA.Fill(table);
-            bSource.DataSource = table;
-            dataGridView1.DataSource = bSource;
-            mysqlCon.Close();
-
-          
-            mysqlCon.Open();
-            MyDA.SelectCommand = new MySqlCommand("SELECT * from pizza_table", mysqlCon);
-            MyDA.Fill(table);
-            bSource.DataSource = table;
-            dataGridView2.DataSource = bSource;
-            mysqlCon.Close();
-
-
         }
 
+        private void LoadDataPizza()
+        {
+            
+                string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=P@ssw0rd;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                string query = "SELECT Name, Size, Price FROM pizza_table";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+    }
 
+        private void LoadDataBeverages()
+        {
+            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=P@ssw0rd;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string query = "SELECT Name, Size, Price FROM beverage_table";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView2.DataSource = table;
+        }
+
+        private void refresh_btn_Click(object sender, EventArgs e)
+        {
+            LoadDataPizza();
+        }
+
+        private void refresh2_btn_Click(object sender, EventArgs e)
+        {
+            LoadDataBeverages();
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                string itemName = row.Cells["Name"].Value.ToString();
+                string itemSize = row.Cells["Size"].Value.ToString();
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+
+                cal.Rows.Add(itemName, itemSize, price);
+
+                total += price;
+            }
+
+            foreach (DataGridViewRow row in cal.SelectedRows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+
+                total += price;
+            }
+
+            label1.Text = total.ToString();
+        }
+
+        private void add2_btn_Click(object sender, EventArgs e)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                string itemName = row.Cells["Name"].Value.ToString();
+                string itemSize = row.Cells["Size"].Value.ToString();
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+
+                cal.Rows.Add(itemName, itemSize, price);
+
+                total += price;
+            }
+
+            foreach (DataGridViewRow row in cal.SelectedRows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+
+                total += price;
+            }
+
+            label1.Text = total.ToString();
+        }
     }
 }
