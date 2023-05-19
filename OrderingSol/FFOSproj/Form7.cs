@@ -104,5 +104,96 @@ namespace FFOSproj
 
             label1.Text = total.ToString();
         }
+
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /* decimal total = 0;
+
+                foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Pricedtg"].Value);
+                total += price;
+            }
+            
+            label3.Text = total.ToString();
+
+            DataTable dataSource = (DataTable)dataGridView3.DataSource;
+
+            int columnIndex = dataSource.Columns.IndexOf("Pricedtg");
+
+            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Pricedtg"].Value);
+                total += price;
+            }*/
+
+
+
+
+            /* decimal Total = 0;
+
+             for (int i = 0; i < dataGridView1.Rows.Count; i++)
+             {
+                 Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells["Price"].Value);
+             }
+
+             label3.Text = Total.ToString();*/
+
+
+
+
+
+
+
+
+            decimal totalValue = 0;
+
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value != DBNull.Value)
+                    {
+                        decimal value = Convert.ToDecimal(cell.Value);
+                        totalValue += value;
+                    }
+                }
+            }
+
+            MessageBox.Show("The total value is " + totalValue.ToString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void cal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            decimal total = 0;
+
+
+            foreach (DataGridViewRow row in cal.SelectedRows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+
+                total += price;
+            }
+
+            label3.Text = total.ToString();
+
+        }
     }
 }
