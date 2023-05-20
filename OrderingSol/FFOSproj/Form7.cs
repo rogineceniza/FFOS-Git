@@ -14,7 +14,7 @@ namespace FFOSproj
 {
     public partial class Cashier_Formmmm : Form
     {
-        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=P@ssw0rd;");
+        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
         private DataTable dataTable = new DataTable();
 
         public Cashier_Formmmm()
@@ -25,7 +25,7 @@ namespace FFOSproj
         private void LoadDataPizza()
         {
             
-                string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=P@ssw0rd;";
+                string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 string query = "SELECT Name, Size, Price FROM pizza_table";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
@@ -36,7 +36,7 @@ namespace FFOSproj
 
         private void LoadDataBeverages()
         {
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=P@ssw0rd;";
+            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             string query = "SELECT Name, Size, Price FROM beverage_table";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
@@ -55,7 +55,7 @@ namespace FFOSproj
             LoadDataBeverages();
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+        public void add_btn_Click(object sender, EventArgs e)
         {
             decimal total = 0;
 
@@ -65,22 +65,17 @@ namespace FFOSproj
                 string itemSize = row.Cells["Size"].Value.ToString();
                 decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
 
-                cal.Rows.Add(itemName, itemSize, price);
+                //cal.Rows.Add(itemName, itemSize, price);
+                totalData.Rows.Add(itemName, itemSize, price);
 
                 total += price;
             }
 
-            foreach (DataGridViewRow row in cal.SelectedRows)
-            {
-                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+           
 
-                total += price;
-            }
-
-            label1.Text = total.ToString();
         }
 
-        private void add2_btn_Click(object sender, EventArgs e)
+       public void add2_btn_Click(object sender, EventArgs e)
         {
             decimal total = 0;
 
@@ -90,109 +85,31 @@ namespace FFOSproj
                 string itemSize = row.Cells["Size"].Value.ToString();
                 decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
 
-                cal.Rows.Add(itemName, itemSize, price);
+               // cal.Rows.Add(itemName, itemSize, price);
+                totalData.Rows.Add(itemName, itemSize, price);
 
                 total += price;
             }
 
-            foreach (DataGridViewRow row in cal.SelectedRows)
-            {
-                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
-
-                total += price;
-            }
-
-            label1.Text = total.ToString();
         }
 
 
-        
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Total_Click_1(object sender, EventArgs e)
         {
-            /* decimal total = 0;
+            decimal Total = 0;
 
-                foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            for (int i = 0; i < totalData.Rows.Count; i++)
             {
-                decimal price = Convert.ToDecimal(row.Cells["Pricedtg"].Value);
-                total += price;
-            }
-            
-            label3.Text = total.ToString();
-
-            DataTable dataSource = (DataTable)dataGridView3.DataSource;
-
-            int columnIndex = dataSource.Columns.IndexOf("Pricedtg");
-
-            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
-            {
-                decimal price = Convert.ToDecimal(row.Cells["Pricedtg"].Value);
-                total += price;
-            }*/
-
-
-
-
-            /* decimal Total = 0;
-
-             for (int i = 0; i < dataGridView1.Rows.Count; i++)
-             {
-                 Total += Convert.ToDecimal(dataGridView1.Rows[i].Cells["Price"].Value);
-             }
-
-             label3.Text = Total.ToString();*/
-
-
-
-
-
-
-
-
-            decimal totalValue = 0;
-
-            foreach (DataGridViewRow row in dataGridView3.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value != null && cell.Value != DBNull.Value)
-                    {
-                        decimal value = Convert.ToDecimal(cell.Value);
-                        totalValue += value;
-                    }
-                }
+                Total += Convert.ToDecimal(totalData.Rows[i].Cells["priceOfItem"].Value);
             }
 
-            MessageBox.Show("The total value is " + totalValue.ToString());
+            label3.Text = Total.ToString();
 
+       }
 
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void cal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-
-            decimal total = 0;
-
-
-            foreach (DataGridViewRow row in cal.SelectedRows)
-            {
-                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
-
-                total += price;
-            }
-
-            label3.Text = total.ToString();
 
         }
     }

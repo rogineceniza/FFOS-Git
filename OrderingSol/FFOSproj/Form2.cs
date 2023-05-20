@@ -20,7 +20,7 @@ namespace FFOSproj
 {
     public partial class Form2 : Form
     {
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=P@ssw0rd");
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
        
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
@@ -31,7 +31,7 @@ namespace FFOSproj
         public Form2()
         {
             InitializeComponent();
-            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = P@ssw0rd";
+            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";
             MySqlConnection mysqlCon = new MySqlConnection(connectionString);
             mysqlCon.Open();
 
@@ -76,7 +76,7 @@ namespace FFOSproj
 
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=P@ssw0rd");
+                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
                 using (MySqlConnection cs = new MySqlConnection())
                 {
                     MySqlCommand cmd = con.CreateCommand();
@@ -130,10 +130,7 @@ namespace FFOSproj
             
         }
 
-        private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }
         

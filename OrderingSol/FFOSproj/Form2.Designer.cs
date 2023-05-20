@@ -66,7 +66,6 @@
             this.showPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.showPB.Size = new System.Drawing.Size(953, 638);
             this.showPB.TabIndex = 0;
-            this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
             // 
             // Form2
             // 

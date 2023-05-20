@@ -40,7 +40,7 @@ namespace FFOSproj
             }
             else
             {
-                MessageBox.Show("Username and Password do not match.");
+                MessageBox.Show("Username and password do not match.");
                 // Passwords do not match
                 // Do something, such as displaying an error message or clearing the password field
             }

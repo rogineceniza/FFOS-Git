@@ -43,7 +43,7 @@ namespace FFOSproj
         {
             try
             {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=P@ssw0rd";
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
                 string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text + "','" + this.sizeBox.Text + "','" + this.priceBox.Text + /*"','" + this.brg_imagebox.Text + */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2); 
@@ -107,7 +107,7 @@ namespace FFOSproj
         {
             try
             {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=P@ssw0rd";
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
                 string Query = "insert into pizza_db.beverage_table(Name, Description, Size, Price) values('" + this.name_bvrg.Text + "','" + this.description_bvrg.Text + "','" + this.size_bvrg.Text + "','" + this.price_bvrg.Text + /*"','" + this.brg_imagebox.Text + */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
@@ -134,6 +134,8 @@ namespace FFOSproj
             price_bvrg.Text = "";
          //  brg_imagebox.Image = null;
         }
+
+      
 
 
 

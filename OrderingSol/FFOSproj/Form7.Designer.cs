@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.totalData = new System.Windows.Forms.DataGridView();
+            this.nameOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeOFItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cal = new System.Windows.Forms.DataGridView();
-            this.Namedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sizedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveFromCart = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Name_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +50,9 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.refresh2_btn = new System.Windows.Forms.Button();
             this.add2_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Total = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,10 +70,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.totalData);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.cal);
             this.panel3.Controls.Add(this.btnRemoveFromCart);
             this.panel3.Controls.Add(this.dataGridView3);
             this.panel3.Location = new System.Drawing.Point(1264, 118);
@@ -82,10 +82,48 @@
             this.panel3.Size = new System.Drawing.Size(702, 746);
             this.panel3.TabIndex = 2;
             // 
+            // totalData
+            // 
+            this.totalData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.totalData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameOfItem,
+            this.sizeOFItem,
+            this.priceOfItem});
+            this.totalData.Location = new System.Drawing.Point(0, 0);
+            this.totalData.Name = "totalData";
+            this.totalData.RowHeadersWidth = 62;
+            this.totalData.RowTemplate.Height = 28;
+            this.totalData.Size = new System.Drawing.Size(699, 338);
+            this.totalData.TabIndex = 7;
+            // 
+            // nameOfItem
+            // 
+            this.nameOfItem.HeaderText = "Name";
+            this.nameOfItem.MinimumWidth = 8;
+            this.nameOfItem.Name = "nameOfItem";
+            this.nameOfItem.ReadOnly = true;
+            this.nameOfItem.Width = 150;
+            // 
+            // sizeOFItem
+            // 
+            this.sizeOFItem.HeaderText = "Size";
+            this.sizeOFItem.MinimumWidth = 8;
+            this.sizeOFItem.Name = "sizeOFItem";
+            this.sizeOFItem.ReadOnly = true;
+            this.sizeOFItem.Width = 150;
+            // 
+            // priceOfItem
+            // 
+            this.priceOfItem.HeaderText = "Price";
+            this.priceOfItem.MinimumWidth = 8;
+            this.priceOfItem.Name = "priceOfItem";
+            this.priceOfItem.ReadOnly = true;
+            this.priceOfItem.Width = 150;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(358, 327);
+            this.label3.Location = new System.Drawing.Point(545, 350);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 6;
@@ -102,51 +140,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(421, 255);
+            this.label2.Location = new System.Drawing.Point(487, 350);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Total: ";
-            // 
-            // cal
-            // 
-            this.cal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Namedtg,
-            this.Sizedtg,
-            this.Price});
-            this.cal.Location = new System.Drawing.Point(0, 0);
-            this.cal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cal.Name = "cal";
-            this.cal.RowHeadersWidth = 51;
-            this.cal.RowTemplate.Height = 24;
-            this.cal.Size = new System.Drawing.Size(537, 251);
-            this.cal.TabIndex = 3;
-            this.cal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cal_CellContentClick);
-            // 
-            // Namedtg
-            // 
-            this.Namedtg.HeaderText = "Name";
-            this.Namedtg.MinimumWidth = 6;
-            this.Namedtg.Name = "Namedtg";
-            this.Namedtg.ReadOnly = true;
-            this.Namedtg.Width = 125;
-            // 
-            // Sizedtg
-            // 
-            this.Sizedtg.HeaderText = "Size";
-            this.Sizedtg.MinimumWidth = 6;
-            this.Sizedtg.Name = "Sizedtg";
-            this.Sizedtg.ReadOnly = true;
-            this.Sizedtg.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 125;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnRemoveFromCart
             // 
@@ -282,24 +281,24 @@
             this.add2_btn.UseVisualStyleBackColor = true;
             this.add2_btn.Click += new System.EventHandler(this.add2_btn_Click);
             // 
-            // button1
+            // Total
             // 
-            this.button1.Location = new System.Drawing.Point(1861, 870);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 50);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Total.Location = new System.Drawing.Point(1861, 870);
+            this.Total.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(106, 50);
+            this.Total.TabIndex = 6;
+            this.Total.Text = "Total";
+            this.Total.UseVisualStyleBackColor = true;
+            this.Total.Click += new System.EventHandler(this.Total_Click_1);
             // 
             // Cashier_Formmmm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1997, 964);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(2086, 964);
+            this.Controls.Add(this.Total);
             this.Controls.Add(this.add2_btn);
             this.Controls.Add(this.refresh2_btn);
             this.Controls.Add(this.refresh_btn);
@@ -313,7 +312,7 @@
             this.Text = "Cashier Form";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -337,16 +336,16 @@
         private System.Windows.Forms.Button add2_btn;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label btnRemoveFromCart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Size_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price_1;
-        private System.Windows.Forms.DataGridView cal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Namedtg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sizedtg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridView totalData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameOfItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeOFItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceOfItem;
     }
 }
