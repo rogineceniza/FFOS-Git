@@ -76,10 +76,10 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btnRemoveFromCart);
             this.panel3.Controls.Add(this.dataGridView3);
-            this.panel3.Location = new System.Drawing.Point(1264, 118);
+            this.panel3.Location = new System.Drawing.Point(1110, 118);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(702, 746);
+            this.panel3.Size = new System.Drawing.Size(856, 746);
             this.panel3.TabIndex = 2;
             // 
             // totalData
@@ -297,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(2086, 964);
+            this.ClientSize = new System.Drawing.Size(2061, 964);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.add2_btn);
             this.Controls.Add(this.refresh2_btn);
