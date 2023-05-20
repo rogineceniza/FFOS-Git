@@ -34,6 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cal = new System.Windows.Forms.DataGridView();
+            this.Namedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sizedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveFromCart = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Name_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +51,6 @@
             this.refresh2_btn = new System.Windows.Forms.Button();
             this.add2_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Namedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sizedtg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -62,10 +62,10 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(11, 10);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1737, 80);
+            this.panel1.Size = new System.Drawing.Size(1954, 100);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -76,35 +76,35 @@
             this.panel3.Controls.Add(this.cal);
             this.panel3.Controls.Add(this.btnRemoveFromCart);
             this.panel3.Controls.Add(this.dataGridView3);
-            this.panel3.Location = new System.Drawing.Point(1124, 94);
+            this.panel3.Location = new System.Drawing.Point(1264, 118);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(624, 597);
+            this.panel3.Size = new System.Drawing.Size(702, 746);
             this.panel3.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(373, 269);
+            this.label3.Location = new System.Drawing.Point(463, 337);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "label3";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(433, 204);
+            this.label1.Location = new System.Drawing.Point(487, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(374, 204);
+            this.label2.Location = new System.Drawing.Point(421, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Total: ";
             // 
@@ -116,19 +116,44 @@
             this.Sizedtg,
             this.Price});
             this.cal.Location = new System.Drawing.Point(0, 0);
+            this.cal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cal.Name = "cal";
             this.cal.RowHeadersWidth = 51;
             this.cal.RowTemplate.Height = 24;
-            this.cal.Size = new System.Drawing.Size(477, 201);
+            this.cal.Size = new System.Drawing.Size(537, 251);
             this.cal.TabIndex = 3;
             this.cal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cal_CellContentClick);
+            // 
+            // Namedtg
+            // 
+            this.Namedtg.HeaderText = "Name";
+            this.Namedtg.MinimumWidth = 6;
+            this.Namedtg.Name = "Namedtg";
+            this.Namedtg.ReadOnly = true;
+            this.Namedtg.Width = 125;
+            // 
+            // Sizedtg
+            // 
+            this.Sizedtg.HeaderText = "Size";
+            this.Sizedtg.MinimumWidth = 6;
+            this.Sizedtg.Name = "Sizedtg";
+            this.Sizedtg.ReadOnly = true;
+            this.Sizedtg.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 125;
             // 
             // btnRemoveFromCart
             // 
             this.btnRemoveFromCart.AutoSize = true;
-            this.btnRemoveFromCart.Location = new System.Drawing.Point(176, 114);
+            this.btnRemoveFromCart.Location = new System.Drawing.Point(198, 142);
             this.btnRemoveFromCart.Name = "btnRemoveFromCart";
-            this.btnRemoveFromCart.Size = new System.Drawing.Size(0, 16);
+            this.btnRemoveFromCart.Size = new System.Drawing.Size(0, 20);
             this.btnRemoveFromCart.TabIndex = 1;
             // 
             // dataGridView3
@@ -139,6 +164,7 @@
             this.Size_1,
             this.Price_1});
             this.dataGridView3.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersWidth = 51;
@@ -173,10 +199,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 94);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 118);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(464, 554);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 692);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -188,15 +214,15 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(461, 551);
+            this.dataGridView1.Size = new System.Drawing.Size(519, 689);
             this.dataGridView1.TabIndex = 0;
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(381, 651);
+            this.add_btn.Location = new System.Drawing.Point(429, 814);
             this.add_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(94, 40);
+            this.add_btn.Size = new System.Drawing.Size(106, 50);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -204,10 +230,10 @@
             // 
             // refresh_btn
             // 
-            this.refresh_btn.Location = new System.Drawing.Point(281, 652);
+            this.refresh_btn.Location = new System.Drawing.Point(316, 815);
             this.refresh_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(94, 40);
+            this.refresh_btn.Size = new System.Drawing.Size(106, 50);
             this.refresh_btn.TabIndex = 3;
             this.refresh_btn.Text = "Refresh";
             this.refresh_btn.UseVisualStyleBackColor = true;
@@ -216,10 +242,10 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.dataGridView2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(495, 94);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(557, 118);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(464, 554);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(522, 692);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // dataGridView2
@@ -231,15 +257,15 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(461, 551);
+            this.dataGridView2.Size = new System.Drawing.Size(519, 689);
             this.dataGridView2.TabIndex = 0;
             // 
             // refresh2_btn
             // 
-            this.refresh2_btn.Location = new System.Drawing.Point(765, 651);
+            this.refresh2_btn.Location = new System.Drawing.Point(861, 814);
             this.refresh2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh2_btn.Name = "refresh2_btn";
-            this.refresh2_btn.Size = new System.Drawing.Size(94, 40);
+            this.refresh2_btn.Size = new System.Drawing.Size(106, 50);
             this.refresh2_btn.TabIndex = 4;
             this.refresh2_btn.Text = "Refresh";
             this.refresh2_btn.UseVisualStyleBackColor = true;
@@ -247,10 +273,10 @@
             // 
             // add2_btn
             // 
-            this.add2_btn.Location = new System.Drawing.Point(865, 651);
+            this.add2_btn.Location = new System.Drawing.Point(973, 814);
             this.add2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add2_btn.Name = "add2_btn";
-            this.add2_btn.Size = new System.Drawing.Size(94, 40);
+            this.add2_btn.Size = new System.Drawing.Size(106, 50);
             this.add2_btn.TabIndex = 5;
             this.add2_btn.Text = "Add";
             this.add2_btn.UseVisualStyleBackColor = true;
@@ -258,45 +284,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1654, 696);
+            this.button1.Location = new System.Drawing.Point(1861, 870);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 40);
+            this.button1.Size = new System.Drawing.Size(106, 50);
             this.button1.TabIndex = 6;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Namedtg
-            // 
-            this.Namedtg.HeaderText = "Name";
-            this.Namedtg.MinimumWidth = 6;
-            this.Namedtg.Name = "Namedtg";
-            this.Namedtg.ReadOnly = true;
-            this.Namedtg.Width = 125;
-            // 
-            // Sizedtg
-            // 
-            this.Sizedtg.HeaderText = "Size";
-            this.Sizedtg.MinimumWidth = 6;
-            this.Sizedtg.Name = "Sizedtg";
-            this.Sizedtg.ReadOnly = true;
-            this.Sizedtg.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 125;
-            // 
             // Cashier_Formmmm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1775, 771);
+            this.ClientSize = new System.Drawing.Size(1997, 964);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.add2_btn);
             this.Controls.Add(this.refresh2_btn);
