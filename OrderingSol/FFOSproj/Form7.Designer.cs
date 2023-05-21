@@ -33,6 +33,9 @@
             this.saveToDb = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.totalData = new System.Windows.Forms.DataGridView();
+            this.nameOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeOFItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@
             this.refresh2_btn = new System.Windows.Forms.Button();
             this.add2_btn = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.Button();
-            this.nameOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeOFItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -72,6 +72,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.Total);
             this.panel3.Controls.Add(this.saveToDb);
             this.panel3.Controls.Add(this.delete);
             this.panel3.Controls.Add(this.totalData);
@@ -88,7 +89,7 @@
             // 
             // saveToDb
             // 
-            this.saveToDb.Location = new System.Drawing.Point(719, 65);
+            this.saveToDb.Location = new System.Drawing.Point(157, 344);
             this.saveToDb.Name = "saveToDb";
             this.saveToDb.Size = new System.Drawing.Size(96, 45);
             this.saveToDb.TabIndex = 9;
@@ -98,7 +99,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(719, 13);
+            this.delete.Location = new System.Drawing.Point(43, 343);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(96, 46);
             this.delete.TabIndex = 8;
@@ -121,14 +122,37 @@
             this.totalData.TabIndex = 7;
             this.totalData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.totalData_CellContentClick);
             // 
+            // nameOfItem
+            // 
+            this.nameOfItem.HeaderText = "Name";
+            this.nameOfItem.MinimumWidth = 8;
+            this.nameOfItem.Name = "nameOfItem";
+            this.nameOfItem.ReadOnly = true;
+            this.nameOfItem.Width = 150;
+            // 
+            // sizeOFItem
+            // 
+            this.sizeOFItem.HeaderText = "Size";
+            this.sizeOFItem.MinimumWidth = 8;
+            this.sizeOFItem.Name = "sizeOFItem";
+            this.sizeOFItem.ReadOnly = true;
+            this.sizeOFItem.Width = 150;
+            // 
+            // priceOfItem
+            // 
+            this.priceOfItem.HeaderText = "Price";
+            this.priceOfItem.MinimumWidth = 8;
+            this.priceOfItem.Name = "priceOfItem";
+            this.priceOfItem.ReadOnly = true;
+            this.priceOfItem.Width = 150;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(545, 350);
+            this.label3.Location = new System.Drawing.Point(648, 350);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
             // 
             // label1
             // 
@@ -141,7 +165,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(487, 350);
+            this.label2.Location = new System.Drawing.Point(590, 350);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 4;
@@ -283,7 +307,7 @@
             // 
             // Total
             // 
-            this.Total.Location = new System.Drawing.Point(1861, 870);
+            this.Total.Location = new System.Drawing.Point(705, 287);
             this.Total.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(106, 50);
@@ -292,37 +316,12 @@
             this.Total.UseVisualStyleBackColor = true;
             this.Total.Click += new System.EventHandler(this.Total_Click_1);
             // 
-            // nameOfItem
-            // 
-            this.nameOfItem.HeaderText = "Name";
-            this.nameOfItem.MinimumWidth = 8;
-            this.nameOfItem.Name = "nameOfItem";
-            this.nameOfItem.ReadOnly = true;
-            this.nameOfItem.Width = 150;
-            // 
-            // sizeOFItem
-            // 
-            this.sizeOFItem.HeaderText = "Size";
-            this.sizeOFItem.MinimumWidth = 8;
-            this.sizeOFItem.Name = "sizeOFItem";
-            this.sizeOFItem.ReadOnly = true;
-            this.sizeOFItem.Width = 150;
-            // 
-            // priceOfItem
-            // 
-            this.priceOfItem.HeaderText = "Price";
-            this.priceOfItem.MinimumWidth = 8;
-            this.priceOfItem.Name = "priceOfItem";
-            this.priceOfItem.ReadOnly = true;
-            this.priceOfItem.Width = 150;
-            // 
             // Cashier_Formmmm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(2061, 964);
-            this.Controls.Add(this.Total);
+            this.ClientSize = new System.Drawing.Size(2564, 964);
             this.Controls.Add(this.add2_btn);
             this.Controls.Add(this.refresh2_btn);
             this.Controls.Add(this.refresh_btn);

@@ -134,8 +134,10 @@ namespace FFOSproj
         {
             try
             {
+                var test = this.sizeOFItem;
+
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.totalsum_table(Name, Size, Price) values('" +/*+ this.id + "','" + */this.nameOfItem + "','" + this.sizeOFItem + "','" + this.priceOfItem + "' );";
+                string Query = "insert into pizza_db.totalsum_table(Name, Size, Price) values('" +this.nameOfItem + "','" + this.sizeOFItem + "','" + this.priceOfItem + "' );";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
