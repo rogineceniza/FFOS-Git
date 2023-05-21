@@ -55,8 +55,6 @@ namespace FFOSproj
                 {
                 }
                 MyConn2.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -74,7 +72,7 @@ namespace FFOSproj
 
         }
 
-        private void upload_Click(object sender, EventArgs e)
+        /*private void upload_Click(object sender, EventArgs e)
         {
             try
             {
@@ -91,17 +89,14 @@ namespace FFOSproj
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }*/
 
-        private void deletebtn_Click(object sender, EventArgs e)
+        /*private void deletebtn_Click(object sender, EventArgs e)
         {
              imageBox.Image = null;
-        }
+        }*/
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            //vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(vScrollBar1_Scroll);
-        }
+        
 
         private void bvrg_save_Click(object sender, EventArgs e)
         {
@@ -135,7 +130,12 @@ namespace FFOSproj
          //  brg_imagebox.Image = null;
         }
 
-      
+        private void name_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
 

@@ -456,6 +456,7 @@
             this.name_txt.Name = "name_txt";
             this.name_txt.Size = new System.Drawing.Size(360, 37);
             this.name_txt.TabIndex = 6;
+            this.name_txt.TextChanged += new System.EventHandler(this.name_txt_TextChanged);
             // 
             // price
             // 

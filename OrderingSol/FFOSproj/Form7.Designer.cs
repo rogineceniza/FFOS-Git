@@ -30,10 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.saveToDb = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             this.totalData = new System.Windows.Forms.DataGridView();
-            this.nameOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeOFItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +50,9 @@
             this.refresh2_btn = new System.Windows.Forms.Button();
             this.add2_btn = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.Button();
+            this.nameOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeOFItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOfItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -70,6 +72,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.saveToDb);
+            this.panel3.Controls.Add(this.delete);
             this.panel3.Controls.Add(this.totalData);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
@@ -82,6 +86,26 @@
             this.panel3.Size = new System.Drawing.Size(856, 746);
             this.panel3.TabIndex = 2;
             // 
+            // saveToDb
+            // 
+            this.saveToDb.Location = new System.Drawing.Point(719, 65);
+            this.saveToDb.Name = "saveToDb";
+            this.saveToDb.Size = new System.Drawing.Size(96, 45);
+            this.saveToDb.TabIndex = 9;
+            this.saveToDb.Text = "Save";
+            this.saveToDb.UseVisualStyleBackColor = true;
+            this.saveToDb.Click += new System.EventHandler(this.saveToDb_Click);
+            // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(719, 13);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(96, 46);
+            this.delete.TabIndex = 8;
+            this.delete.Text = "Delete";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
             // totalData
             // 
             this.totalData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -89,36 +113,13 @@
             this.nameOfItem,
             this.sizeOFItem,
             this.priceOfItem});
-            this.totalData.Location = new System.Drawing.Point(0, 0);
+            this.totalData.Location = new System.Drawing.Point(0, -1);
             this.totalData.Name = "totalData";
             this.totalData.RowHeadersWidth = 62;
             this.totalData.RowTemplate.Height = 28;
             this.totalData.Size = new System.Drawing.Size(699, 338);
             this.totalData.TabIndex = 7;
-            // 
-            // nameOfItem
-            // 
-            this.nameOfItem.HeaderText = "Name";
-            this.nameOfItem.MinimumWidth = 8;
-            this.nameOfItem.Name = "nameOfItem";
-            this.nameOfItem.ReadOnly = true;
-            this.nameOfItem.Width = 150;
-            // 
-            // sizeOFItem
-            // 
-            this.sizeOFItem.HeaderText = "Size";
-            this.sizeOFItem.MinimumWidth = 8;
-            this.sizeOFItem.Name = "sizeOFItem";
-            this.sizeOFItem.ReadOnly = true;
-            this.sizeOFItem.Width = 150;
-            // 
-            // priceOfItem
-            // 
-            this.priceOfItem.HeaderText = "Price";
-            this.priceOfItem.MinimumWidth = 8;
-            this.priceOfItem.Name = "priceOfItem";
-            this.priceOfItem.ReadOnly = true;
-            this.priceOfItem.Width = 150;
+            this.totalData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.totalData_CellContentClick);
             // 
             // label3
             // 
@@ -145,7 +146,6 @@
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Total: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnRemoveFromCart
             // 
@@ -292,6 +292,30 @@
             this.Total.UseVisualStyleBackColor = true;
             this.Total.Click += new System.EventHandler(this.Total_Click_1);
             // 
+            // nameOfItem
+            // 
+            this.nameOfItem.HeaderText = "Name";
+            this.nameOfItem.MinimumWidth = 8;
+            this.nameOfItem.Name = "nameOfItem";
+            this.nameOfItem.ReadOnly = true;
+            this.nameOfItem.Width = 150;
+            // 
+            // sizeOFItem
+            // 
+            this.sizeOFItem.HeaderText = "Size";
+            this.sizeOFItem.MinimumWidth = 8;
+            this.sizeOFItem.Name = "sizeOFItem";
+            this.sizeOFItem.ReadOnly = true;
+            this.sizeOFItem.Width = 150;
+            // 
+            // priceOfItem
+            // 
+            this.priceOfItem.HeaderText = "Price";
+            this.priceOfItem.MinimumWidth = 8;
+            this.priceOfItem.Name = "priceOfItem";
+            this.priceOfItem.ReadOnly = true;
+            this.priceOfItem.Width = 150;
+            // 
             // Cashier_Formmmm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -344,6 +368,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView totalData;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button saveToDb;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameOfItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeOFItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceOfItem;
