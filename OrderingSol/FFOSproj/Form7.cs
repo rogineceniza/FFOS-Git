@@ -27,17 +27,17 @@ namespace FFOSproj
         private DataTable table = new DataTable();
         int ID = 0;
 
-    
+
 
         public Cashier_Formmmm()
         {
             InitializeComponent();
         }
 
-      /*  private void Cashier_Formmmm_Load(object sender, EventArgs e)
-        {
-            LoadDataIntoDataGridView(); 
-        }*/
+        /*  private void Cashier_Formmmm_Load(object sender, EventArgs e)
+          {
+              LoadDataIntoDataGridView(); 
+          }*/
 
         private void LoadDataIntoDataGridView()
         {
@@ -93,7 +93,7 @@ namespace FFOSproj
             LoadDataBeverages();
         }
 
-        public void add_btn_Click(object sender, EventArgs e)
+        /*public void add_btn_Click(object sender, EventArgs e)
         {
             decimal total = 0;
 
@@ -112,9 +112,9 @@ namespace FFOSproj
 
 
 
-        }
+        }*/
 
-        public void add2_btn_Click(object sender, EventArgs e)
+        /*public void add2_btn_Click(object sender, EventArgs e)
         {
             decimal total = 0;
 
@@ -132,10 +132,10 @@ namespace FFOSproj
             }
 
         }
+*/
 
 
-
-        private void Total_Click_1(object sender, EventArgs e)
+       /* private void Total_Click_1(object sender, EventArgs e)
         {
             decimal Total = 0;
             for (int i = 0; i < totalData.Rows.Count; i++)
@@ -145,9 +145,9 @@ namespace FFOSproj
             label3.Text = Total.ToString();
 
         }
+*/
 
-
-        private void delete_Click(object sender, EventArgs e)
+      /*  private void delete_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.totalData.SelectedRows)
             {
@@ -166,18 +166,18 @@ namespace FFOSproj
                 }
 
             }
-        }
+        }*/
 
 
 
 
 
 
-    
 
 
 
-            private void saveToDb_Click(object sender, EventArgs e)
+
+        private void saveToDb_Click(object sender, EventArgs e)
         {
             /*try
             {
@@ -304,32 +304,30 @@ namespace FFOSproj
             }
 */
 
-       
+
         }
 
         private void dateToday_Click(object sender, EventArgs e)
         {
-            
-                
 
-                // Create a new timer
-                var timer = new Timer();
+            // Create a new timer
+            var timer = new Timer();
 
-                // Set the interval (in milliseconds) at which the timer ticks
-                timer.Interval = 1000; // 1 second
+            // Set the interval (in milliseconds) at which the timer ticks
+            timer.Interval = 1000; // 1 second
 
-                // Specify the method to be called when the timer ticks
-                timer.Tick += Timer_Tick;
+            // Specify the method to be called when the timer ticks
+            timer.Tick += Timer_Tick;
 
-                // Start the timer
-                timer.Start();
-            }
+            // Start the timer
+            timer.Start();
+        }
 
-            private void Timer_Tick(object sender, EventArgs e)
-            {
-                // Update the label with the current time
-                dateToday.Text = DateTime.Now.ToString("HH:mm:ss");
-            }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Update the label with the current time
+            dateToday.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -345,7 +343,7 @@ namespace FFOSproj
                 priceTXT.Text = itemPrice;
             }
 
-            
+
         }
 
         private void btn2_Click(object sender, EventArgs e)
@@ -365,7 +363,7 @@ namespace FFOSproj
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void addBTN_Click(object sender, EventArgs e)
@@ -389,6 +387,7 @@ namespace FFOSproj
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void displayBTN_Click(object sender, EventArgs e)
@@ -398,7 +397,7 @@ namespace FFOSproj
 
         private void clearBTN_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.dataGridView4.SelectedRows)
+            /*foreach (DataGridViewRow item in this.dataGridView4.SelectedRows)
             {
                 MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
                 using (MySqlConnection cs = new MySqlConnection())
@@ -415,8 +414,85 @@ namespace FFOSproj
                 }
 
 
+            }*/
+
+
+
+
+            foreach (DataGridViewRow item in this.dataGridView4.SelectedRows)
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
+                using (MySqlConnection cs = new MySqlConnection())
+                {
+                    MySqlCommand cmd = con.CreateCommand();
+                    int id = Convert.ToInt32(dataGridView4.SelectedRows[0].Cells[0].Value);
+                    cmd.CommandText = "Delete from purchased_items where id='" + id + "'"; /*current_table*/
+
+                    dataGridView4.Rows.RemoveAt(this.dataGridView4.SelectedRows[0].Index);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+
+                }
+
+
             }
+
+        }
+
+
+      
+
+
+
+        private void totalllll_Click(object sender, EventArgs e)
+        {
+            decimal Total = 0;
+            for (int i = 0; i < dataGridView4.Rows.Count; i++)
+            {
+                Total += Convert.ToDecimal(dataGridView4.Rows[i].Cells["Price"].Value);
+            }
+            totalLabel.Text = Total.ToString();
+        }
+
+
+
+
+
+        private void saveCurrent_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                string Query = "insert into pizza_db.total_sum_saved(TotalSum) values('" + this.totalLabel.Text + "');";
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();
+                MessageBox.Show("Successfully Saved!");
+                while (MyReader2.Read())
+                {
+                }
+                MyConn2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void totalLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
-    }
-    
+}
+
+
+
+
+
