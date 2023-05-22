@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection.Emit;
+using System.Collections;
 
 namespace FFOSproj
 {
@@ -35,6 +37,7 @@ namespace FFOSproj
             timer = new Timer();
             timer.Interval = 1000; // 1 second interval
             timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void Cashier_Formmm_Load(object sender, EventArgs e)
@@ -45,13 +48,14 @@ namespace FFOSproj
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Update the label text with the current date and time
+            //Update the label text with the current date and time;
             dateToday.Text = DateTime.Now.ToString();
         }
         /*  private void Cashier_Formmmm_Load(object sender, EventArgs e)
           {
               LoadDataIntoDataGridView(); 
           }*/
+
 
         private void LoadDataIntoDataGridView()
         {
@@ -324,10 +328,7 @@ namespace FFOSproj
             timer.Start();*/
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            dateToday.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
+
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -462,7 +463,7 @@ namespace FFOSproj
         private void saveCurrent_Click(object sender, EventArgs e)
         {
 
-            try
+           /* try
             {
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
                 string Query = "insert into pizza_db.total_sum_saved(TotalSum, DateTime) values('" + this.totalLabel.Text + "', '" + this.dateToday.Text + "'); ";
@@ -480,49 +481,57 @@ namespace FFOSproj
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
+
+            /*string TotalSum = totalLabel.Text;
+            DateTime DateTime = DateTime.Now;
+            SaveDataToDatabase(TotalSum, DateTime.ToString());
+            MessageBox.Show("Data saved to the database successfully!");*/
+
+/*
+            string labelValue = dateToday.Text;
+            DateTime currentDateTime = DateTime.Now;
+            string dateTimeString = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            MessageBox.Show("Data saved to the database successfully!");*/
+
+
+            string labelValue = totalLabel.Text;
+            DateTime dateToday = DateTime.Now;
+            string dateTimeString = dateToday.ToString("yyyy-MM-dd HH:mm:ss");
+            SaveDataToDatabase(labelValue, dateTimeString);
+          //  MessageBox.Show("Data saved to the database successfully!");
 
 
         }
-
-
-        private void AddCurrentTimeToDatabase()
+        private void SaveDataToDatabase(string labelValue, string dateTimeString)
         {
-            // Establish database connection
-            string connectionString = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                try
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    // Prepare SQL statement
-                    string insertQuery = "INSERT INTO total_sum_saved (DateTime) VALUES (NOW())";
-                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    connection.Open();
 
-                    // Execute SQL statement
-                    command.ExecuteNonQuery();
-
-                    // Display success message
-                    Console.WriteLine("Current time added to the database successfully!");
-                }
-                catch (Exception ex)
-                {
-                    // Display error message
-                    Console.WriteLine("An error occurred while adding the current time to the database: " + ex.Message);
+                    string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                    string Query = "insert into pizza_db.total_sum_saved(TotalSum) values('" + this.totalLabel.Text +/* "', '" + this.dateToday.Text + */"'); ";
+                    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+                    MessageBox.Show("Successfully Saved!");
+                    while (MyReader2.Read())
+                    {
+                    }
+                    MyConn2.Close();
                 }
             }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
-
-
-
     }
 }
-
-
-
 
 

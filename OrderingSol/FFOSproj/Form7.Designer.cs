@@ -80,7 +80,6 @@
             this.dateToday.Size = new System.Drawing.Size(106, 22);
             this.dateToday.TabIndex = 10;
             this.dateToday.Text = "dateAndTime";
-            this.dateToday.Click += new System.EventHandler(this.dateToday_Click);
             // 
             // flowLayoutPanel1
             // 
