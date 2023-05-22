@@ -75,7 +75,7 @@
             // 
             this.dateToday.AutoSize = true;
             this.dateToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dateToday.Location = new System.Drawing.Point(1972, 12);
+            this.dateToday.Location = new System.Drawing.Point(1972, 90);
             this.dateToday.Name = "dateToday";
             this.dateToday.Size = new System.Drawing.Size(106, 22);
             this.dateToday.TabIndex = 10;
@@ -310,7 +310,6 @@
             this.totalLabel.Size = new System.Drawing.Size(40, 20);
             this.totalLabel.TabIndex = 24;
             this.totalLabel.Text = "total";
-            this.totalLabel.Click += new System.EventHandler(this.totalLabel_Click);
             // 
             // saveCurrent
             // 
@@ -331,6 +330,9 @@
             this.dataGridView4.RowTemplate.Height = 28;
             this.dataGridView4.Size = new System.Drawing.Size(447, 680);
             this.dataGridView4.TabIndex = 0;
+            // 
+            // currentDateAndTime
+            // 
             // 
             // Cashier_Formmmm
             // 
@@ -400,5 +402,6 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button saveCurrent;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label currentDateAndTime;
     }
 }

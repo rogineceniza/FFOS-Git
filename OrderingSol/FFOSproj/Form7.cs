@@ -26,14 +26,28 @@ namespace FFOSproj
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
         int ID = 0;
-
+        private Timer timer;
 
 
         public Cashier_Formmmm()
         {
             InitializeComponent();
+            timer = new Timer();
+            timer.Interval = 1000; // 1 second interval
+            timer.Tick += Timer_Tick;
         }
 
+        private void Cashier_Formmm_Load(object sender, EventArgs e)
+        {
+            // Start the timer when the form loads
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Update the label text with the current date and time
+            dateToday.Text = DateTime.Now.ToString();
+        }
         /*  private void Cashier_Formmmm_Load(object sender, EventArgs e)
           {
               LoadDataIntoDataGridView(); 
@@ -135,44 +149,38 @@ namespace FFOSproj
 */
 
 
-       /* private void Total_Click_1(object sender, EventArgs e)
-        {
-            decimal Total = 0;
-            for (int i = 0; i < totalData.Rows.Count; i++)
-            {
-                Total += Convert.ToDecimal(totalData.Rows[i].Cells["priceOfItem"].Value);
-            }
-            label3.Text = Total.ToString();
+        /* private void Total_Click_1(object sender, EventArgs e)
+         {
+             decimal Total = 0;
+             for (int i = 0; i < totalData.Rows.Count; i++)
+             {
+                 Total += Convert.ToDecimal(totalData.Rows[i].Cells["priceOfItem"].Value);
+             }
+             label3.Text = Total.ToString();
 
-        }
-*/
+         }
+ */
 
-      /*  private void delete_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow item in this.totalData.SelectedRows)
-            {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
-                using (MySqlConnection cs = new MySqlConnection())
-                {
-                    MySqlCommand cmd = con.CreateCommand();
-                    string name = Convert.ToString(totalData.SelectedRows[0].Cells[0].Value);
-                    cmd.CommandText = "Delete from totalsum_table where Name ='" + nameOfItem + "'";
+        /*  private void delete_Click(object sender, EventArgs e)
+          {
+              foreach (DataGridViewRow item in this.totalData.SelectedRows)
+              {
+                  MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
+                  using (MySqlConnection cs = new MySqlConnection())
+                  {
+                      MySqlCommand cmd = con.CreateCommand();
+                      string name = Convert.ToString(totalData.SelectedRows[0].Cells[0].Value);
+                      cmd.CommandText = "Delete from totalsum_table where Name ='" + nameOfItem + "'";
 
-                    totalData.Rows.RemoveAt(this.totalData.SelectedRows[0].Index);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-
-
-                }
-
-            }
-        }*/
+                      totalData.Rows.RemoveAt(this.totalData.SelectedRows[0].Index);
+                      con.Open();
+                      cmd.ExecuteNonQuery();
 
 
+                  }
 
-
-
-
+              }
+          }*/
 
 
 
@@ -309,23 +317,15 @@ namespace FFOSproj
 
         private void dateToday_Click(object sender, EventArgs e)
         {
-
-            // Create a new timer
-            var timer = new Timer();
-
-            // Set the interval (in milliseconds) at which the timer ticks
+            dateToday.Text = DateTime.Now.ToString();
+            /*var timer = new Timer();
             timer.Interval = 1000; // 1 second
-
-            // Specify the method to be called when the timer ticks
             timer.Tick += Timer_Tick;
-
-            // Start the timer
-            timer.Start();
+            timer.Start();*/
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Update the label with the current time
             dateToday.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
@@ -441,7 +441,7 @@ namespace FFOSproj
         }
 
 
-      
+
 
 
 
@@ -465,7 +465,7 @@ namespace FFOSproj
             try
             {
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.total_sum_saved(TotalSum) values('" + this.totalLabel.Text + "');";
+                string Query = "insert into pizza_db.total_sum_saved(TotalSum, DateTime) values('" + this.totalLabel.Text + "', '" + this.dateToday.Text + "'); ";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
@@ -485,10 +485,40 @@ namespace FFOSproj
 
         }
 
-        private void totalLabel_Click(object sender, EventArgs e)
+
+        private void AddCurrentTimeToDatabase()
         {
+            // Establish database connection
+            string connectionString = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                try
+                {
+                    // Prepare SQL statement
+                    string insertQuery = "INSERT INTO total_sum_saved (DateTime) VALUES (NOW())";
+                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+
+                    // Execute SQL statement
+                    command.ExecuteNonQuery();
+
+                    // Display success message
+                    Console.WriteLine("Current time added to the database successfully!");
+                }
+                catch (Exception ex)
+                {
+                    // Display error message
+                    Console.WriteLine("An error occurred while adding the current time to the database: " + ex.Message);
+                }
+            }
+
 
         }
+
+
+
     }
 }
 
