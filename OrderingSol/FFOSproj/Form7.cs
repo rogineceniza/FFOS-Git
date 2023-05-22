@@ -57,6 +57,7 @@ namespace FFOSproj
           }*/
 
 
+
         private void LoadDataIntoDataGridView()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -462,47 +463,73 @@ namespace FFOSproj
 
         private void saveCurrent_Click(object sender, EventArgs e)
         {
-
-           /* try
-            {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.total_sum_saved(TotalSum, DateTime) values('" + this.totalLabel.Text + "', '" + this.dateToday.Text + "'); ";
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Successfully Saved!");
-                while (MyReader2.Read())
-                {
-                }
-                MyConn2.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
+            /*
+                        try
+                        {
+                            string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                            string Query = "insert into pizza_db.total_sum_saved(TotalSum, DateTime) values('" + this.totalLabel.Text + "', '" + this.dateToday.Text + "'); ";
+                            MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                            MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                            MySqlDataReader MyReader2;
+                            MyConn2.Open();
+                            MyReader2 = MyCommand2.ExecuteReader();
+                            MessageBox.Show("Successfully Saved!");
+                            while (MyReader2.Read())
+                            {
+                            }
+                            MyConn2.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }*/
 
             /*string TotalSum = totalLabel.Text;
             DateTime DateTime = DateTime.Now;
             SaveDataToDatabase(TotalSum, DateTime.ToString());
             MessageBox.Show("Data saved to the database successfully!");*/
 
-/*
-            string labelValue = dateToday.Text;
-            DateTime currentDateTime = DateTime.Now;
-            string dateTimeString = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-            MessageBox.Show("Data saved to the database successfully!");*/
+            /*
+                        string labelValue = dateToday.Text;
+                        DateTime currentDateTime = DateTime.Now;
+                        string dateTimeString = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        MessageBox.Show("Data saved to the database successfully!");*/
 
 
             string labelValue = totalLabel.Text;
             DateTime dateToday = DateTime.Now;
             string dateTimeString = dateToday.ToString("yyyy-MM-dd HH:mm:ss");
             SaveDataToDatabase(labelValue, dateTimeString);
-          //  MessageBox.Show("Data saved to the database successfully!");
+            //  MessageBox.Show("Data saved to the database successfully!");
 
 
+
+            /*
+                        try
+                        {
+                            using (MySqlConnection connection = new MySqlConnection(connectionString))
+                            {
+                                connection.Open();
+
+                                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                                string Query = "insert into pizza_db.total_sum_saved(TotalSum, DateTime) values('" + this.totalLabel.Text + "', '" + this.dateToday.Text + "'); ";
+                                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                                MySqlDataReader MyReader2;
+                                MyConn2.Open();
+                                MyReader2 = MyCommand2.ExecuteReader();
+                                MessageBox.Show("Successfully Saved!");
+                                while (MyReader2.Read())
+                                {
+                                }
+                                MyConn2.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);*/
         }
+
         private void SaveDataToDatabase(string labelValue, string dateTimeString)
         {
             try
@@ -512,7 +539,7 @@ namespace FFOSproj
                     connection.Open();
 
                     string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                    string Query = "insert into pizza_db.total_sum_saved(TotalSum) values('" + this.totalLabel.Text +/* "', '" + this.dateToday.Text + */"'); ";
+                    string Query = "insert into pizza_db.total_sum_saved(TotalSum) values('" + this.totalLabel.Text + "'); ";
                     MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                     MySqlDataReader MyReader2;
@@ -529,9 +556,19 @@ namespace FFOSproj
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
+    
+
+
+
+
     }
-}
+
+
+
+    }
+
+
 
 
