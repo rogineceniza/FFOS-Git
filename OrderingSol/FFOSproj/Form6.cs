@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FFOSproj
 {
-    public partial class Form6 : Form
+    public partial class cashierLogin : Form
     {
-        public Form6()
+        public cashierLogin()
         {
             InitializeComponent();
         }

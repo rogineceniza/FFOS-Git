@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FFOSproj
 {
-    public partial class Form4 : Form
+    public partial class LoginForm : Form
     {
-        public Form4()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -21,14 +21,14 @@ namespace FFOSproj
 
         private void admin_button_Click(object sender, EventArgs e)
         {
-            var myForm4 = new Form5();
+            var myForm4 = new adminLogin();
             myForm4.ShowDialog();
             myForm4.Dispose();
         }
 
         private void cashier_button_Click(object sender, EventArgs e)
         {
-            var myForm4 = new Form6();
+            var myForm4 = new cashierLogin();
             myForm4.ShowDialog();
             myForm4.Dispose();
         }

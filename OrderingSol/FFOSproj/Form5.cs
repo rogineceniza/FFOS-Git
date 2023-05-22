@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FFOSproj
 {
-    public partial class Form5 : Form
+    public partial class adminLogin : Form
     {
-        public Form5()
+        public adminLogin()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace FFOSproj
           
             if (username == "admin123" && password == "admin123")
             {
-                    var myForm1 = new Form1();
+                    var myForm1 = new inventoryManagementForm();
                     myForm1.ShowDialog();
                     myForm1.Dispose();
             }

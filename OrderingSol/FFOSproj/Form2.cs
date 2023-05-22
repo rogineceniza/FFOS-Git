@@ -18,7 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFOSproj
 {
-    public partial class Form2 : Form
+    public partial class pizzaDatagrid : Form
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
@@ -28,7 +28,7 @@ namespace FFOSproj
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
         int ID = 0;
-        public Form2()
+        public pizzaDatagrid()
         {
             InitializeComponent();
             string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";

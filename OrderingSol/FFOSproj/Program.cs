@@ -16,7 +16,7 @@ namespace FFOSproj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cashier_Formmmm());
+            Application.Run(new LoginForm());
         }
     }
 }

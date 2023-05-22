@@ -16,23 +16,23 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FFOSproj
 {
-    public partial class Form1 : Form
+    public partial class inventoryManagementForm : Form
     {
         
-        public Form1()
+        public inventoryManagementForm()
         {
             InitializeComponent();
         }
 
         private void viewInventoryBTN_Click(object sender, EventArgs e)
         {
-            var myForm2 = new Form2();
+            var myForm2 = new pizzaDatagrid();
             myForm2.ShowDialog();
             myForm2.Dispose();
         }
         private void viewBinventory_Click(object sender, EventArgs e)
         {
-            var myForm3 = new Form3();
+            var myForm3 = new beverageDatagrid();
             myForm3.ShowDialog();
             myForm3.Dispose();
         }

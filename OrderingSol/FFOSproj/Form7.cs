@@ -132,7 +132,7 @@ namespace FFOSproj
 
         private void saveToDb_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 var test = this.sizeOFItem;
 
@@ -152,6 +152,34 @@ namespace FFOSproj
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }*/
+
+            string connectionString = "server=localhost;database=mydatabase;uid=username;password=password;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Step 2: Retrieve the data from DataGrid 3
+                foreach (DataGridViewRow row in totalData.Rows)
+                {
+                    // Step 3: Construct SQL statement
+                    string insertQuery = "INSERT INTO your_table (column1, column2, column3) VALUES (@value1, @value2, @value3)";
+
+                    // Step 4: Extract values from the row
+                    string value1 = row.Cells["column1"].Value.ToString();
+                    string value2 = row.Cells["column2"].Value.ToString();
+                    string value3 = row.Cells["column3"].Value.ToString();
+
+                    // Step 5: Execute the SQL statement
+                    using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@value1", value1);
+                        command.Parameters.AddWithValue("@value2", value2);
+                        command.Parameters.AddWithValue("@value3", value3);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
             }
         }
 

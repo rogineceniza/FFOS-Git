@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FFOSproj
 {
-    public partial class Form3 : Form
+    public partial class beverageDatagrid : Form
     {
 
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
@@ -25,7 +25,7 @@ namespace FFOSproj
         int ID = 0;
 
 
-        public Form3()
+        public beverageDatagrid()
         {
             InitializeComponent();
             string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password =  RteCh_0C#@11";

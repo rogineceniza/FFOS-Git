@@ -1,6 +1,6 @@
 ﻿namespace FFOSproj
 {
-    partial class Form2
+    partial class pizzaDatagrid
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pizzaDatagrid));
             this.panel1 = new System.Windows.Forms.Panel();
             this.del_pizza = new System.Windows.Forms.Button();
             this.showPB = new System.Windows.Forms.DataGridView();
@@ -67,14 +67,14 @@
             this.showPB.Size = new System.Drawing.Size(953, 638);
             this.showPB.TabIndex = 0;
             // 
-            // Form2
+            // pizzaDatagrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 803);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "pizzaDatagrid";
             this.Text = "VIEW Pizza Inventory";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.showPB)).EndInit();
