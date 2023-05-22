@@ -4,11 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFOSproj
 {
@@ -16,23 +20,57 @@ namespace FFOSproj
     {
         private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
         private DataTable dataTable = new DataTable();
+        private string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private BindingSource bSource = new BindingSource();
+        private DataSet dataSet = new DataSet();
+        private DataTable table = new DataTable();
+        int ID = 0;
+
+    
 
         public Cashier_Formmmm()
         {
             InitializeComponent();
         }
 
+      /*  private void Cashier_Formmmm_Load(object sender, EventArgs e)
+        {
+            LoadDataIntoDataGridView(); 
+        }*/
+
+        private void LoadDataIntoDataGridView()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM purchased_items";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Bind the DataTable to the DataGridView
+                    dataGridView4.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private void LoadDataPizza()
         {
-            
-                string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                string query = "SELECT Name, Size, Price FROM pizza_table";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                dataGridView1.DataSource = table;
-    }
+
+            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string query = "SELECT Name, Size, Price FROM pizza_table";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+        }
 
         private void LoadDataBeverages()
         {
@@ -61,7 +99,7 @@ namespace FFOSproj
 
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-               // int idNum = Convert.ToInt32(row.Cells["ID"].Value);
+                // int idNum = Convert.ToInt32(row.Cells["ID"].Value);
                 string itemName = row.Cells["Name"].Value.ToString();
                 string itemSize = row.Cells["Size"].Value.ToString();
                 decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
@@ -72,22 +110,22 @@ namespace FFOSproj
                 total += price;
             }
 
-           
+
 
         }
 
-       public void add2_btn_Click(object sender, EventArgs e)
+        public void add2_btn_Click(object sender, EventArgs e)
         {
             decimal total = 0;
 
             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
             {
-               // int idNum = Convert.ToInt32(row.Cells["ID"].Value);
+                // int idNum = Convert.ToInt32(row.Cells["ID"].Value);
                 string itemName = row.Cells["Name"].Value.ToString();
                 string itemSize = row.Cells["Size"].Value.ToString();
                 decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
 
-               // cal.Rows.Add(itemName, itemSize, price);
+                // cal.Rows.Add(itemName, itemSize, price);
                 totalData.Rows.Add(itemName, itemSize, price);
 
                 total += price;
@@ -106,7 +144,7 @@ namespace FFOSproj
             }
             label3.Text = Total.ToString();
 
-       }
+        }
 
 
         private void delete_Click(object sender, EventArgs e)
@@ -118,7 +156,7 @@ namespace FFOSproj
                 {
                     MySqlCommand cmd = con.CreateCommand();
                     string name = Convert.ToString(totalData.SelectedRows[0].Cells[0].Value);
-                    cmd.CommandText = "Delete from totalsum_table where Name='" + nameOfItem + "'";
+                    cmd.CommandText = "Delete from totalsum_table where Name ='" + nameOfItem + "'";
 
                     totalData.Rows.RemoveAt(this.totalData.SelectedRows[0].Index);
                     con.Open();
@@ -130,7 +168,16 @@ namespace FFOSproj
             }
         }
 
-        private void saveToDb_Click(object sender, EventArgs e)
+
+
+
+
+
+    
+
+
+
+            private void saveToDb_Click(object sender, EventArgs e)
         {
             /*try
             {
@@ -154,38 +201,222 @@ namespace FFOSproj
                 MessageBox.Show(ex.Message);
             }*/
 
-            string connectionString = "server=localhost;database=mydatabase;uid=username;password=password;";
+            /* string connectionString = "server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11";
+             using (MySqlConnection connection = new MySqlConnection(connectionString))
+             {
+                 connection.Open();
+
+                 foreach (DataGridViewRow row in totalData.Rows)
+                 {
+                     string insertQuery = "INSERT INTO pizza_db.totalsum_table (Name, Size, Price) VALUES (@nameOfItem, @sizeOFItem, @priceOfItem)";
+
+                     // Step 4: Extract values from the row
+                     string value1 = row.Cells["Name"].Value.ToString();
+                     string value2 = row.Cells["Size"].Value.ToString();
+                     string value3 = row.Cells["Price"].Value.ToString();
+
+                     // Step 5: Execute the SQL statement
+                     using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                     {
+                         command.Parameters.AddWithValue("@nameOfItem", value1);
+                         command.Parameters.AddWithValue("@sizeOFItem", value2);
+                         command.Parameters.AddWithValue("@priceOfItem", value3);
+
+                         command.ExecuteNonQuery();
+                     }
+                 }
+             }*/
+
+            /* string connectionString = "server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11";
+             using (MySqlConnection connection = new MySqlConnection(connectionString))
+             {
+                 connection.Open();
+
+                 try
+                 {
+                     foreach (DataGridViewRow row in totalData.SelectedRows)
+                     {
+                         // Prepare SQL statement
+                         string insertQuery = "INSERT INTO pizza_db.totalsum_table (Name, Size, Price) VALUES ('" + this.nameOfItem.Name + "','" + this.sizeOFItem.Name+ "','" + this.priceOfItem.Name+ "',);";
+                         MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                         command.Parameters.AddWithValue("@nameOfItem", row.Cells["Name"].Value);
+                         command.Parameters.AddWithValue("@sizeOFItem", row.Cells["Size"].Value);
+                         command.Parameters.AddWithValue("@priceOfItem", row.Cells["Price"].Value);
+
+                         // Execute SQL statement
+                         command.ExecuteNonQuery();
+                     }
+
+                     MessageBox.Show("Selected rows saved successfully!");
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show("An error occurred while saving data: " + ex.Message);
+                 }
+             }
+ */
+
+            /* DataGridView totalData = new DataGridView();
+
+             totalData.Name = "totalData";
+             totalData.Location = new System.Drawing.Point(10, 10);
+             totalData.Size = new System.Drawing.Size(400, 300);
+             totalData.ColumnCount = 2;
+             totalData.Columns[0].Name = "Name";
+             totalData.Columns[1].Name = "Size";
+             totalData.Columns[1].Name = "Price";
+
+             this.Controls.Add(totalData);*/
+
+
+            /*// Retrieve the value from the label
+            string labelValue = label3.Text;
+            string name = totalData.Name;
+            string size = totalData.Name;
+           // string price = totalData.Name;
+
+            // MySQL database connection string
+            string connectionString = "server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11";
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
-                // Step 2: Retrieve the data from DataGrid 3
-                foreach (DataGridViewRow row in totalData.Rows)
+                try
                 {
-                    // Step 3: Construct SQL statement
-                    string insertQuery = "INSERT INTO your_table (column1, column2, column3) VALUES (@value1, @value2, @value3)";
+                    // Prepare SQL statement
+                    string insertQuery = "INSERT INTO pizza_db.totalsum_table (Price, Name, Size) VALUES ('" + this.label3 + "','" + this.nameOfItem + "','" + this.sizeOFItem + "');";
+                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    command.Parameters.AddWithValue("@label3", labelValue);
+                    command.Parameters.AddWithValue("@nameOfItem", name);
+                    command.Parameters.AddWithValue("@sizeOFItem", size);
+                //    command.Parameters.AddWithValue("@priceOfItem", price);
 
-                    // Step 4: Extract values from the row
-                    string value1 = row.Cells["column1"].Value.ToString();
-                    string value2 = row.Cells["column2"].Value.ToString();
-                    string value3 = row.Cells["column3"].Value.ToString();
+                    // Execute SQL statement
+                    command.ExecuteNonQuery();
 
-                    // Step 5: Execute the SQL statement
-                    using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
-                    {
-                        command.Parameters.AddWithValue("@value1", value1);
-                        command.Parameters.AddWithValue("@value2", value2);
-                        command.Parameters.AddWithValue("@value3", value3);
-
-                        command.ExecuteNonQuery();
-                    }
+                    MessageBox.Show("Value saved to database successfully!");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while saving the value to the database: " + ex.Message);
+                }
+            }
+*/
+
+       
+        }
+
+        private void dateToday_Click(object sender, EventArgs e)
+        {
+            
+                
+
+                // Create a new timer
+                var timer = new Timer();
+
+                // Set the interval (in milliseconds) at which the timer ticks
+                timer.Interval = 1000; // 1 second
+
+                // Specify the method to be called when the timer ticks
+                timer.Tick += Timer_Tick;
+
+                // Start the timer
+                timer.Start();
+            }
+
+            private void Timer_Tick(object sender, EventArgs e)
+            {
+                // Update the label with the current time
+                dateToday.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                string itemName = row.Cells["Name"].Value.ToString();
+                string itemSize = row.Cells["Size"].Value.ToString();
+                string itemPrice = row.Cells["Price"].Value.ToString();
+
+                // Transfer the values to separate TextBoxes
+                nameTXT.Text = itemName;
+                sizeTXT.Text = itemSize;
+                priceTXT.Text = itemPrice;
+            }
+
+            
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                string itemName = row.Cells["Name"].Value.ToString();
+                string itemSize = row.Cells["Size"].Value.ToString();
+                string itemPrice = row.Cells["Price"].Value.ToString();
+
+                // Transfer the values to separate TextBoxes
+                nameTXT.Text = itemName;
+                sizeTXT.Text = itemSize;
+                priceTXT.Text = itemPrice;
             }
         }
 
-        private void totalData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
 
+        private void addBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                string Query = "insert into pizza_db.purchased_items(Name,Size, Price) values('" + this.nameTXT.Text + "','" + this.sizeTXT.Text + "','" + this.priceTXT.Text + "');";
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();
+                MessageBox.Show("Successfully Saved!");
+                while (MyReader2.Read())
+                {
+                }
+                MyConn2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void displayBTN_Click(object sender, EventArgs e)
+        {
+            LoadDataIntoDataGridView();
+        }
+
+        private void clearBTN_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dataGridView4.SelectedRows)
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
+                using (MySqlConnection cs = new MySqlConnection())
+                {
+                    MySqlCommand cmd = con.CreateCommand();
+                    int id = Convert.ToInt32(dataGridView4.SelectedRows[0].Cells[0].Value);
+                    cmd.CommandText = "Delete from pizza_table where id='" + id + "'";
+
+                    dataGridView4.Rows.RemoveAt(this.dataGridView4.SelectedRows[0].Index);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+
+                }
+
+
+            }
         }
     }
-}
+    }
+    
