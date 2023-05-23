@@ -53,26 +53,7 @@ namespace FFOSproj
 
         private void del_pizza_Click(object sender, EventArgs e)
         {
-            /*foreach (DataGridViewCell oneCell in showPB.SelectedCells)
-            {
-                if (oneCell.Selected)
-                    showPB.Rows.RemoveAt(oneCell.RowIndex);
-            }*/
-
-            /* foreach (DataGridViewCell oneCell in showPB.SelectedCells)
-             {
-                 if (oneCell.Selected)
-                     showPB.Rows.RemoveAt(oneCell.RowIndex);
-             }
-
-             int selectedCount = showPB.SelectedRows.Count;
-             while (selectedCount > 0)
-             {
-                 if (!showPB.SelectedRows[0].IsNewRow)
-                     showPB.Rows.RemoveAt(showPB.SelectedRows[0].Index);
-                 selectedCount--;
-             }*/
-
+            
 
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {

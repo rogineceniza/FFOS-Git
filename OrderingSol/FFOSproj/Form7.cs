@@ -70,7 +70,6 @@ namespace FFOSproj
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
-                    // Bind the DataTable to the DataGridView
                     dataGridView4.DataSource = dataTable;
                 }
                 catch (Exception ex)

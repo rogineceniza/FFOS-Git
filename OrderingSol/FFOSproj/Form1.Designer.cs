@@ -30,23 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.viewBinventory = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.logOutBTN = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.viewInventoryBTN = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.addInventoryBTN = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
-            this.upload_bvrg = new System.Windows.Forms.Button();
-            this.del_bvrg = new System.Windows.Forms.Button();
+            this.dsrrrrr = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.inventoryPanel = new System.Windows.Forms.Panel();
             this.size_bvrg = new System.Windows.Forms.ComboBox();
             this.bvrg_clear = new System.Windows.Forms.Button();
             this.bvrg_save = new System.Windows.Forms.Button();
@@ -57,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.brg_imagebox = new System.Windows.Forms.PictureBox();
             this.sizeBox = new System.Windows.Forms.ComboBox();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -68,244 +53,95 @@
             this.size = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.pizzaPicLabel = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.deletebtn = new System.Windows.Forms.Button();
-            this.upload = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.imageBox = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.viewBinventory = new System.Windows.Forms.Button();
+            this.logOutBTN = new System.Windows.Forms.Button();
+            this.DSRbtn = new System.Windows.Forms.Button();
+            this.viewInventoryBTN = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addInventoryBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.dsrrrrr.SuspendLayout();
+            this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brg_imagebox)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dsrrrrr);
+            this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.logOutBTN);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.DSRbtn);
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.addInventoryBTN);
             this.panel1.Location = new System.Drawing.Point(25, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(948, 151);
+            this.panel1.Size = new System.Drawing.Size(1162, 844);
             this.panel1.TabIndex = 0;
             // 
-            // viewBinventory
+            // dsrrrrr
             // 
-            this.viewBinventory.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewBinventory.Location = new System.Drawing.Point(294, 104);
-            this.viewBinventory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.viewBinventory.Name = "viewBinventory";
-            this.viewBinventory.Size = new System.Drawing.Size(245, 44);
-            this.viewBinventory.TabIndex = 6;
-            this.viewBinventory.Text = "VIEW Beverage Inventory";
-            this.viewBinventory.UseVisualStyleBackColor = true;
-            this.viewBinventory.Click += new System.EventHandler(this.viewBinventory_Click);
+            this.dsrrrrr.Controls.Add(this.label5);
+            this.dsrrrrr.Location = new System.Drawing.Point(196, 28);
+            this.dsrrrrr.Name = "dsrrrrr";
+            this.dsrrrrr.Size = new System.Drawing.Size(944, 816);
+            this.dsrrrrr.TabIndex = 2;
             // 
-            // label8
+            // label5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(221, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(251, 28);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Inventory Management";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(358, 376);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 28);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Daily Sales Report";
             // 
-            // logOutBTN
+            // inventoryPanel
             // 
-            this.logOutBTN.Location = new System.Drawing.Point(686, 66);
-            this.logOutBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.logOutBTN.Name = "logOutBTN";
-            this.logOutBTN.Size = new System.Drawing.Size(118, 67);
-            this.logOutBTN.TabIndex = 4;
-            this.logOutBTN.Text = "Logout";
-            this.logOutBTN.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(553, 67);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 67);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Daily Sales Report";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // viewInventoryBTN
-            // 
-            this.viewInventoryBTN.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewInventoryBTN.Location = new System.Drawing.Point(293, 56);
-            this.viewInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.viewInventoryBTN.Name = "viewInventoryBTN";
-            this.viewInventoryBTN.Size = new System.Drawing.Size(246, 44);
-            this.viewInventoryBTN.TabIndex = 2;
-            this.viewInventoryBTN.Text = "VIEW Pizza Inventory";
-            this.viewInventoryBTN.UseVisualStyleBackColor = true;
-            this.viewInventoryBTN.Click += new System.EventHandler(this.viewInventoryBTN_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 145);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // addInventoryBTN
-            // 
-            this.addInventoryBTN.Location = new System.Drawing.Point(162, 68);
-            this.addInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.addInventoryBTN.Name = "addInventoryBTN";
-            this.addInventoryBTN.Size = new System.Drawing.Size(118, 67);
-            this.addInventoryBTN.TabIndex = 0;
-            this.addInventoryBTN.Text = "ADD Inventory";
-            this.addInventoryBTN.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.upload_bvrg);
-            this.panel2.Controls.Add(this.del_bvrg);
-            this.panel2.Controls.Add(this.size_bvrg);
-            this.panel2.Controls.Add(this.bvrg_clear);
-            this.panel2.Controls.Add(this.bvrg_save);
-            this.panel2.Controls.Add(this.price_bvrg);
-            this.panel2.Controls.Add(this.description_bvrg);
-            this.panel2.Controls.Add(this.name_bvrg);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.brg_imagebox);
-            this.panel2.Controls.Add(this.sizeBox);
-            this.panel2.Controls.Add(this.clearBtn);
-            this.panel2.Controls.Add(this.saveBtn);
-            this.panel2.Controls.Add(this.priceBox);
-            this.panel2.Controls.Add(this.description_txt);
-            this.panel2.Controls.Add(this.name_txt);
-            this.panel2.Controls.Add(this.price);
-            this.panel2.Controls.Add(this.size);
-            this.panel2.Controls.Add(this.description);
-            this.panel2.Controls.Add(this.name);
-            this.panel2.Controls.Add(this.pizzaPicLabel);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.deletebtn);
-            this.panel2.Controls.Add(this.upload);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.imageBox);
-            this.panel2.Location = new System.Drawing.Point(27, 171);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 699);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(16, 369);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(295, 291);
-            this.panel5.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 28);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Beverage Panel";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::FFOSproj.Properties.Resources.cokkkk;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(37, 71);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(206, 172);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(30, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(248, 246);
-            this.panel3.TabIndex = 28;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.pizza_image_picbox);
-            this.panel4.Location = new System.Drawing.Point(-27, -3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(308, 291);
-            this.panel4.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 28);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Pizza Panel";
-            // 
-            // pizza_image_picbox
-            // 
-            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
-            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
-            this.pizza_image_picbox.Name = "pizza_image_picbox";
-            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
-            this.pizza_image_picbox.TabIndex = 0;
-            this.pizza_image_picbox.TabStop = false;
-            // 
-            // upload_bvrg
-            // 
-            this.upload_bvrg.Location = new System.Drawing.Point(206, 591);
-            this.upload_bvrg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.upload_bvrg.Name = "upload_bvrg";
-            this.upload_bvrg.Size = new System.Drawing.Size(105, 47);
-            this.upload_bvrg.TabIndex = 27;
-            this.upload_bvrg.Text = "Upload";
-            this.upload_bvrg.UseVisualStyleBackColor = true;
-            // 
-            // del_bvrg
-            // 
-            this.del_bvrg.Location = new System.Drawing.Point(97, 591);
-            this.del_bvrg.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.del_bvrg.Name = "del_bvrg";
-            this.del_bvrg.Size = new System.Drawing.Size(105, 47);
-            this.del_bvrg.TabIndex = 26;
-            this.del_bvrg.Text = "Delete";
-            this.del_bvrg.UseVisualStyleBackColor = true;
+            this.inventoryPanel.Controls.Add(this.size_bvrg);
+            this.inventoryPanel.Controls.Add(this.bvrg_clear);
+            this.inventoryPanel.Controls.Add(this.bvrg_save);
+            this.inventoryPanel.Controls.Add(this.price_bvrg);
+            this.inventoryPanel.Controls.Add(this.description_bvrg);
+            this.inventoryPanel.Controls.Add(this.name_bvrg);
+            this.inventoryPanel.Controls.Add(this.label1);
+            this.inventoryPanel.Controls.Add(this.label2);
+            this.inventoryPanel.Controls.Add(this.label3);
+            this.inventoryPanel.Controls.Add(this.label4);
+            this.inventoryPanel.Controls.Add(this.sizeBox);
+            this.inventoryPanel.Controls.Add(this.clearBtn);
+            this.inventoryPanel.Controls.Add(this.saveBtn);
+            this.inventoryPanel.Controls.Add(this.priceBox);
+            this.inventoryPanel.Controls.Add(this.description_txt);
+            this.inventoryPanel.Controls.Add(this.name_txt);
+            this.inventoryPanel.Controls.Add(this.price);
+            this.inventoryPanel.Controls.Add(this.size);
+            this.inventoryPanel.Controls.Add(this.description);
+            this.inventoryPanel.Controls.Add(this.name);
+            this.inventoryPanel.Controls.Add(this.panel4);
+            this.inventoryPanel.Controls.Add(this.panel5);
+            this.inventoryPanel.Location = new System.Drawing.Point(205, 58);
+            this.inventoryPanel.Name = "inventoryPanel";
+            this.inventoryPanel.Size = new System.Drawing.Size(928, 730);
+            this.inventoryPanel.TabIndex = 1;
             // 
             // size_bvrg
             // 
             this.size_bvrg.AllowDrop = true;
             this.size_bvrg.FormattingEnabled = true;
-            this.size_bvrg.Location = new System.Drawing.Point(503, 520);
+            this.size_bvrg.Location = new System.Drawing.Point(503, 537);
             this.size_bvrg.Name = "size_bvrg";
             this.size_bvrg.Size = new System.Drawing.Size(360, 36);
             this.size_bvrg.TabIndex = 24;
@@ -313,7 +149,7 @@
             // bvrg_clear
             // 
             this.bvrg_clear.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bvrg_clear.Location = new System.Drawing.Point(630, 635);
+            this.bvrg_clear.Location = new System.Drawing.Point(630, 652);
             this.bvrg_clear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bvrg_clear.Name = "bvrg_clear";
             this.bvrg_clear.Size = new System.Drawing.Size(105, 54);
@@ -325,7 +161,7 @@
             // bvrg_save
             // 
             this.bvrg_save.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bvrg_save.Location = new System.Drawing.Point(758, 635);
+            this.bvrg_save.Location = new System.Drawing.Point(758, 652);
             this.bvrg_save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bvrg_save.Name = "bvrg_save";
             this.bvrg_save.Size = new System.Drawing.Size(105, 54);
@@ -336,14 +172,14 @@
             // 
             // price_bvrg
             // 
-            this.price_bvrg.Location = new System.Drawing.Point(503, 562);
+            this.price_bvrg.Location = new System.Drawing.Point(503, 579);
             this.price_bvrg.Name = "price_bvrg";
             this.price_bvrg.Size = new System.Drawing.Size(360, 37);
             this.price_bvrg.TabIndex = 22;
             // 
             // description_bvrg
             // 
-            this.description_bvrg.Location = new System.Drawing.Point(503, 424);
+            this.description_bvrg.Location = new System.Drawing.Point(503, 441);
             this.description_bvrg.Multiline = true;
             this.description_bvrg.Name = "description_bvrg";
             this.description_bvrg.Size = new System.Drawing.Size(360, 90);
@@ -351,7 +187,7 @@
             // 
             // name_bvrg
             // 
-            this.name_bvrg.Location = new System.Drawing.Point(503, 381);
+            this.name_bvrg.Location = new System.Drawing.Point(503, 398);
             this.name_bvrg.Name = "name_bvrg";
             this.name_bvrg.Size = new System.Drawing.Size(360, 37);
             this.name_bvrg.TabIndex = 20;
@@ -359,7 +195,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 571);
+            this.label1.Location = new System.Drawing.Point(349, 588);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 28);
             this.label1.TabIndex = 19;
@@ -368,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(349, 520);
+            this.label2.Location = new System.Drawing.Point(349, 537);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 17;
@@ -377,7 +213,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(349, 427);
+            this.label3.Location = new System.Drawing.Point(349, 444);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 28);
             this.label3.TabIndex = 16;
@@ -386,21 +222,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(349, 384);
+            this.label4.Location = new System.Drawing.Point(349, 401);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 28);
             this.label4.TabIndex = 15;
             this.label4.Text = "Name: ";
-            // 
-            // brg_imagebox
-            // 
-            this.brg_imagebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.brg_imagebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.brg_imagebox.Location = new System.Drawing.Point(30, 381);
-            this.brg_imagebox.Name = "brg_imagebox";
-            this.brg_imagebox.Size = new System.Drawing.Size(281, 204);
-            this.brg_imagebox.TabIndex = 14;
-            this.brg_imagebox.TabStop = false;
             // 
             // sizeBox
             // 
@@ -456,7 +282,6 @@
             this.name_txt.Name = "name_txt";
             this.name_txt.Size = new System.Drawing.Size(360, 37);
             this.name_txt.TabIndex = 6;
-            this.name_txt.TextChanged += new System.EventHandler(this.name_txt_TextChanged);
             // 
             // price
             // 
@@ -494,78 +319,140 @@
             this.name.TabIndex = 2;
             this.name.Text = "Name";
             // 
-            // pizzaPicLabel
+            // panel4
             // 
-            this.pizzaPicLabel.AutoSize = true;
-            this.pizzaPicLabel.Location = new System.Drawing.Point(25, 14);
-            this.pizzaPicLabel.Name = "pizzaPicLabel";
-            this.pizzaPicLabel.Size = new System.Drawing.Size(135, 28);
-            this.pizzaPicLabel.TabIndex = 1;
-            this.pizzaPicLabel.Text = "Pizza Image";
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.pizza_image_picbox);
+            this.panel4.Location = new System.Drawing.Point(4, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(910, 372);
+            this.panel4.TabIndex = 0;
             // 
-            // panel6
+            // label6
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(946, 369);
-            this.panel6.TabIndex = 29;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(86, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 28);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Pizza Panel";
             // 
-            // panel7
+            // pizza_image_picbox
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(-1, 365);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(946, 330);
-            this.panel7.TabIndex = 30;
+            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
+            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
+            this.pizza_image_picbox.Name = "pizza_image_picbox";
+            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
+            this.pizza_image_picbox.TabIndex = 0;
+            this.pizza_image_picbox.TabStop = false;
             // 
-            // deletebtn
+            // panel5
             // 
-            this.deletebtn.Location = new System.Drawing.Point(97, 255);
-            this.deletebtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(105, 47);
-            this.deletebtn.TabIndex = 5;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.panel5.Location = new System.Drawing.Point(4, 378);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(910, 349);
+            this.panel5.TabIndex = 1;
             // 
-            // upload
+            // label7
             // 
-            this.upload.Location = new System.Drawing.Point(206, 255);
-            this.upload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(105, 47);
-            this.upload.TabIndex = 10;
-            this.upload.Text = "Upload";
-            this.upload.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(77, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(169, 28);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Beverage Panel";
             // 
-            // label5
+            // pictureBox3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 350);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 28);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Beverage Image";
+            this.pictureBox3.BackgroundImage = global::FFOSproj.Properties.Resources.cokkkk;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(37, 71);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(206, 172);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
-            // imageBox
+            // viewBinventory
             // 
-            this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox.Location = new System.Drawing.Point(30, 45);
-            this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(281, 225);
-            this.imageBox.TabIndex = 0;
-            this.imageBox.TabStop = false;
+            this.viewBinventory.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBinventory.Location = new System.Drawing.Point(12, 362);
+            this.viewBinventory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.viewBinventory.Name = "viewBinventory";
+            this.viewBinventory.Size = new System.Drawing.Size(179, 67);
+            this.viewBinventory.TabIndex = 6;
+            this.viewBinventory.Text = "VIEW Beverage Inventory";
+            this.viewBinventory.UseVisualStyleBackColor = true;
+            this.viewBinventory.Click += new System.EventHandler(this.viewBinventory_Click_1);
+            // 
+            // logOutBTN
+            // 
+            this.logOutBTN.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBTN.Location = new System.Drawing.Point(12, 541);
+            this.logOutBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.logOutBTN.Name = "logOutBTN";
+            this.logOutBTN.Size = new System.Drawing.Size(179, 66);
+            this.logOutBTN.TabIndex = 4;
+            this.logOutBTN.Text = "Logout";
+            this.logOutBTN.UseVisualStyleBackColor = true;
+            // 
+            // DSRbtn
+            // 
+            this.DSRbtn.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DSRbtn.Location = new System.Drawing.Point(12, 452);
+            this.DSRbtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DSRbtn.Name = "DSRbtn";
+            this.DSRbtn.Size = new System.Drawing.Size(179, 67);
+            this.DSRbtn.TabIndex = 3;
+            this.DSRbtn.Text = "Daily Sales Report";
+            this.DSRbtn.UseVisualStyleBackColor = true;
+            this.DSRbtn.Click += new System.EventHandler(this.DSRbtn_Click);
+            // 
+            // viewInventoryBTN
+            // 
+            this.viewInventoryBTN.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewInventoryBTN.Location = new System.Drawing.Point(12, 276);
+            this.viewInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.viewInventoryBTN.Name = "viewInventoryBTN";
+            this.viewInventoryBTN.Size = new System.Drawing.Size(179, 67);
+            this.viewInventoryBTN.TabIndex = 2;
+            this.viewInventoryBTN.Text = "VIEW Pizza Inventory";
+            this.viewInventoryBTN.UseVisualStyleBackColor = true;
+            this.viewInventoryBTN.Click += new System.EventHandler(this.viewInventoryBTN_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 145);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // addInventoryBTN
+            // 
+            this.addInventoryBTN.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addInventoryBTN.Location = new System.Drawing.Point(12, 188);
+            this.addInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.addInventoryBTN.Name = "addInventoryBTN";
+            this.addInventoryBTN.Size = new System.Drawing.Size(179, 67);
+            this.addInventoryBTN.TabIndex = 0;
+            this.addInventoryBTN.Text = "ADD Inventory";
+            this.addInventoryBTN.UseVisualStyleBackColor = true;
+            this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(996, 880);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1232, 1005);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -574,20 +461,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fast Food Ordering System";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.dsrrrrr.ResumeLayout(false);
+            this.dsrrrrr.PerformLayout();
+            this.inventoryPanel.ResumeLayout(false);
+            this.inventoryPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brg_imagebox)).EndInit();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,26 +480,21 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button logOutBTN;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DSRbtn;
         private System.Windows.Forms.Button viewInventoryBTN;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button addInventoryBTN;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel inventoryPanel;
         private System.Windows.Forms.TextBox name_txt;
         private System.Windows.Forms.Label price;
         private System.Windows.Forms.Label size;
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.Label name;
-        private System.Windows.Forms.Label pizzaPicLabel;
-        private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.TextBox priceBox;
         private System.Windows.Forms.TextBox description_txt;
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button upload;
-        private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.ComboBox sizeBox;
-        private System.Windows.Forms.PictureBox brg_imagebox;
         private System.Windows.Forms.ComboBox size_bvrg;
         private System.Windows.Forms.Button bvrg_clear;
         private System.Windows.Forms.Button bvrg_save;
@@ -626,20 +505,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button upload_bvrg;
-        private System.Windows.Forms.Button del_bvrg;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button viewBinventory;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pizza_image_picbox;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel dsrrrrr;
+        private System.Windows.Forms.Label label5;
     }
 }
 

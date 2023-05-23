@@ -13,31 +13,32 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using MySqlX.XDevAPI.Relational;
 
 namespace FFOSproj
 {
     public partial class inventoryManagementForm : Form
     {
-        
+
+        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+        private DataTable dataTable = new DataTable();
+        private string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private BindingSource bSource = new BindingSource();
+        private DataSet dataSet = new DataSet();
+        private DataTable table = new DataTable();
+        int ID = 0;
+        private Timer timer;
+
+
+
         public inventoryManagementForm()
         {
             InitializeComponent();
+            inventoryPanel.Visible = true;
+            dsrrrrr.Visible = false;
         }
-
-        private void viewInventoryBTN_Click(object sender, EventArgs e)
-        {
-            var myForm2 = new pizzaDatagrid();
-            myForm2.ShowDialog();
-            myForm2.Dispose();
-        }
-        private void viewBinventory_Click(object sender, EventArgs e)
-        {
-            var myForm3 = new beverageDatagrid();
-            myForm3.ShowDialog();
-            myForm3.Dispose();
-        }
-
-
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace FFOSproj
                 string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
                 string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text + "','" + this.sizeBox.Text + "','" + this.priceBox.Text + /*"','" + this.brg_imagebox.Text + */"');";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2); 
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
@@ -68,35 +69,9 @@ namespace FFOSproj
             description_txt.Text = "";
             sizeBox.Text = "";
             priceBox.Text = "";
-         //   imageBox.Image = null;
 
         }
 
-        /*private void upload_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.jpg";
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                   imageBox.Text = openFileDialog1.FileName;
-                   imageBox.Image = Image.FromFile(openFileDialog1.FileName);
-                }
-                imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }*/
-
-        /*private void deletebtn_Click(object sender, EventArgs e)
-        {
-             imageBox.Image = null;
-        }*/
-
-        
 
         private void bvrg_save_Click(object sender, EventArgs e)
         {
@@ -127,53 +102,72 @@ namespace FFOSproj
             description_bvrg.Text = "";
             size_bvrg.Text = "";
             price_bvrg.Text = "";
-         //  brg_imagebox.Image = null;
         }
 
-        private void name_txt_TextChanged(object sender, EventArgs e)
+
+        private void addInventoryBTN_Click(object sender, EventArgs e)
         {
 
+            inventoryPanel.Visible = true;
+            dsrrrrr.Visible = false;
         }
 
 
 
+        private void viewInventoryBTN_Click(object sender, EventArgs e)
+        {
+            var myForm2 = new pizzaDatagrid();
+            myForm2.ShowDialog();
+            myForm2.Dispose();
+
+            /*
+                        ViewP.Visible = true;
+                        dsrrrrr.Visible = false;
+                        inventoryPanel.Visible = false;
+                        ViewB.Visible = false;*/
+
+
+        }
+
+        private void DSRbtn_Click(object sender, EventArgs e)
+        {
+
+            dsrrrrr.Visible = true;
+            inventoryPanel.Visible = false;
+
+        }
+        private void viewBinventory_Click(object sender, EventArgs e)
+        {
+            var myForm3 = new beverageDatagrid();
+            myForm3.ShowDialog();
+            myForm3.Dispose();
+
+            /*ViewB.Visible = true;
+            ViewP.Visible = false;
+            dsrrrrr.Visible = false;
+            inventoryPanel.Visible = false;
+*/
+
+        }
 
 
 
-
-
-
-
-
-        /* private void upload_bvrg_Click(object sender, EventArgs e)
-         {
-             try
-             {
-                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                 openFileDialog1.Filter = "Image files | *.jpg";
-                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                 {
-                     brg_imagebox.Text = openFileDialog1.FileName;
-                     brg_imagebox.Image = Image.FromFile(openFileDialog1.FileName);
-                 }
-                 brg_imagebox.SizeMode = PictureBoxSizeMode.StretchImage;
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
-         }
-
-         private void del_bvrg_Click(object sender, EventArgs e)
-         {
-             brg_imagebox.Image = null;
-         }*/
+        private void viewBinventory_Click_1(object sender, EventArgs e)
+        {
+            var myForm3 = new beverageDatagrid();
+            myForm3.ShowDialog();
+            myForm3.Dispose();
+        }
     }
 }
 
-            
 
-//NOTE: images in db, deleted
-//Commented upload and delete (image)
-//Return image and uncomment 
-//Covered image picturebox with panel, remove after
+
+
+
+
+
+
+
+
+
