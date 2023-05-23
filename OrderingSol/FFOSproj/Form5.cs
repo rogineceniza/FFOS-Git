@@ -47,14 +47,11 @@ namespace FFOSproj
 
         }
 
+        
+
         private void exit_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

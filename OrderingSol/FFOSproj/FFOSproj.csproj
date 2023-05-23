@@ -171,5 +171,26 @@
   <ItemGroup>
     <None Include="Resources\unlock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PizzaBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzapicwithlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adsadadad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yukmu,mu,mu,mu,.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

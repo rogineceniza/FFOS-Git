@@ -17,12 +17,14 @@ namespace FFOSproj
             InitializeComponent();
         }
 
-        private void exit_button_Click(object sender, EventArgs e)
+       
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void login_admin_Click(object sender, EventArgs e)
+        private void cLogin_Click(object sender, EventArgs e)
         {
             var username = username_cashier.Text;
             var password = password_cashier.Text;
@@ -39,7 +41,6 @@ namespace FFOSproj
                 // Passwords do not match
                 // Do something, such as displaying an error message or clearing the password field
             }
-
         }
     }
     }
