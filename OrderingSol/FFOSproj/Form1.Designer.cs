@@ -55,29 +55,28 @@
             this.name = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewBinventory = new System.Windows.Forms.Button();
             this.logOutBTN = new System.Windows.Forms.Button();
             this.DSRbtn = new System.Windows.Forms.Button();
             this.viewInventoryBTN = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
+            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
             this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
@@ -85,6 +84,7 @@
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.addInventoryBTN);
+            this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Location = new System.Drawing.Point(25, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
@@ -338,16 +338,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Pizza Panel";
             // 
-            // pizza_image_picbox
-            // 
-            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
-            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
-            this.pizza_image_picbox.Name = "pizza_image_picbox";
-            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
-            this.pizza_image_picbox.TabIndex = 0;
-            this.pizza_image_picbox.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -366,16 +356,6 @@
             this.label7.Size = new System.Drawing.Size(148, 24);
             this.label7.TabIndex = 2;
             this.label7.Text = "Beverage Panel";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::FFOSproj.Properties.Resources.cokkkk;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(37, 71);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(206, 172);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
             // 
             // viewBinventory
             // 
@@ -399,6 +379,7 @@
             this.logOutBTN.TabIndex = 4;
             this.logOutBTN.Text = "Logout";
             this.logOutBTN.UseVisualStyleBackColor = true;
+            this.logOutBTN.Click += new System.EventHandler(this.logOutBTN_Click);
             // 
             // DSRbtn
             // 
@@ -424,17 +405,6 @@
             this.viewInventoryBTN.UseVisualStyleBackColor = true;
             this.viewInventoryBTN.Click += new System.EventHandler(this.viewInventoryBTN_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 145);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // addInventoryBTN
             // 
             this.addInventoryBTN.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -446,6 +416,37 @@
             this.addInventoryBTN.Text = "ADD Inventory";
             this.addInventoryBTN.UseVisualStyleBackColor = true;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
+            // 
+            // pizza_image_picbox
+            // 
+            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
+            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
+            this.pizza_image_picbox.Name = "pizza_image_picbox";
+            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
+            this.pizza_image_picbox.TabIndex = 0;
+            this.pizza_image_picbox.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::FFOSproj.Properties.Resources.cokkkk;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(37, 71);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(206, 172);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 145);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // inventoryManagementForm
             // 
@@ -468,9 +469,9 @@
             this.inventoryPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

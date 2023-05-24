@@ -158,6 +158,19 @@ namespace FFOSproj
             myForm3.ShowDialog();
             myForm3.Dispose();
         }
+
+        private void logOutBTN_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Hide(); // Hide the current form instead of closing it
+
+            // Create and display the new login form
+            var loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
+            // After the login form is closed, close the previous form
+            this.Close();
+        }
     }
 }
 
