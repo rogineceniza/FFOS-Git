@@ -52,7 +52,7 @@
             // 
             // login_admin
             // 
-            this.login_admin.BackColor = System.Drawing.Color.Sienna;
+            this.login_admin.BackColor = System.Drawing.Color.SaddleBrown;
             this.login_admin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.login_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_admin.ForeColor = System.Drawing.Color.Transparent;
@@ -144,7 +144,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.BackColor = System.Drawing.Color.Sienna;
+            this.exit_button.BackColor = System.Drawing.Color.SaddleBrown;
             this.exit_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.Transparent;
@@ -204,7 +204,7 @@
             this.BackColor = System.Drawing.Color.SaddleBrown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.exit_button;
-            this.ClientSize = new System.Drawing.Size(905, 620);
+            this.ClientSize = new System.Drawing.Size(907, 618);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.label3);
