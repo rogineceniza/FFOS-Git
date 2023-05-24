@@ -163,6 +163,16 @@ namespace FFOSproj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pizza9 {
+            get {
+                object obj = ResourceManager.GetObject("pizza9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PizzaBG {
             get {
                 object obj = ResourceManager.GetObject("PizzaBG", resourceCulture);
@@ -176,6 +186,26 @@ namespace FFOSproj.Properties {
         internal static System.Drawing.Bitmap pizzapicwithlogo {
             get {
                 object obj = ResourceManager.GetObject("pizzapicwithlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap R {
+            get {
+                object obj = ResourceManager.GetObject("R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scsdg {
+            get {
+                object obj = ResourceManager.GetObject("scsdg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
