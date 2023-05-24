@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSearchBev = new System.Windows.Forms.TextBox();
-            this.btnSearchBev = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSearchBev = new System.Windows.Forms.TextBox();
+            this.btnSearchBev = new System.Windows.Forms.Button();
             this.dateToday = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -88,24 +88,6 @@
             this.panel1.Size = new System.Drawing.Size(519, 104);
             this.panel1.TabIndex = 0;
             // 
-            // txtSearchBev
-            // 
-            this.txtSearchBev.Location = new System.Drawing.Point(124, 66);
-            this.txtSearchBev.Name = "txtSearchBev";
-            this.txtSearchBev.Size = new System.Drawing.Size(295, 26);
-            this.txtSearchBev.TabIndex = 28;
-            // 
-            // btnSearchBev
-            // 
-            this.btnSearchBev.Location = new System.Drawing.Point(12, 58);
-            this.btnSearchBev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchBev.Name = "btnSearchBev";
-            this.btnSearchBev.Size = new System.Drawing.Size(106, 38);
-            this.btnSearchBev.TabIndex = 27;
-            this.btnSearchBev.Text = "Search";
-            this.btnSearchBev.UseVisualStyleBackColor = true;
-            this.btnSearchBev.Click += new System.EventHandler(this.btnSearchBev_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(119, 66);
@@ -133,6 +115,24 @@
             this.label1.Size = new System.Drawing.Size(241, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pizza Panel";
+            // 
+            // txtSearchBev
+            // 
+            this.txtSearchBev.Location = new System.Drawing.Point(124, 66);
+            this.txtSearchBev.Name = "txtSearchBev";
+            this.txtSearchBev.Size = new System.Drawing.Size(295, 26);
+            this.txtSearchBev.TabIndex = 28;
+            // 
+            // btnSearchBev
+            // 
+            this.btnSearchBev.Location = new System.Drawing.Point(12, 58);
+            this.btnSearchBev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchBev.Name = "btnSearchBev";
+            this.btnSearchBev.Size = new System.Drawing.Size(106, 38);
+            this.btnSearchBev.TabIndex = 27;
+            this.btnSearchBev.Text = "Search";
+            this.btnSearchBev.UseVisualStyleBackColor = true;
+            this.btnSearchBev.Click += new System.EventHandler(this.btnSearchBev_Click);
             // 
             // dateToday
             // 
@@ -464,7 +464,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ClientSize = new System.Drawing.Size(2564, 964);
+            this.ClientSize = new System.Drawing.Size(2278, 1002);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.panel4);
