@@ -77,6 +77,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
@@ -93,6 +96,7 @@
             // 
             // dsrrrrr
             // 
+            this.dsrrrrr.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.dsrrrrr.Controls.Add(this.label5);
             this.dsrrrrr.Location = new System.Drawing.Point(196, 28);
             this.dsrrrrr.Name = "dsrrrrr";
@@ -110,6 +114,7 @@
             // 
             // inventoryPanel
             // 
+            this.inventoryPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inventoryPanel.Controls.Add(this.size_bvrg);
             this.inventoryPanel.Controls.Add(this.bvrg_clear);
             this.inventoryPanel.Controls.Add(this.bvrg_save);
@@ -141,6 +146,10 @@
             // 
             this.size_bvrg.AllowDrop = true;
             this.size_bvrg.FormattingEnabled = true;
+            this.size_bvrg.Items.AddRange(new object[] {
+            "Small",
+            "Regular",
+            "Large"});
             this.size_bvrg.Location = new System.Drawing.Point(503, 537);
             this.size_bvrg.Name = "size_bvrg";
             this.size_bvrg.Size = new System.Drawing.Size(360, 31);
@@ -232,6 +241,10 @@
             // 
             this.sizeBox.AllowDrop = true;
             this.sizeBox.FormattingEnabled = true;
+            this.sizeBox.Items.AddRange(new object[] {
+            "8 inches",
+            "10 inches",
+            "12 inches"});
             this.sizeBox.Location = new System.Drawing.Point(503, 191);
             this.sizeBox.Name = "sizeBox";
             this.sizeBox.Size = new System.Drawing.Size(360, 31);
@@ -321,6 +334,7 @@
             // 
             // panel4
             // 
+            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pizza_image_picbox);
@@ -340,6 +354,7 @@
             // 
             // panel5
             // 
+            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.pictureBox3);
@@ -452,8 +467,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1232, 1005);
+            this.ClientSize = new System.Drawing.Size(1232, 1053);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
