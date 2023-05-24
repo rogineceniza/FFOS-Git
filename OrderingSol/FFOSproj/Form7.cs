@@ -557,11 +557,67 @@ namespace FFOSproj
             }
 
         }
-    
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim();
+            SearchItem(searchTerm);
+        }
 
+        private void SearchItem(string searchTerm)
+        {
+            dataGridView1.ClearSelection();
 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().Contains(searchTerm))
+                    {
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
+                }
+            }
 
+            MessageBox.Show("Item not found.");
+        }
+
+        private void btnSearchBev_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchBev.Text.Trim();
+            SearchItemBev(searchTerm);
+        }
+
+        private void SearchItemBev(string searchTerm)
+        {
+            dataGridView2.ClearSelection();
+
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().Contains(searchTerm))
+                    {
+                        row.Selected = true;
+                        dataGridView2.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
+                }
+            }
+
+            MessageBox.Show("Item not found.");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+                    }
     }
 
 
