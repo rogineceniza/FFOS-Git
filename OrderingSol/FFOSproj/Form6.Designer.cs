@@ -54,7 +54,7 @@
             this.panel3.Controls.Add(this.password_cashier);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(127, 302);
+            this.panel3.Location = new System.Drawing.Point(83, 302);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(375, 94);
@@ -68,7 +68,7 @@
             this.password_cashier.Multiline = true;
             this.password_cashier.Name = "password_cashier";
             this.password_cashier.PasswordChar = '*';
-            this.password_cashier.Size = new System.Drawing.Size(284, 39);
+            this.password_cashier.Size = new System.Drawing.Size(271, 39);
             this.password_cashier.TabIndex = 8;
             // 
             // pictureBox4
@@ -98,7 +98,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.username_cashier);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(127, 214);
+            this.panel2.Location = new System.Drawing.Point(83, 214);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(375, 84);
@@ -122,7 +122,7 @@
             this.username_cashier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username_cashier.Multiline = true;
             this.username_cashier.Name = "username_cashier";
-            this.username_cashier.Size = new System.Drawing.Size(284, 39);
+            this.username_cashier.Size = new System.Drawing.Size(271, 39);
             this.username_cashier.TabIndex = 6;
             // 
             // label1
@@ -140,7 +140,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(202, 34);
+            this.label4.Location = new System.Drawing.Point(170, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 69);
             this.label4.TabIndex = 11;
@@ -151,10 +151,10 @@
             // 
             this.pictureBox5.BackgroundImage = global::FFOSproj.Properties.Resources.Picture2;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(91, 150);
+            this.pictureBox5.Location = new System.Drawing.Point(59, 150);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(471, 404);
+            this.pictureBox5.Size = new System.Drawing.Size(426, 404);
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
             // 
@@ -163,7 +163,7 @@
             this.button1.BackColor = System.Drawing.Color.SaddleBrown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(233, 414);
+            this.button1.Location = new System.Drawing.Point(182, 414);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 57);
@@ -177,7 +177,7 @@
             this.cLogin.BackColor = System.Drawing.Color.SaddleBrown;
             this.cLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cLogin.ForeColor = System.Drawing.Color.Transparent;
-            this.cLogin.Location = new System.Drawing.Point(372, 414);
+            this.cLogin.Location = new System.Drawing.Point(315, 414);
             this.cLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cLogin.Name = "cLogin";
             this.cLogin.Size = new System.Drawing.Size(118, 57);
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ClientSize = new System.Drawing.Size(655, 670);
+            this.ClientSize = new System.Drawing.Size(547, 620);
             this.Controls.Add(this.cLogin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
