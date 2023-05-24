@@ -21,7 +21,12 @@ namespace FFOSproj
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
+
+            var cashierLogin = new LoginForm();
+            cashierLogin.ShowDialog();
+
+            cashierLogin.Close();
         }
 
         private void cLogin_Click(object sender, EventArgs e)
@@ -31,9 +36,10 @@ namespace FFOSproj
 
             if (username == "cashier123" && password == "cashier123")
             {
+                this.Hide();
                 var myForm6 = new Cashier_Formmmm();
                 myForm6.ShowDialog();
-                myForm6.Dispose();
+                myForm6.Close();
             }
             else
             {

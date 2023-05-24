@@ -34,9 +34,12 @@ namespace FFOSproj
           
             if (username == "admin123" && password == "admin123")
             {
+                    this.Hide();
+
                     var myForm1 = new inventoryManagementForm();
                     myForm1.ShowDialog();
-                    myForm1.Dispose();
+
+                    myForm1.Close();
             }
             else
             {
@@ -51,7 +54,12 @@ namespace FFOSproj
 
         private void exit_button_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
+
+            var myForm1 = new LoginForm();
+            myForm1.ShowDialog();
+
+            myForm1.Close();
         }
     }
 }

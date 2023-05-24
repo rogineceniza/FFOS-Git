@@ -21,16 +21,18 @@ namespace FFOSproj
 
         private void admin_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var myForm4 = new adminLogin();
             myForm4.ShowDialog();
-            myForm4.Dispose();
+            this.Close();
         }
 
         private void cashier_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var myForm4 = new cashierLogin();
             myForm4.ShowDialog();
-            myForm4.Dispose();
+            myForm4.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
