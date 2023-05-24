@@ -104,7 +104,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(358, 376);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 28);
+            this.label5.Size = new System.Drawing.Size(171, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Daily Sales Report";
             // 
@@ -143,7 +143,7 @@
             this.size_bvrg.FormattingEnabled = true;
             this.size_bvrg.Location = new System.Drawing.Point(503, 537);
             this.size_bvrg.Name = "size_bvrg";
-            this.size_bvrg.Size = new System.Drawing.Size(360, 36);
+            this.size_bvrg.Size = new System.Drawing.Size(360, 31);
             this.size_bvrg.TabIndex = 24;
             // 
             // bvrg_clear
@@ -174,7 +174,7 @@
             // 
             this.price_bvrg.Location = new System.Drawing.Point(503, 579);
             this.price_bvrg.Name = "price_bvrg";
-            this.price_bvrg.Size = new System.Drawing.Size(360, 37);
+            this.price_bvrg.Size = new System.Drawing.Size(360, 32);
             this.price_bvrg.TabIndex = 22;
             // 
             // description_bvrg
@@ -189,7 +189,7 @@
             // 
             this.name_bvrg.Location = new System.Drawing.Point(503, 398);
             this.name_bvrg.Name = "name_bvrg";
-            this.name_bvrg.Size = new System.Drawing.Size(360, 37);
+            this.name_bvrg.Size = new System.Drawing.Size(360, 32);
             this.name_bvrg.TabIndex = 20;
             // 
             // label1
@@ -197,7 +197,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(349, 588);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 28);
+            this.label1.Size = new System.Drawing.Size(53, 24);
             this.label1.TabIndex = 19;
             this.label1.Text = "Price";
             // 
@@ -206,7 +206,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(349, 537);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 28);
+            this.label2.Size = new System.Drawing.Size(46, 24);
             this.label2.TabIndex = 17;
             this.label2.Text = "Size";
             // 
@@ -215,7 +215,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(349, 444);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 28);
+            this.label3.Size = new System.Drawing.Size(113, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "Description";
             // 
@@ -224,7 +224,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(349, 401);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 28);
+            this.label4.Size = new System.Drawing.Size(73, 24);
             this.label4.TabIndex = 15;
             this.label4.Text = "Name: ";
             // 
@@ -234,7 +234,7 @@
             this.sizeBox.FormattingEnabled = true;
             this.sizeBox.Location = new System.Drawing.Point(503, 191);
             this.sizeBox.Name = "sizeBox";
-            this.sizeBox.Size = new System.Drawing.Size(360, 36);
+            this.sizeBox.Size = new System.Drawing.Size(360, 31);
             this.sizeBox.TabIndex = 13;
             // 
             // clearBtn
@@ -265,7 +265,7 @@
             // 
             this.priceBox.Location = new System.Drawing.Point(503, 233);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(360, 37);
+            this.priceBox.Size = new System.Drawing.Size(360, 32);
             this.priceBox.TabIndex = 9;
             // 
             // description_txt
@@ -280,7 +280,7 @@
             // 
             this.name_txt.Location = new System.Drawing.Point(503, 52);
             this.name_txt.Name = "name_txt";
-            this.name_txt.Size = new System.Drawing.Size(360, 37);
+            this.name_txt.Size = new System.Drawing.Size(360, 32);
             this.name_txt.TabIndex = 6;
             // 
             // price
@@ -288,7 +288,7 @@
             this.price.AutoSize = true;
             this.price.Location = new System.Drawing.Point(349, 242);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(62, 28);
+            this.price.Size = new System.Drawing.Size(53, 24);
             this.price.TabIndex = 5;
             this.price.Text = "Price";
             // 
@@ -297,7 +297,7 @@
             this.size.AutoSize = true;
             this.size.Location = new System.Drawing.Point(349, 191);
             this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(54, 28);
+            this.size.Size = new System.Drawing.Size(46, 24);
             this.size.TabIndex = 4;
             this.size.Text = "Size";
             // 
@@ -306,7 +306,7 @@
             this.description.AutoSize = true;
             this.description.Location = new System.Drawing.Point(349, 98);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(131, 28);
+            this.description.Size = new System.Drawing.Size(113, 24);
             this.description.TabIndex = 3;
             this.description.Text = "Description";
             // 
@@ -315,7 +315,7 @@
             this.name.AutoSize = true;
             this.name.Location = new System.Drawing.Point(349, 55);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(74, 28);
+            this.name.Size = new System.Drawing.Size(64, 24);
             this.name.TabIndex = 2;
             this.name.Text = "Name";
             // 
@@ -334,7 +334,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(86, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 28);
+            this.label6.Size = new System.Drawing.Size(108, 24);
             this.label6.TabIndex = 1;
             this.label6.Text = "Pizza Panel";
             // 
@@ -363,7 +363,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(77, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 28);
+            this.label7.Size = new System.Drawing.Size(148, 24);
             this.label7.TabIndex = 2;
             this.label7.Text = "Beverage Panel";
             // 
@@ -449,7 +449,7 @@
             // 
             // inventoryManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1232, 1005);
@@ -460,6 +460,7 @@
             this.Name = "inventoryManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fast Food Ordering System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.dsrrrrr.ResumeLayout(false);
             this.dsrrrrr.PerformLayout();
