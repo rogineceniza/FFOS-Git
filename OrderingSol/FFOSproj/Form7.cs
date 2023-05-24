@@ -102,12 +102,6 @@ namespace FFOSproj
             LoadDataBeverages();
         }
 
-
-        private void saveToDb_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateToday_Click(object sender, EventArgs e)
         {
             dateToday.Text = DateTime.Now.ToString();
@@ -322,7 +316,15 @@ namespace FFOSproj
             MessageBox.Show("Item not found.");
         }
 
-       
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cashier_Formmmm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

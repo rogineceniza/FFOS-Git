@@ -203,6 +203,16 @@ namespace FFOSproj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap wood {
+            get {
+                object obj = ResourceManager.GetObject("wood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap yukmu_mu_mu_mu_ {
             get {
                 object obj = ResourceManager.GetObject("yukmu,mu,mu,mu,", resourceCulture);

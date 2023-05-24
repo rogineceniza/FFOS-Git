@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(15, 17);
+            this.panel1.Location = new System.Drawing.Point(110, 87);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(519, 104);
@@ -109,10 +109,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell Extra Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(117, 2);
+            this.label1.Font = new System.Drawing.Font("Book Antiqua", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(126, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 37);
+            this.label1.Size = new System.Drawing.Size(230, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pizza Panel";
             // 
@@ -147,7 +147,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 128);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(107, 198);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 692);
@@ -168,7 +168,7 @@
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(429, 824);
+            this.add_btn.Location = new System.Drawing.Point(524, 894);
             this.add_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(106, 50);
@@ -178,7 +178,7 @@
             // 
             // refresh_btn
             // 
-            this.refresh_btn.Location = new System.Drawing.Point(316, 825);
+            this.refresh_btn.Location = new System.Drawing.Point(411, 895);
             this.refresh_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh_btn.Name = "refresh_btn";
             this.refresh_btn.Size = new System.Drawing.Size(106, 50);
@@ -190,7 +190,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.dataGridView2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(557, 128);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(652, 198);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(522, 692);
@@ -212,7 +212,7 @@
             // 
             // refresh2_btn
             // 
-            this.refresh2_btn.Location = new System.Drawing.Point(861, 824);
+            this.refresh2_btn.Location = new System.Drawing.Point(956, 894);
             this.refresh2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh2_btn.Name = "refresh2_btn";
             this.refresh2_btn.Size = new System.Drawing.Size(106, 50);
@@ -223,7 +223,7 @@
             // 
             // add2_btn
             // 
-            this.add2_btn.Location = new System.Drawing.Point(973, 824);
+            this.add2_btn.Location = new System.Drawing.Point(1068, 894);
             this.add2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add2_btn.Name = "add2_btn";
             this.add2_btn.Size = new System.Drawing.Size(106, 50);
@@ -234,14 +234,14 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1864, 312);
+            this.label4.Location = new System.Drawing.Point(1959, 382);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 0;
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(429, 825);
+            this.btn1.Location = new System.Drawing.Point(524, 895);
             this.btn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(106, 50);
@@ -252,7 +252,7 @@
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(973, 825);
+            this.btn2.Location = new System.Drawing.Point(1068, 895);
             this.btn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(106, 50);
@@ -334,7 +334,7 @@
             this.panel2.Controls.Add(this.nameItem);
             this.panel2.Controls.Add(this.nameTXT);
             this.panel2.Controls.Add(this.priceTXT);
-            this.panel2.Location = new System.Drawing.Point(1112, 484);
+            this.panel2.Location = new System.Drawing.Point(1207, 554);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 335);
             this.panel2.TabIndex = 0;
@@ -342,7 +342,7 @@
             // displayBTN
             // 
             this.displayBTN.ForeColor = System.Drawing.Color.White;
-            this.displayBTN.Location = new System.Drawing.Point(1595, 815);
+            this.displayBTN.Location = new System.Drawing.Point(1690, 885);
             this.displayBTN.Name = "displayBTN";
             this.displayBTN.Size = new System.Drawing.Size(97, 50);
             this.displayBTN.TabIndex = 20;
@@ -353,7 +353,7 @@
             // clearBTN
             // 
             this.clearBTN.ForeColor = System.Drawing.Color.White;
-            this.clearBTN.Location = new System.Drawing.Point(1492, 815);
+            this.clearBTN.Location = new System.Drawing.Point(1587, 885);
             this.clearBTN.Name = "clearBTN";
             this.clearBTN.Size = new System.Drawing.Size(97, 50);
             this.clearBTN.TabIndex = 22;
@@ -364,7 +364,7 @@
             // totalllll
             // 
             this.totalllll.ForeColor = System.Drawing.Color.White;
-            this.totalllll.Location = new System.Drawing.Point(1698, 815);
+            this.totalllll.Location = new System.Drawing.Point(1793, 885);
             this.totalllll.Name = "totalllll";
             this.totalllll.Size = new System.Drawing.Size(97, 50);
             this.totalllll.TabIndex = 23;
@@ -377,7 +377,7 @@
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.White;
-            this.totalLabel.Location = new System.Drawing.Point(1868, 827);
+            this.totalLabel.Location = new System.Drawing.Point(1963, 897);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(57, 29);
             this.totalLabel.TabIndex = 24;
@@ -386,7 +386,7 @@
             // saveCurrent
             // 
             this.saveCurrent.ForeColor = System.Drawing.Color.White;
-            this.saveCurrent.Location = new System.Drawing.Point(1935, 691);
+            this.saveCurrent.Location = new System.Drawing.Point(2030, 761);
             this.saveCurrent.Name = "saveCurrent";
             this.saveCurrent.Size = new System.Drawing.Size(146, 112);
             this.saveCurrent.TabIndex = 25;
@@ -398,7 +398,7 @@
             // 
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(1410, 120);
+            this.dataGridView4.Location = new System.Drawing.Point(1505, 190);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.RowTemplate.Height = 28;
@@ -411,7 +411,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txtSearchBev);
             this.panel3.Controls.Add(this.btnSearchBev);
-            this.panel3.Location = new System.Drawing.Point(557, 17);
+            this.panel3.Location = new System.Drawing.Point(652, 87);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(522, 104);
@@ -420,10 +420,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Rockwell Extra Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(93, 4);
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(115, 4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(317, 37);
+            this.label5.Size = new System.Drawing.Size(300, 49);
             this.label5.TabIndex = 0;
             this.label5.Text = "Beverage Panel";
             // 
@@ -432,7 +432,7 @@
             this.panel4.BackColor = System.Drawing.Color.Snow;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.dateToday);
-            this.panel4.Location = new System.Drawing.Point(1411, 9);
+            this.panel4.Location = new System.Drawing.Point(1506, 79);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(513, 104);
@@ -441,19 +441,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell Extra Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(95, 10);
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(75, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(342, 37);
+            this.label2.Size = new System.Drawing.Size(385, 57);
             this.label2.TabIndex = 0;
             this.label2.Text = "Purchased Items";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1833, 827);
+            this.label3.Location = new System.Drawing.Point(1928, 897);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 29);
             this.label3.TabIndex = 30;
@@ -463,8 +464,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ClientSize = new System.Drawing.Size(2278, 1002);
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(2258, 1002);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.panel4);
@@ -488,6 +491,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Cashier_Formmmm";
             this.Text = "Cashier Form";
+            this.Load += new System.EventHandler(this.Cashier_Formmmm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

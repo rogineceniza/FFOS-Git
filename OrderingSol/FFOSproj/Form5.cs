@@ -34,9 +34,11 @@ namespace FFOSproj
           
             if (username == "admin123" && password == "admin123")
             {
-                    var myForm1 = new inventoryManagementForm();
-                    myForm1.ShowDialog();
-                    myForm1.Dispose();
+                   
+                this.Hide();
+                inventoryManagementForm sistema = new inventoryManagementForm();
+                sistema.ShowDialog();
+                this.Close();
             }
             else
             {

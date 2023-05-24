@@ -399,6 +399,7 @@
             this.logOutBTN.TabIndex = 4;
             this.logOutBTN.Text = "Logout";
             this.logOutBTN.UseVisualStyleBackColor = true;
+            this.logOutBTN.Click += new System.EventHandler(this.logOutBTN_Click);
             // 
             // DSRbtn
             // 

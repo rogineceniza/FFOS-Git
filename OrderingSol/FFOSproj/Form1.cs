@@ -95,7 +95,6 @@ namespace FFOSproj
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void bvrg_clear_Click(object sender, EventArgs e)
         {
             name_bvrg.Text = "";
@@ -103,32 +102,30 @@ namespace FFOSproj
             size_bvrg.Text = "";
             price_bvrg.Text = "";
         }
-
-
         private void addInventoryBTN_Click(object sender, EventArgs e)
         {
-
             inventoryPanel.Visible = true;
             dsrrrrr.Visible = false;
         }
-
-
 
         private void viewInventoryBTN_Click(object sender, EventArgs e)
         {
             var myForm2 = new pizzaDatagrid();
             myForm2.ShowDialog();
             myForm2.Dispose();
-
-            /*
-                        ViewP.Visible = true;
-                        dsrrrrr.Visible = false;
-                        inventoryPanel.Visible = false;
-                        ViewB.Visible = false;*/
-
-
         }
-
+        private void viewBinventory_Click(object sender, EventArgs e)
+        {
+            var myForm3 = new beverageDatagrid();
+            myForm3.ShowDialog();
+            myForm3.Dispose();
+        }
+        private void viewBinventory_Click_1(object sender, EventArgs e)
+        {
+            var myForm3 = new beverageDatagrid();
+            myForm3.ShowDialog();
+            myForm3.Dispose();
+        }
         private void DSRbtn_Click(object sender, EventArgs e)
         {
 
@@ -136,27 +133,15 @@ namespace FFOSproj
             inventoryPanel.Visible = false;
 
         }
-        private void viewBinventory_Click(object sender, EventArgs e)
+
+        private void logOutBTN_Click(object sender, EventArgs e)
         {
-            var myForm3 = new beverageDatagrid();
-            myForm3.ShowDialog();
-            myForm3.Dispose();
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            /*ViewB.Visible = true;
-            ViewP.Visible = false;
-            dsrrrrr.Visible = false;
-            inventoryPanel.Visible = false;
-*/
-
-        }
-
-
-
-        private void viewBinventory_Click_1(object sender, EventArgs e)
-        {
-            var myForm3 = new beverageDatagrid();
-            myForm3.ShowDialog();
-            myForm3.Dispose();
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

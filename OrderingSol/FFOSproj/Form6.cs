@@ -31,9 +31,10 @@ namespace FFOSproj
 
             if (username == "cashier123" && password == "cashier123")
             {
-                var myForm6 = new Cashier_Formmmm();
-                myForm6.ShowDialog();
-                myForm6.Dispose();
+                this.Hide();
+                Cashier_Formmmm sistema = new Cashier_Formmmm();
+                sistema.ShowDialog();
+                this.Close();
             }
             else
             {
