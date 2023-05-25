@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,12 +30,16 @@ namespace FFOSproj
         }
         public void login_admin_Click(object sender, EventArgs e)
         {
-            var username = username_admin.Text;
-            var password = password_admin.Text;
-          
-            if (username == "admin123" && password == "admin123")
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=resetPassword;Integrated Security=True");
+            SqlDataAdapter sda = new SqlDataAdapter("select * from resetPassword where username = '" + username_admin.Text + "' and password = '" + password_admin.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows.Count > 0)
             {
-                    this.Hide();
+                MessageBox.Show("Login Successfully!");
+
+                this.Hide();
 
                     var myForm1 = new inventoryManagementForm();
                     myForm1.ShowDialog();
@@ -57,6 +62,21 @@ namespace FFOSproj
             this.Hide();
 
             var myForm1 = new LoginForm();
+            myForm1.ShowDialog();
+
+            myForm1.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var myForm1 = new forgotPassword();
             myForm1.ShowDialog();
 
             myForm1.Close();

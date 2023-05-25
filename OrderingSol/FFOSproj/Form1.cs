@@ -9,7 +9,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -20,20 +19,28 @@ namespace FFOSproj
 {
     public partial class inventoryManagementForm : Form
     {
+        // First database connection
+        private SqlConnection connection1 = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True");
+        private DataTable dataTable1 = new DataTable();
+        private string connectionString1 = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True";
+        private SqlDataAdapter dataAdapter1 = new SqlDataAdapter();
+        private BindingSource bSource1 = new BindingSource();
+        private DataSet dataSet1 = new DataSet();
+        private DataTable table1 = new DataTable();
 
-        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
-        private DataTable dataTable = new DataTable();
-        private string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        private BindingSource bSource = new BindingSource();
-        private DataSet dataSet = new DataSet();
-        private DataTable table = new DataTable();
+        // Second database connection
+        private SqlConnection connection2 = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True");
+        private DataTable dataTable2 = new DataTable();
+        private string connectionString2 = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True";
+        private SqlDataAdapter dataAdapter2 = new SqlDataAdapter();
+        private BindingSource bSource2 = new BindingSource();
+        private DataSet dataSet2 = new DataSet();
+        private DataTable table2 = new DataTable();
+
         int ID = 0;
         private Timer timer;
 
-
-
-        public inventoryManagementForm()
+      public inventoryManagementForm()
         {
             InitializeComponent();
             inventoryPanel.Visible = true;
@@ -44,18 +51,23 @@ namespace FFOSproj
         {
             try
             {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.pizza_table(Name, Description, Size, Price) values('" + this.name_txt.Text + "','" + this.description_txt.Text + "','" + this.sizeBox.Text + "','" + this.priceBox.Text + /*"','" + this.brg_imagebox.Text + */"');";
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Successfully Saved!");
-                while (MyReader2.Read())
+                string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True";
+                string query = "INSERT INTO pizza_table (Name, Description, Size, Price) VALUES (@Name, @Description, @Size, @Price)";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", name_txt.Text);
+                        command.Parameters.AddWithValue("@Description", description_txt.Text);
+                        command.Parameters.AddWithValue("@Size", sizeBox.Text);
+                        command.Parameters.AddWithValue("@Price", priceBox.Text);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Saved!");
+                    }
                 }
-                MyConn2.Close();
             }
             catch (Exception ex)
             {
@@ -77,23 +89,29 @@ namespace FFOSproj
         {
             try
             {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.beverage_table(Name, Description, Size, Price) values('" + this.name_bvrg.Text + "','" + this.description_bvrg.Text + "','" + this.size_bvrg.Text + "','" + this.price_bvrg.Text + /*"','" + this.brg_imagebox.Text + */"');";
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Successfully Saved!");
-                while (MyReader2.Read())
+                string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True";
+                string query = "INSERT INTO beverage_table (Name, Description, Size, Price) VALUES (@Name, @Description, @Size, @Price)";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", name_bvrg.Text);
+                        command.Parameters.AddWithValue("@Description", description_bvrg.Text);
+                        command.Parameters.AddWithValue("@Size", size_bvrg.Text);
+                        command.Parameters.AddWithValue("@Price", price_bvrg.Text);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Saved!");
+                    }
                 }
-                MyConn2.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void bvrg_clear_Click(object sender, EventArgs e)
@@ -116,9 +134,12 @@ namespace FFOSproj
 
         private void viewInventoryBTN_Click(object sender, EventArgs e)
         {
-            var myForm2 = new pizzaDatagrid();
-            myForm2.ShowDialog();
-            myForm2.Dispose();
+            this.Hide();
+
+            var inventoryManagementForm = new pizzaDatagrid();
+            inventoryManagementForm.ShowDialog();
+
+            inventoryManagementForm.Close();
 
             /*
                         ViewP.Visible = true;
@@ -138,9 +159,10 @@ namespace FFOSproj
         }
         private void viewBinventory_Click(object sender, EventArgs e)
         {
-            var myForm3 = new beverageDatagrid();
-            myForm3.ShowDialog();
-            myForm3.Dispose();
+            this.Hide();
+            var inventoryManagementForm = new beverageDatagrid();
+            inventoryManagementForm.ShowDialog();
+            inventoryManagementForm.Close();
 
             /*ViewB.Visible = true;
             ViewP.Visible = false;
@@ -154,9 +176,10 @@ namespace FFOSproj
 
         private void viewBinventory_Click_1(object sender, EventArgs e)
         {
-            var myForm3 = new beverageDatagrid();
-            myForm3.ShowDialog();
-            myForm3.Dispose();
+            this.Hide();
+            var inventoryManagementForm = new beverageDatagrid();
+            inventoryManagementForm.ShowDialog();
+            inventoryManagementForm.Close();
         }
 
         private void logOutBTN_Click(object sender, EventArgs e)

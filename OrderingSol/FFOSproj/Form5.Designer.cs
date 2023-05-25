@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.exit_button = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -141,6 +142,7 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Login";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // exit_button
             // 
@@ -155,6 +157,17 @@
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = false;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(698, 398);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Forgot Password?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
@@ -205,6 +218,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.exit_button;
             this.ClientSize = new System.Drawing.Size(907, 618);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.label3);
@@ -245,5 +259,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exit_button;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

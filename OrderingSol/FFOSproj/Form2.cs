@@ -20,32 +20,31 @@ namespace FFOSproj
 {
     public partial class pizzaDatagrid : Form
     {
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
-        MySqlCommand command;
-       
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True");
+        private SqlCommand command;
+
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private BindingSource bSource = new BindingSource();
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
         int ID = 0;
+
         public pizzaDatagrid()
         {
             InitializeComponent();
-            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password = RteCh_0C#@11";
-            MySqlConnection mysqlCon = new MySqlConnection(connectionString);
-            mysqlCon.Open();
+            string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            sqlCon.Open();
 
-            //select command has to include the primary key column, otherwise update command will fail
-            //as it does not know exactly what row is updated.
-            MyDA.SelectCommand = new MySqlCommand("SELECT * from pizza_table", mysqlCon);
-            MyDA.Fill(table);
+            // Select command has to include the primary key column, otherwise update command will fail
+            // as it does not know exactly which row is updated.
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM pizza_table", sqlCon);
+            dataAdapter.Fill(table);
             bSource.DataSource = table;
             showPB.DataSource = bSource;
 
-            mysqlCon.Close();
+            sqlCon.Close();
         }
-
-
 
         private void datagrid_btn_Click(object sender, EventArgs e)
         {
@@ -53,26 +52,36 @@ namespace FFOSproj
 
         private void del_pizza_Click(object sender, EventArgs e)
         {
-            
+
 
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
-                using (MySqlConnection cs = new MySqlConnection())
+                using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True"))
                 {
-                    MySqlCommand cmd = con.CreateCommand();
-                    int id = Convert.ToInt32(showPB.SelectedRows[0].Cells[0].Value);
-                    cmd.CommandText = "Delete from pizza_table where id='" + id + "'";
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        int rowIndex = item.Index;
+                        // Assuming the columns are in the following order: Name, Description, Size, Price
+                        string Name = showPB.Rows[rowIndex].Cells[0].Value.ToString();
+                        string Description = showPB.Rows[rowIndex].Cells[1].Value.ToString();
+                        string Size = showPB.Rows[rowIndex].Cells[2].Value.ToString();
+                        decimal Price = Convert.ToDecimal(showPB.Rows[rowIndex].Cells[3].Value);
 
-                    showPB.Rows.RemoveAt(this.showPB.SelectedRows[0].Index);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
+                        cmd.CommandText = "DELETE FROM pizza_table WHERE Name=@Name AND Description=@Description AND Size=@Size AND Price=@Price";
+                        cmd.Parameters.AddWithValue("@Name", Name);
+                        cmd.Parameters.AddWithValue("@Description", Description);
+                        cmd.Parameters.AddWithValue("@Size", Size);
+                        cmd.Parameters.AddWithValue("@Price", Price);
 
+                        con.Open();
+                        cmd.ExecuteNonQuery();
 
+                        showPB.Rows.RemoveAt(rowIndex);
+                    }
                 }
-
-
             }
+
         }
 
         private void update_pizza_btn_Click(object sender, EventArgs e)
@@ -114,6 +123,69 @@ namespace FFOSproj
         private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pizzaDatagrid_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pizza_tableDataSet1.pizza_table' table. You can move, or remove it, as needed.
+            this.pizza_tableTableAdapter1.Fill(this.pizza_tableDataSet1.pizza_table);
+            // TODO: This line of code loads data into the 'pizza_tableDataSet.pizza_table' table. You can move, or remove it, as needed.
+
+            // Create a new instance of SqlConnection using your connection string
+            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True"))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Create a new instance of SqlDataAdapter and SqlCommand
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT * FROM pizza_table", connection);
+
+                // Clear the existing DataTable
+                pizza_tableDataSet.pizza_table.Clear();
+
+                // Fill the DataTable with data from the database using SqlDataAdapter
+                dataAdapter.SelectCommand = command;
+                dataAdapter.Fill(pizza_tableDataSet.pizza_table);
+            }
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of SqlConnection using your connection string
+                using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True"))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // Create a new instance of SqlDataAdapter and SqlCommand
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                    SqlCommand command = new SqlCommand("SELECT * FROM pizza_table", connection);
+
+                    // Clear the existing DataTable
+                    pizza_tableDataSet.pizza_table.Clear();
+
+                    // Fill the DataTable with data from the database using SqlDataAdapter
+                    dataAdapter.SelectCommand = command;
+                    dataAdapter.Fill(pizza_tableDataSet.pizza_table);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var pizzaDatagrid = new inventoryManagementForm();
+            pizzaDatagrid.ShowDialog();
+
+            pizzaDatagrid.Close();
         }
     }
 }

@@ -22,5 +22,26 @@ namespace FFOSproj.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True")]
+        public string pizza_tableConnectionString {
+            get {
+                return ((string)(this["pizza_tableConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=Tr" +
+            "ue")]
+        public string beverage_tableConnectionString {
+            get {
+                return ((string)(this["beverage_tableConnectionString"]));
+            }
+        }
     }
 }

@@ -3,22 +3,29 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.IO;
+using System.Data.SqlClient;
+using MySqlX.XDevAPI.Relational;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace FFOSproj
 {
     public partial class beverageDatagrid : Form
     {
 
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
-        MySqlCommand command;
-        MySqlDataAdapter da;
+        private SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True");
+        private SqlCommand command;
 
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private BindingSource bSource = new BindingSource();
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
@@ -28,23 +35,34 @@ namespace FFOSproj
         public beverageDatagrid()
         {
             InitializeComponent();
-            string connectionString = "server = localhost; userid = root; database = pizza_db; port = 3306; password =  RteCh_0C#@11";
-            MySqlConnection mysqlCon = new MySqlConnection(connectionString);
-            mysqlCon.Open();
+            string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            sqlCon.Open();
 
-            MyDA.SelectCommand = new MySqlCommand("SELECT * from beverage_table", mysqlCon);
-            MyDA.Fill(table);
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM beverage_table", sqlCon);
+            dataAdapter.Fill(table);
             bSource.DataSource = table;
             showPB.DataSource = bSource;
 
-            mysqlCon.Close();
+            sqlCon.Close();
+
         }
 
 
 
         private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            InitializeComponent();
+            string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            sqlCon.Open();
 
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM beverage_table", sqlCon);
+            dataAdapter.Fill(table);
+            bSource.DataSource = table;
+            showPB.DataSource = bSource;
+
+            sqlCon.Close();
         }
 
       
@@ -53,21 +71,95 @@ namespace FFOSproj
         {
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
-                using (MySqlConnection cs = new MySqlConnection())
+                using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True"))
                 {
-                    MySqlCommand cmd = con.CreateCommand();
-                    int id = Convert.ToInt32(showPB.SelectedRows[0].Cells[0].Value);
-                    cmd.CommandText = "Delete from beverage_table where id='" + id + "'";
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        int rowIndex = item.Index;
+                        // Assuming the columns are in the following order: Name, Description, Size, Price
+                        string Name = showPB.Rows[rowIndex].Cells[0].Value.ToString();
+                        string Description = showPB.Rows[rowIndex].Cells[1].Value.ToString();
+                        string Size = showPB.Rows[rowIndex].Cells[2].Value.ToString();
+                        decimal Price = Convert.ToDecimal(showPB.Rows[rowIndex].Cells[3].Value);
 
-                    showPB.Rows.RemoveAt(this.showPB.SelectedRows[0].Index);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
+                        cmd.CommandText = "DELETE FROM beverage_table WHERE Name=@Name AND Description=@Description AND Size=@Size AND Price=@Price";
+                        cmd.Parameters.AddWithValue("@Name", Name);
+                        cmd.Parameters.AddWithValue("@Description", Description);
+                        cmd.Parameters.AddWithValue("@Size", Size);
+                        cmd.Parameters.AddWithValue("@Price", Price);
 
+                        con.Open();
+                        cmd.ExecuteNonQuery();
 
+                        showPB.Rows.RemoveAt(rowIndex);
+                    }
                 }
-
             }
+
+        }
+
+        private void beverageDatagrid_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pizza_tableDataSet1.pizza_table' table. You can move, or remove it, as needed.
+            this.beverage_tableTableAdapter.Fill(this.beverage_tableDataSet.beverage_table);
+            // TODO: This line of code loads data into the 'pizza_tableDataSet.pizza_table' table. You can move, or remove it, as needed.
+
+            // Create a new instance of SqlConnection using your connection string
+            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True"))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Create a new instance of SqlDataAdapter and SqlCommand
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT * FROM beverage_table", connection);
+
+                // Clear the existing DataTable
+                beverage_tableDataSet.beverage_table.Clear();
+
+                // Fill the DataTable with data from the database using SqlDataAdapter
+                dataAdapter.SelectCommand = command;
+                dataAdapter.Fill(beverage_tableDataSet.beverage_table);
+            }
+
+        }
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of SqlConnection using your connection string
+                using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True"))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // Create a new instance of SqlDataAdapter and SqlCommand
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                    SqlCommand command = new SqlCommand("SELECT * FROM beverage_table", connection);
+
+                    // Clear the existing DataTable
+                    beverage_tableDataSet.beverage_table.Clear();
+
+                    // Fill the DataTable with data from the database using SqlDataAdapter
+                    dataAdapter.SelectCommand = command;
+                    dataAdapter.Fill(beverage_tableDataSet.beverage_table);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var beverageDatagrid = new inventoryManagementForm();
+            beverageDatagrid.ShowDialog();
+
+            beverageDatagrid.Close();
         }
     }
 }
