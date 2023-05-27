@@ -69,16 +69,19 @@ namespace FFOSproj
                 }
             }
         }
+
+        
         private void LoadDataPizza()
         {
 
             string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string query = "SELECT Name, Size, Price FROM pizza_table";
+            string query = "SELECT Name, Size, Price FROM (pizza_table)";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
+
         }
 
         private void LoadDataBeverages()
@@ -166,6 +169,7 @@ namespace FFOSproj
                 MessageBox.Show(ex.Message);
             }
 
+           
         }
 
         private void displayBTN_Click(object sender, EventArgs e)
@@ -322,6 +326,11 @@ namespace FFOSproj
         }
 
         private void Cashier_Formmmm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quantityTXT_TextChanged(object sender, EventArgs e)
         {
 
         }

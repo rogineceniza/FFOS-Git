@@ -65,6 +65,7 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
             this.inventoryPanel.SuspendLayout();
@@ -73,6 +74,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +95,7 @@
             // 
             // dsrrrrr
             // 
+            this.dsrrrrr.Controls.Add(this.dataGridView1);
             this.dsrrrrr.Controls.Add(this.label5);
             this.dsrrrrr.Location = new System.Drawing.Point(196, 28);
             this.dsrrrrr.Name = "dsrrrrr";
@@ -102,7 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 376);
+            this.label5.Location = new System.Drawing.Point(344, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 28);
             this.label5.TabIndex = 0;
@@ -448,6 +451,16 @@
             this.addInventoryBTN.UseVisualStyleBackColor = true;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
@@ -473,6 +486,7 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,6 +532,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel dsrrrrr;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

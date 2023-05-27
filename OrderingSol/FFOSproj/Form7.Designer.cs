@@ -263,7 +263,7 @@
             // 
             // priceTXT
             // 
-            this.priceTXT.Location = new System.Drawing.Point(23, 171);
+            this.priceTXT.Location = new System.Drawing.Point(22, 299);
             this.priceTXT.Name = "priceTXT";
             this.priceTXT.ReadOnly = true;
             this.priceTXT.Size = new System.Drawing.Size(191, 26);
@@ -271,7 +271,7 @@
             // 
             // nameTXT
             // 
-            this.nameTXT.Location = new System.Drawing.Point(23, 15);
+            this.nameTXT.Location = new System.Drawing.Point(22, 143);
             this.nameTXT.Name = "nameTXT";
             this.nameTXT.ReadOnly = true;
             this.nameTXT.Size = new System.Drawing.Size(191, 26);
@@ -281,7 +281,7 @@
             // 
             this.nameItem.AutoSize = true;
             this.nameItem.ForeColor = System.Drawing.Color.White;
-            this.nameItem.Location = new System.Drawing.Point(76, 44);
+            this.nameItem.Location = new System.Drawing.Point(75, 172);
             this.nameItem.Name = "nameItem";
             this.nameItem.Size = new System.Drawing.Size(87, 20);
             this.nameItem.TabIndex = 1;
@@ -291,7 +291,7 @@
             // 
             this.itemPrice.AutoSize = true;
             this.itemPrice.ForeColor = System.Drawing.Color.White;
-            this.itemPrice.Location = new System.Drawing.Point(76, 200);
+            this.itemPrice.Location = new System.Drawing.Point(75, 328);
             this.itemPrice.Name = "itemPrice";
             this.itemPrice.Size = new System.Drawing.Size(76, 20);
             this.itemPrice.TabIndex = 13;
@@ -299,7 +299,7 @@
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(58, 244);
+            this.addBTN.Location = new System.Drawing.Point(57, 387);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(115, 65);
             this.addBTN.TabIndex = 19;
@@ -311,7 +311,7 @@
             // 
             this.sizeItem.AutoSize = true;
             this.sizeItem.ForeColor = System.Drawing.Color.White;
-            this.sizeItem.Location = new System.Drawing.Point(76, 123);
+            this.sizeItem.Location = new System.Drawing.Point(75, 251);
             this.sizeItem.Name = "sizeItem";
             this.sizeItem.Size = new System.Drawing.Size(76, 20);
             this.sizeItem.TabIndex = 12;
@@ -319,7 +319,7 @@
             // 
             // sizeTXT
             // 
-            this.sizeTXT.Location = new System.Drawing.Point(23, 94);
+            this.sizeTXT.Location = new System.Drawing.Point(22, 222);
             this.sizeTXT.Name = "sizeTXT";
             this.sizeTXT.ReadOnly = true;
             this.sizeTXT.Size = new System.Drawing.Size(191, 26);
@@ -334,9 +334,9 @@
             this.panel2.Controls.Add(this.nameItem);
             this.panel2.Controls.Add(this.nameTXT);
             this.panel2.Controls.Add(this.priceTXT);
-            this.panel2.Location = new System.Drawing.Point(1207, 554);
+            this.panel2.Location = new System.Drawing.Point(1212, 396);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 335);
+            this.panel2.Size = new System.Drawing.Size(234, 482);
             this.panel2.TabIndex = 0;
             // 
             // displayBTN
@@ -357,7 +357,7 @@
             this.clearBTN.Name = "clearBTN";
             this.clearBTN.Size = new System.Drawing.Size(97, 50);
             this.clearBTN.TabIndex = 22;
-            this.clearBTN.Text = "Clear";
+            this.clearBTN.Text = "Delete";
             this.clearBTN.UseVisualStyleBackColor = false;
             this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
             // 
@@ -464,8 +464,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
+            this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2258, 1002);
             this.Controls.Add(this.label3);
