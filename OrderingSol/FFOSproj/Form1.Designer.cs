@@ -41,25 +41,17 @@
             this.price_bvrg = new System.Windows.Forms.TextBox();
             this.description_bvrg = new System.Windows.Forms.TextBox();
             this.name_bvrg = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.sizeBox = new System.Windows.Forms.ComboBox();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.priceBox = new System.Windows.Forms.TextBox();
             this.description_txt = new System.Windows.Forms.TextBox();
             this.name_txt = new System.Windows.Forms.TextBox();
-            this.price = new System.Windows.Forms.Label();
-            this.size = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewBinventory = new System.Windows.Forms.Button();
             this.logOutBTN = new System.Windows.Forms.Button();
@@ -67,6 +59,12 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,8 +78,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimeLabel);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(196)))), ((int)(((byte)(170)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
+            this.panel1.Controls.Add(this.dateTimeLabel);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
@@ -89,15 +89,17 @@
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.addInventoryBTN);
-            this.panel1.Location = new System.Drawing.Point(25, 15);
+            this.panel1.Location = new System.Drawing.Point(-2, -3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1162, 844);
+            this.panel1.Size = new System.Drawing.Size(1237, 841);
             this.panel1.TabIndex = 0;
             // 
             // dateTimeLabel
             // 
             this.dateTimeLabel.AutoSize = true;
+            this.dateTimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeLabel.ForeColor = System.Drawing.Color.White;
             this.dateTimeLabel.Location = new System.Drawing.Point(971, 18);
             this.dateTimeLabel.Name = "dateTimeLabel";
             this.dateTimeLabel.Size = new System.Drawing.Size(162, 28);
@@ -106,11 +108,12 @@
             // 
             // dsrrrrr
             // 
+            this.dsrrrrr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
             this.dsrrrrr.Controls.Add(this.dataGridView1);
             this.dsrrrrr.Controls.Add(this.label5);
-            this.dsrrrrr.Location = new System.Drawing.Point(205, 58);
+            this.dsrrrrr.Location = new System.Drawing.Point(230, 49);
             this.dsrrrrr.Name = "dsrrrrr";
-            this.dsrrrrr.Size = new System.Drawing.Size(928, 744);
+            this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
             this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
             // 
@@ -141,25 +144,17 @@
             this.inventoryPanel.Controls.Add(this.price_bvrg);
             this.inventoryPanel.Controls.Add(this.description_bvrg);
             this.inventoryPanel.Controls.Add(this.name_bvrg);
-            this.inventoryPanel.Controls.Add(this.label1);
-            this.inventoryPanel.Controls.Add(this.label2);
-            this.inventoryPanel.Controls.Add(this.label3);
-            this.inventoryPanel.Controls.Add(this.label4);
             this.inventoryPanel.Controls.Add(this.sizeBox);
             this.inventoryPanel.Controls.Add(this.clearBtn);
             this.inventoryPanel.Controls.Add(this.saveBtn);
             this.inventoryPanel.Controls.Add(this.priceBox);
             this.inventoryPanel.Controls.Add(this.description_txt);
             this.inventoryPanel.Controls.Add(this.name_txt);
-            this.inventoryPanel.Controls.Add(this.price);
-            this.inventoryPanel.Controls.Add(this.size);
-            this.inventoryPanel.Controls.Add(this.description);
-            this.inventoryPanel.Controls.Add(this.name);
             this.inventoryPanel.Controls.Add(this.panel4);
             this.inventoryPanel.Controls.Add(this.panel5);
-            this.inventoryPanel.Location = new System.Drawing.Point(205, 58);
+            this.inventoryPanel.Location = new System.Drawing.Point(232, 58);
             this.inventoryPanel.Name = "inventoryPanel";
-            this.inventoryPanel.Size = new System.Drawing.Size(928, 730);
+            this.inventoryPanel.Size = new System.Drawing.Size(902, 730);
             this.inventoryPanel.TabIndex = 1;
             // 
             // size_bvrg
@@ -173,26 +168,30 @@
             // 
             // bvrg_clear
             // 
+            this.bvrg_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
             this.bvrg_clear.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bvrg_clear.ForeColor = System.Drawing.Color.White;
             this.bvrg_clear.Location = new System.Drawing.Point(630, 652);
             this.bvrg_clear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bvrg_clear.Name = "bvrg_clear";
             this.bvrg_clear.Size = new System.Drawing.Size(105, 54);
             this.bvrg_clear.TabIndex = 23;
             this.bvrg_clear.Text = "Clear";
-            this.bvrg_clear.UseVisualStyleBackColor = true;
+            this.bvrg_clear.UseVisualStyleBackColor = false;
             this.bvrg_clear.Click += new System.EventHandler(this.bvrg_clear_Click);
             // 
             // bvrg_save
             // 
+            this.bvrg_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
             this.bvrg_save.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bvrg_save.ForeColor = System.Drawing.Color.White;
             this.bvrg_save.Location = new System.Drawing.Point(758, 652);
             this.bvrg_save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bvrg_save.Name = "bvrg_save";
             this.bvrg_save.Size = new System.Drawing.Size(105, 54);
             this.bvrg_save.TabIndex = 18;
             this.bvrg_save.Text = "Save";
-            this.bvrg_save.UseVisualStyleBackColor = true;
+            this.bvrg_save.UseVisualStyleBackColor = false;
             this.bvrg_save.Click += new System.EventHandler(this.bvrg_save_Click);
             // 
             // price_bvrg
@@ -217,45 +216,8 @@
             this.name_bvrg.Size = new System.Drawing.Size(360, 37);
             this.name_bvrg.TabIndex = 20;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 588);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 28);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Price";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(349, 537);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 28);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Size";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(349, 444);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 28);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Description";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(349, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 28);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Name: ";
-            // 
             // sizeBox
             // 
-            this.sizeBox.AllowDrop = true;
             this.sizeBox.FormattingEnabled = true;
             this.sizeBox.Location = new System.Drawing.Point(503, 191);
             this.sizeBox.Name = "sizeBox";
@@ -264,26 +226,30 @@
             // 
             // clearBtn
             // 
+            this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
             this.clearBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.ForeColor = System.Drawing.Color.White;
             this.clearBtn.Location = new System.Drawing.Point(630, 306);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(105, 54);
             this.clearBtn.TabIndex = 11;
             this.clearBtn.Text = "Clear";
-            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // saveBtn
             // 
+            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
             this.saveBtn.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Location = new System.Drawing.Point(758, 306);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(105, 54);
             this.saveBtn.TabIndex = 5;
             this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // priceBox
@@ -308,66 +274,47 @@
             this.name_txt.Size = new System.Drawing.Size(360, 37);
             this.name_txt.TabIndex = 6;
             // 
-            // price
-            // 
-            this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(349, 242);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(62, 28);
-            this.price.TabIndex = 5;
-            this.price.Text = "Price";
-            // 
-            // size
-            // 
-            this.size.AutoSize = true;
-            this.size.Location = new System.Drawing.Point(349, 191);
-            this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(54, 28);
-            this.size.TabIndex = 4;
-            this.size.Text = "Size";
-            // 
             // description
             // 
             this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(349, 98);
+            this.description.Font = new System.Drawing.Font("Roboto Mono Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.description.Location = new System.Drawing.Point(342, 105);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(131, 28);
+            this.description.Size = new System.Drawing.Size(167, 29);
             this.description.TabIndex = 3;
             this.description.Text = "Description";
             // 
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(349, 55);
+            this.name.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.name.Location = new System.Drawing.Point(342, 60);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(74, 28);
+            this.name.Size = new System.Drawing.Size(74, 32);
             this.name.TabIndex = 2;
             this.name.Text = "Name";
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pizza_image_picbox);
-            this.panel4.Location = new System.Drawing.Point(4, 3);
+            this.panel4.Controls.Add(this.description);
+            this.panel4.Controls.Add(this.name);
+            this.panel4.Location = new System.Drawing.Point(-2, -9);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(910, 372);
+            this.panel4.Size = new System.Drawing.Size(911, 383);
             this.panel4.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(86, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 28);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Pizza Panel";
             // 
             // pizza_image_picbox
             // 
             this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
             this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pizza_image_picbox.Location = new System.Drawing.Point(39, 77);
+            this.pizza_image_picbox.Location = new System.Drawing.Point(37, 114);
             this.pizza_image_picbox.Name = "pizza_image_picbox";
             this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
             this.pizza_image_picbox.TabIndex = 0;
@@ -375,22 +322,17 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(4, 378);
+            this.panel5.Location = new System.Drawing.Point(-2, 373);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(910, 349);
+            this.panel5.Size = new System.Drawing.Size(910, 364);
             this.panel5.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 28);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Beverage Panel";
             // 
             // pictureBox3
             // 
@@ -404,57 +346,66 @@
             // 
             // viewBinventory
             // 
-            this.viewBinventory.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewBinventory.Location = new System.Drawing.Point(12, 362);
-            this.viewBinventory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.viewBinventory.BackColor = System.Drawing.Color.SaddleBrown;
+            this.viewBinventory.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewBinventory.ForeColor = System.Drawing.Color.White;
+            this.viewBinventory.Location = new System.Drawing.Point(26, 431);
+            this.viewBinventory.Margin = new System.Windows.Forms.Padding(0);
             this.viewBinventory.Name = "viewBinventory";
             this.viewBinventory.Size = new System.Drawing.Size(179, 67);
             this.viewBinventory.TabIndex = 6;
-            this.viewBinventory.Text = "VIEW Beverage Inventory";
-            this.viewBinventory.UseVisualStyleBackColor = true;
+            this.viewBinventory.Text = "Beverage Inventory";
+            this.viewBinventory.UseVisualStyleBackColor = false;
             this.viewBinventory.Click += new System.EventHandler(this.viewBinventory_Click_1);
             // 
             // logOutBTN
             // 
-            this.logOutBTN.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutBTN.Location = new System.Drawing.Point(12, 541);
-            this.logOutBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.logOutBTN.BackColor = System.Drawing.Color.SaddleBrown;
+            this.logOutBTN.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBTN.ForeColor = System.Drawing.Color.White;
+            this.logOutBTN.Location = new System.Drawing.Point(26, 637);
+            this.logOutBTN.Margin = new System.Windows.Forms.Padding(0);
             this.logOutBTN.Name = "logOutBTN";
             this.logOutBTN.Size = new System.Drawing.Size(179, 66);
             this.logOutBTN.TabIndex = 4;
             this.logOutBTN.Text = "Logout";
-            this.logOutBTN.UseVisualStyleBackColor = true;
+            this.logOutBTN.UseVisualStyleBackColor = false;
             this.logOutBTN.Click += new System.EventHandler(this.logOutBTN_Click);
             // 
             // DSRbtn
             // 
-            this.DSRbtn.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DSRbtn.Location = new System.Drawing.Point(12, 452);
-            this.DSRbtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DSRbtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.DSRbtn.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DSRbtn.ForeColor = System.Drawing.Color.White;
+            this.DSRbtn.Location = new System.Drawing.Point(26, 533);
+            this.DSRbtn.Margin = new System.Windows.Forms.Padding(0);
             this.DSRbtn.Name = "DSRbtn";
+            this.DSRbtn.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.DSRbtn.Size = new System.Drawing.Size(179, 67);
             this.DSRbtn.TabIndex = 3;
             this.DSRbtn.Text = "Daily Sales Report";
-            this.DSRbtn.UseVisualStyleBackColor = true;
+            this.DSRbtn.UseVisualStyleBackColor = false;
             this.DSRbtn.Click += new System.EventHandler(this.DSRbtn_Click);
             // 
             // viewInventoryBTN
             // 
-            this.viewInventoryBTN.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewInventoryBTN.Location = new System.Drawing.Point(12, 276);
-            this.viewInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.viewInventoryBTN.BackColor = System.Drawing.Color.SaddleBrown;
+            this.viewInventoryBTN.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewInventoryBTN.ForeColor = System.Drawing.Color.White;
+            this.viewInventoryBTN.Location = new System.Drawing.Point(26, 324);
+            this.viewInventoryBTN.Margin = new System.Windows.Forms.Padding(0);
             this.viewInventoryBTN.Name = "viewInventoryBTN";
             this.viewInventoryBTN.Size = new System.Drawing.Size(179, 67);
             this.viewInventoryBTN.TabIndex = 2;
-            this.viewInventoryBTN.Text = "VIEW Pizza Inventory";
-            this.viewInventoryBTN.UseVisualStyleBackColor = true;
+            this.viewInventoryBTN.Text = "Pizza Inventory";
+            this.viewInventoryBTN.UseVisualStyleBackColor = false;
             this.viewInventoryBTN.Click += new System.EventHandler(this.viewInventoryBTN_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 39);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(143, 145);
@@ -463,27 +414,98 @@
             // 
             // addInventoryBTN
             // 
-            this.addInventoryBTN.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addInventoryBTN.Location = new System.Drawing.Point(12, 188);
+            this.addInventoryBTN.BackColor = System.Drawing.Color.SaddleBrown;
+            this.addInventoryBTN.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addInventoryBTN.ForeColor = System.Drawing.Color.White;
+            this.addInventoryBTN.Location = new System.Drawing.Point(26, 218);
             this.addInventoryBTN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.addInventoryBTN.Name = "addInventoryBTN";
             this.addInventoryBTN.Size = new System.Drawing.Size(179, 67);
             this.addInventoryBTN.TabIndex = 0;
             this.addInventoryBTN.Text = "ADD Inventory";
-            this.addInventoryBTN.UseVisualStyleBackColor = true;
+            this.addInventoryBTN.UseVisualStyleBackColor = false;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label6.Location = new System.Drawing.Point(342, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 32);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Size";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label7.Location = new System.Drawing.Point(342, 246);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 32);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Price";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label1.Location = new System.Drawing.Point(342, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 32);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Price";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label2.Location = new System.Drawing.Point(342, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Size";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto Mono Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label3.Location = new System.Drawing.Point(342, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 29);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Description";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label4.Location = new System.Drawing.Point(342, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 32);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Name";
             // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1232, 1005);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1232, 829);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft JhengHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "inventoryManagementForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fast Food Ordering System";
             this.Load += new System.EventHandler(this.inventoryManagementForm_Load);
@@ -515,8 +537,6 @@
         private System.Windows.Forms.Button addInventoryBTN;
         private System.Windows.Forms.Panel inventoryPanel;
         private System.Windows.Forms.TextBox name_txt;
-        private System.Windows.Forms.Label price;
-        private System.Windows.Forms.Label size;
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.TextBox priceBox;
@@ -530,16 +550,10 @@
         private System.Windows.Forms.TextBox price_bvrg;
         private System.Windows.Forms.TextBox description_bvrg;
         private System.Windows.Forms.TextBox name_bvrg;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button viewBinventory;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pizza_image_picbox;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -548,6 +562,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label dateTimeLabel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
