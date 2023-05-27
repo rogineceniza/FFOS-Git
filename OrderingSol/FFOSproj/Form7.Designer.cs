@@ -36,7 +36,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.merge = new System.Windows.Forms.DataGridView();
             this.add_btn = new System.Windows.Forms.Button();
-            this.refresh_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn1 = new System.Windows.Forms.Button();
             this.priceTXT = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // label1
             // 
@@ -146,17 +146,6 @@
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
-            // 
-            // refresh_btn
-            // 
-            this.refresh_btn.Location = new System.Drawing.Point(411, 895);
-            this.refresh_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(106, 50);
-            this.refresh_btn.TabIndex = 3;
-            this.refresh_btn.Text = "Refresh";
-            this.refresh_btn.UseVisualStyleBackColor = true;
-  //          this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
             // label4
             // 
@@ -390,7 +379,6 @@
             this.Controls.Add(this.displayBTN);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn1);
-            this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -417,7 +405,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button add_btn;
-        private System.Windows.Forms.Button refresh_btn;
         private System.Windows.Forms.DataGridView merge;
         private System.Windows.Forms.Label dateToday;
         private System.Windows.Forms.Label label4;

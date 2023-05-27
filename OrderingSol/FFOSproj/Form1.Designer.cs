@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimeLabel = new System.Windows.Forms.Label();
             this.dsrrrrr = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
             this.size_bvrg = new System.Windows.Forms.ComboBox();
@@ -65,20 +67,20 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dateTimeLabel);
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
@@ -93,14 +95,34 @@
             this.panel1.Size = new System.Drawing.Size(1162, 844);
             this.panel1.TabIndex = 0;
             // 
+            // dateTimeLabel
+            // 
+            this.dateTimeLabel.AutoSize = true;
+            this.dateTimeLabel.Location = new System.Drawing.Point(971, 18);
+            this.dateTimeLabel.Name = "dateTimeLabel";
+            this.dateTimeLabel.Size = new System.Drawing.Size(162, 28);
+            this.dateTimeLabel.TabIndex = 1;
+            this.dateTimeLabel.Text = "Date and Time";
+            // 
             // dsrrrrr
             // 
             this.dsrrrrr.Controls.Add(this.dataGridView1);
             this.dsrrrrr.Controls.Add(this.label5);
-            this.dsrrrrr.Location = new System.Drawing.Point(196, 28);
+            this.dsrrrrr.Location = new System.Drawing.Point(205, 58);
             this.dsrrrrr.Name = "dsrrrrr";
-            this.dsrrrrr.Size = new System.Drawing.Size(944, 816);
+            this.dsrrrrr.Size = new System.Drawing.Size(928, 744);
             this.dsrrrrr.TabIndex = 2;
+            this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 1;
             // 
             // label5
             // 
@@ -451,16 +473,6 @@
             this.addInventoryBTN.UseVisualStyleBackColor = true;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
@@ -474,9 +486,12 @@
             this.Name = "inventoryManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fast Food Ordering System";
+            this.Load += new System.EventHandler(this.inventoryManagementForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.dsrrrrr.ResumeLayout(false);
             this.dsrrrrr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -486,7 +501,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,6 +547,7 @@
         private System.Windows.Forms.Panel dsrrrrr;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label dateTimeLabel;
     }
 }
 

@@ -35,7 +35,7 @@ namespace FFOSproj
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 1000;  
+            timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Start();
             LoadData();
@@ -109,19 +109,19 @@ namespace FFOSproj
             }
         }
 
-        
-       /* private void LoadDataPizza()
-        {
 
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            string query = "SELECT Name, Size, Price FROM (pizza_table)";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            merge.DataSource = table;
+        /* private void LoadDataPizza()
+         {
 
-        }*/
+             string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
+             MySqlConnection connection = new MySqlConnection(connectionString);
+             string query = "SELECT Name, Size, Price FROM (pizza_table)";
+             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+             DataTable table = new DataTable();
+             adapter.Fill(table);
+             merge.DataSource = table;
+
+         }*/
 
         /*private void LoadDataBeverages()
         {
@@ -134,16 +134,16 @@ namespace FFOSproj
             dataGridView2.DataSource = table;
         }*/
 
-       /* private void refresh_btn_Click(object sender, EventArgs e)
-        {
-            LoadDataPizza();
-        }*/
+        /* private void refresh_btn_Click(object sender, EventArgs e)
+         {
+             LoadDataPizza();
+         }*/
 
-       /* private void refresh2_btn_Click(object sender, EventArgs e)
-        {
-            LoadDataBeverages();
-        }
-*/
+        /* private void refresh2_btn_Click(object sender, EventArgs e)
+         {
+             LoadDataBeverages();
+         }
+ */
         private void dateToday_Click(object sender, EventArgs e)
         {
             dateToday.Text = DateTime.Now.ToString();
@@ -167,20 +167,20 @@ namespace FFOSproj
 
         }
 
-       /* private void btn2_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
-            {
-                string itemName = row.Cells["Name"].Value.ToString();
-                string itemSize = row.Cells["Size"].Value.ToString();
-                string itemPrice = row.Cells["Price"].Value.ToString();
+        /* private void btn2_Click(object sender, EventArgs e)
+         {
+             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+             {
+                 string itemName = row.Cells["Name"].Value.ToString();
+                 string itemSize = row.Cells["Size"].Value.ToString();
+                 string itemPrice = row.Cells["Price"].Value.ToString();
 
-                nameTXT.Text = itemName;
-                sizeTXT.Text = itemSize;
-                priceTXT.Text = itemPrice;
-            }
-        }
-*/
+                 nameTXT.Text = itemName;
+                 sizeTXT.Text = itemSize;
+                 priceTXT.Text = itemPrice;
+             }
+         }
+ */
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -250,9 +250,9 @@ namespace FFOSproj
 
 
         }
-    
 
-    private void displayBTN_Click(object sender, EventArgs e)
+
+        private void displayBTN_Click(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
         }
@@ -348,32 +348,6 @@ namespace FFOSproj
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string searchTerm = txtSearch.Text.Trim();
-            SearchItem(searchTerm);
-        }
-
-        private void SearchItem(string searchTerm)
-        {
-            merge.ClearSelection();
-
-            foreach (DataGridViewRow row in merge.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value != null && cell.Value.ToString().Contains(searchTerm))
-                    {
-                        row.Selected = true;
-                        merge.FirstDisplayedScrollingRowIndex = row.Index;
-                        return;
-                    }
-                }
-            }
-
-            MessageBox.Show("Item not found.");
-        }
-
         private void displayBTN_Click_1(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
@@ -431,12 +405,39 @@ namespace FFOSproj
             {
                 MessageBox.Show("An error occurred while saving data to the database: " + ex.Message);
             }
-            
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim();
+            SearchItem(searchTerm);
+        }
+
+
+
+
+        private void SearchItem(string searchTerm)
+        {
+
+            merge.ClearSelection();
+
+            foreach (DataGridViewRow row in merge.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().Contains(searchTerm))
+                    {
+                        row.Selected = true;
+                        merge.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
+                }
+            }
+
+            MessageBox.Show("Item not found.");
         }
     }
-    }
+}
     
-
-
-
-
+  

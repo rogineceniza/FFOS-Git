@@ -31,7 +31,21 @@ namespace FFOSproj
         int ID = 0;
         private Timer timer;
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Update the label with the current date and time
+            dateTimeLabel.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
 
+        private void inventoryManagementForm_Load(object sender, EventArgs e)
+        {
+            timer = new Timer();
+            timer.Interval = 1000; // 1000 milliseconds = 1 second
+            timer.Tick += Timer_Tick;
+
+            // Start the timer
+            timer.Start();
+        }
 
         public inventoryManagementForm()
         {
@@ -126,13 +140,6 @@ namespace FFOSproj
             myForm3.ShowDialog();
             myForm3.Dispose();
         }
-        private void DSRbtn_Click(object sender, EventArgs e)
-        {
-
-            dsrrrrr.Visible = true;
-            inventoryPanel.Visible = false;
-
-        }
 
         private void logOutBTN_Click(object sender, EventArgs e)
         {
@@ -143,8 +150,83 @@ namespace FFOSproj
                 this.Close();
             }
         }
+        private void DSRbtn_Click(object sender, EventArgs e)
+        {
+
+            dsrrrrr.Visible = true;
+            inventoryPanel.Visible = false;
+
+
+            /*
+
+                        try
+                        {
+                            // Format the date to match the database date format
+                            string formattedDate = DateTime.ToString("yyyy-MM-dd");
+
+                            // Query to retrieve the total payment for the specified date
+                            string query = "SELECT SUM(TotalPayment) AS TotalSales FROM SalesTable WHERE DATE(DateTime) = @Date";
+                            MySqlCommand command = new MySqlCommand(query, connection);
+                            command.Parameters.AddWithValue("@Date", formattedDate);
+
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+
+                            if (result != null && result != DBNull.Value)
+                            {
+                                decimal totalSales = Convert.ToDecimal(result);
+                                MessageBox.Show($"Total Sales for {date.ToShortDateString()}: {totalSales.ToString("C")}");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No sales found for the specified date.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while generating the daily sales report: " + ex.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+
+                    // Usage: Call this method passing the desired date
+                    DateTime desiredDate = DateTime.Now.Date; // Use any desired date
+                    GenerateDailySalesReport(desiredDate);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void dsrrrrr_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
+
+
+
+
+
 
 
 
