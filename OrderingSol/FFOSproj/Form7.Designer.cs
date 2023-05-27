@@ -32,20 +32,13 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSearchBev = new System.Windows.Forms.TextBox();
-            this.btnSearchBev = new System.Windows.Forms.Button();
             this.dateToday = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.merge = new System.Windows.Forms.DataGridView();
             this.add_btn = new System.Windows.Forms.Button();
             this.refresh_btn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.refresh2_btn = new System.Windows.Forms.Button();
-            this.add2_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn1 = new System.Windows.Forms.Button();
-            this.btn2 = new System.Windows.Forms.Button();
             this.priceTXT = new System.Windows.Forms.TextBox();
             this.nameTXT = new System.Windows.Forms.TextBox();
             this.nameItem = new System.Windows.Forms.Label();
@@ -54,25 +47,22 @@
             this.sizeItem = new System.Windows.Forms.Label();
             this.sizeTXT = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.quantityTXT = new System.Windows.Forms.TextBox();
             this.displayBTN = new System.Windows.Forms.Button();
             this.clearBTN = new System.Windows.Forms.Button();
             this.totalllll = new System.Windows.Forms.Button();
             this.totalLabel = new System.Windows.Forms.Label();
             this.saveCurrent = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.merge)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +94,6 @@
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label1
             // 
@@ -115,24 +104,6 @@
             this.label1.Size = new System.Drawing.Size(230, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pizza Panel";
-            // 
-            // txtSearchBev
-            // 
-            this.txtSearchBev.Location = new System.Drawing.Point(124, 66);
-            this.txtSearchBev.Name = "txtSearchBev";
-            this.txtSearchBev.Size = new System.Drawing.Size(295, 26);
-            this.txtSearchBev.TabIndex = 28;
-            // 
-            // btnSearchBev
-            // 
-            this.btnSearchBev.Location = new System.Drawing.Point(12, 58);
-            this.btnSearchBev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchBev.Name = "btnSearchBev";
-            this.btnSearchBev.Size = new System.Drawing.Size(106, 38);
-            this.btnSearchBev.TabIndex = 27;
-            this.btnSearchBev.Text = "Search";
-            this.btnSearchBev.UseVisualStyleBackColor = true;
-            this.btnSearchBev.Click += new System.EventHandler(this.btnSearchBev_Click);
             // 
             // dateToday
             // 
@@ -146,25 +117,25 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
+            this.flowLayoutPanel1.Controls.Add(this.merge);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(107, 198);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 692);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // merge
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(519, 689);
-            this.dataGridView1.TabIndex = 0;
+            this.merge.BackgroundColor = System.Drawing.Color.White;
+            this.merge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.merge.Location = new System.Drawing.Point(3, 2);
+            this.merge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.merge.Name = "merge";
+            this.merge.ReadOnly = true;
+            this.merge.RowHeadersWidth = 62;
+            this.merge.RowTemplate.Height = 28;
+            this.merge.Size = new System.Drawing.Size(519, 689);
+            this.merge.TabIndex = 0;
             // 
             // add_btn
             // 
@@ -185,56 +156,12 @@
             this.refresh_btn.TabIndex = 3;
             this.refresh_btn.Text = "Refresh";
             this.refresh_btn.UseVisualStyleBackColor = true;
-            this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.dataGridView2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(652, 198);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(522, 692);
-            this.flowLayoutPanel2.TabIndex = 1;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(519, 689);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // refresh2_btn
-            // 
-            this.refresh2_btn.Location = new System.Drawing.Point(956, 894);
-            this.refresh2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.refresh2_btn.Name = "refresh2_btn";
-            this.refresh2_btn.Size = new System.Drawing.Size(106, 50);
-            this.refresh2_btn.TabIndex = 4;
-            this.refresh2_btn.Text = "Refresh";
-            this.refresh2_btn.UseVisualStyleBackColor = true;
-            this.refresh2_btn.Click += new System.EventHandler(this.refresh2_btn_Click);
-            // 
-            // add2_btn
-            // 
-            this.add2_btn.Location = new System.Drawing.Point(1068, 894);
-            this.add2_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.add2_btn.Name = "add2_btn";
-            this.add2_btn.Size = new System.Drawing.Size(106, 50);
-            this.add2_btn.TabIndex = 5;
-            this.add2_btn.Text = "Add";
-            this.add2_btn.UseVisualStyleBackColor = true;
+  //          this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1959, 382);
+            this.label4.Location = new System.Drawing.Point(1424, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 0;
@@ -249,17 +176,6 @@
             this.btn1.Text = "Add";
             this.btn1.UseVisualStyleBackColor = true;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
-            // 
-            // btn2
-            // 
-            this.btn2.Location = new System.Drawing.Point(1068, 895);
-            this.btn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(106, 50);
-            this.btn2.TabIndex = 21;
-            this.btn2.Text = "Add";
-            this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // priceTXT
             // 
@@ -299,7 +215,7 @@
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(57, 387);
+            this.addBTN.Location = new System.Drawing.Point(58, 473);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(115, 65);
             this.addBTN.TabIndex = 19;
@@ -327,6 +243,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.quantityTXT);
             this.panel2.Controls.Add(this.sizeTXT);
             this.panel2.Controls.Add(this.sizeItem);
             this.panel2.Controls.Add(this.addBTN);
@@ -334,50 +252,68 @@
             this.panel2.Controls.Add(this.nameItem);
             this.panel2.Controls.Add(this.nameTXT);
             this.panel2.Controls.Add(this.priceTXT);
-            this.panel2.Location = new System.Drawing.Point(1212, 396);
+            this.panel2.Location = new System.Drawing.Point(670, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 482);
+            this.panel2.Size = new System.Drawing.Size(234, 576);
             this.panel2.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(75, 415);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Quantity";
+            // 
+            // quantityTXT
+            // 
+            this.quantityTXT.Location = new System.Drawing.Point(22, 375);
+            this.quantityTXT.Name = "quantityTXT";
+            this.quantityTXT.Size = new System.Drawing.Size(191, 26);
+            this.quantityTXT.TabIndex = 20;
+            this.quantityTXT.Text = "1";
             // 
             // displayBTN
             // 
             this.displayBTN.ForeColor = System.Drawing.Color.White;
-            this.displayBTN.Location = new System.Drawing.Point(1690, 885);
+            this.displayBTN.Location = new System.Drawing.Point(1155, 897);
             this.displayBTN.Name = "displayBTN";
             this.displayBTN.Size = new System.Drawing.Size(97, 50);
             this.displayBTN.TabIndex = 20;
             this.displayBTN.Text = "Display";
             this.displayBTN.UseVisualStyleBackColor = false;
-            this.displayBTN.Click += new System.EventHandler(this.displayBTN_Click);
+            this.displayBTN.Click += new System.EventHandler(this.displayBTN_Click_1);
             // 
             // clearBTN
             // 
             this.clearBTN.ForeColor = System.Drawing.Color.White;
-            this.clearBTN.Location = new System.Drawing.Point(1587, 885);
+            this.clearBTN.Location = new System.Drawing.Point(1052, 897);
             this.clearBTN.Name = "clearBTN";
             this.clearBTN.Size = new System.Drawing.Size(97, 50);
             this.clearBTN.TabIndex = 22;
             this.clearBTN.Text = "Delete";
             this.clearBTN.UseVisualStyleBackColor = false;
-            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
+            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click_1);
             // 
             // totalllll
             // 
             this.totalllll.ForeColor = System.Drawing.Color.White;
-            this.totalllll.Location = new System.Drawing.Point(1793, 885);
+            this.totalllll.Location = new System.Drawing.Point(1258, 897);
             this.totalllll.Name = "totalllll";
             this.totalllll.Size = new System.Drawing.Size(97, 50);
             this.totalllll.TabIndex = 23;
             this.totalllll.Text = "Total";
             this.totalllll.UseVisualStyleBackColor = false;
-            this.totalllll.Click += new System.EventHandler(this.totalllll_Click);
+            this.totalllll.Click += new System.EventHandler(this.totalllll_Click_1);
             // 
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.White;
-            this.totalLabel.Location = new System.Drawing.Point(1963, 897);
+            this.totalLabel.Location = new System.Drawing.Point(1428, 909);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(57, 29);
             this.totalLabel.TabIndex = 24;
@@ -386,53 +322,31 @@
             // saveCurrent
             // 
             this.saveCurrent.ForeColor = System.Drawing.Color.White;
-            this.saveCurrent.Location = new System.Drawing.Point(2030, 761);
+            this.saveCurrent.Location = new System.Drawing.Point(1495, 773);
             this.saveCurrent.Name = "saveCurrent";
             this.saveCurrent.Size = new System.Drawing.Size(146, 112);
             this.saveCurrent.TabIndex = 25;
             this.saveCurrent.Text = "Save Current Purchase";
             this.saveCurrent.UseVisualStyleBackColor = false;
-            this.saveCurrent.Click += new System.EventHandler(this.saveCurrent_Click);
+            this.saveCurrent.Click += new System.EventHandler(this.saveCurrent_Click_1);
             // 
             // dataGridView4
             // 
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(1505, 190);
+            this.dataGridView4.Location = new System.Drawing.Point(971, 202);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.RowTemplate.Height = 28;
             this.dataGridView4.Size = new System.Drawing.Size(519, 688);
             this.dataGridView4.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Snow;
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txtSearchBev);
-            this.panel3.Controls.Add(this.btnSearchBev);
-            this.panel3.Location = new System.Drawing.Point(652, 87);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(522, 104);
-            this.panel3.TabIndex = 27;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Book Antiqua", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 49);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Beverage Panel";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Snow;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.dateToday);
-            this.panel4.Location = new System.Drawing.Point(1506, 79);
+            this.panel4.Location = new System.Drawing.Point(971, 91);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(513, 104);
@@ -447,14 +361,13 @@
             this.label2.Size = new System.Drawing.Size(385, 57);
             this.label2.TabIndex = 0;
             this.label2.Text = "Purchased Items";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1928, 897);
+            this.label3.Location = new System.Drawing.Point(1393, 909);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 29);
             this.label3.TabIndex = 30;
@@ -470,19 +383,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.saveCurrent);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.totalllll);
             this.Controls.Add(this.clearBTN);
             this.Controls.Add(this.displayBTN);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
-            this.Controls.Add(this.add2_btn);
-            this.Controls.Add(this.refresh2_btn);
             this.Controls.Add(this.refresh_btn);
-            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -490,18 +398,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Cashier_Formmmm";
             this.Text = "Cashier Form";
-            this.Load += new System.EventHandler(this.Cashier_Formmmm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.merge)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -515,15 +418,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button refresh_btn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button refresh2_btn;
-        private System.Windows.Forms.Button add2_btn;
+        private System.Windows.Forms.DataGridView merge;
         private System.Windows.Forms.Label dateToday;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox sizeTXT;
         private System.Windows.Forms.Label sizeItem;
@@ -542,12 +440,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnSearchBev;
-        private System.Windows.Forms.TextBox txtSearchBev;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox quantityTXT;
     }
 }
