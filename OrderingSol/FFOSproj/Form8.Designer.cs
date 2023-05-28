@@ -28,36 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.merge = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.merge)).BeginInit();
+            this.sales = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.sales)).BeginInit();
             this.SuspendLayout();
             // 
-            // merge
+            // sales
             // 
-            this.merge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.merge.Location = new System.Drawing.Point(24, 12);
-            this.merge.Name = "merge";
-            this.merge.RowHeadersWidth = 62;
-            this.merge.RowTemplate.Height = 28;
-            this.merge.Size = new System.Drawing.Size(437, 477);
-            this.merge.TabIndex = 0;
+            this.sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sales.Location = new System.Drawing.Point(26, 53);
+            this.sales.Name = "sales";
+            this.sales.RowHeadersWidth = 62;
+            this.sales.RowTemplate.Height = 28;
+            this.sales.Size = new System.Drawing.Size(437, 477);
+            this.sales.TabIndex = 0;
             // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 651);
-            this.Controls.Add(this.merge);
+            this.Controls.Add(this.sales);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "test";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.merge)).EndInit();
+            this.Load += new System.EventHandler(this.test_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sales)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView merge;
+        private System.Windows.Forms.DataGridView sales;
     }
 }

@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using MySqlX.XDevAPI.Relational;
+using System.Security.Cryptography;
 
 namespace FFOSproj
 {
@@ -28,8 +29,10 @@ namespace FFOSproj
         private BindingSource bSource = new BindingSource();
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
-        int ID = 0;
+        //int ID = 0;
         private Timer timer;
+
+       
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -156,82 +159,62 @@ namespace FFOSproj
             dsrrrrr.Visible = true;
             inventoryPanel.Visible = false;
 
+            string query = "SELECT DATE(DateTime) AS Date, SUM(TotalSum) AS TotalSales " +
+                              "FROM total_sum_saved " +
+                              "GROUP BY DATE(DateTime)";
 
-            /*
+            try
+            {
+                // Create a MySqlConnection using the connection string
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    // Open the database connection
+                    connection.Open();
 
-                        try
-                        {
-                            // Format the date to match the database date format
-                            string formattedDate = DateTime.ToString("yyyy-MM-dd");
+                    // Create a MySqlCommand with the query and connection
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Create a DataTable to store the results
+                        DataTable dataTable = new DataTable();
 
-                            // Query to retrieve the total payment for the specified date
-                            string query = "SELECT SUM(TotalPayment) AS TotalSales FROM SalesTable WHERE DATE(DateTime) = @Date";
-                            MySqlCommand command = new MySqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@Date", formattedDate);
+                        // Load the data from the MySqlCommand into the DataTable
+                        dataTable.Load(command.ExecuteReader());
 
-                            connection.Open();
-                            object result = command.ExecuteScalar();
-
-                            if (result != null && result != DBNull.Value)
-                            {
-                                decimal totalSales = Convert.ToDecimal(result);
-                                MessageBox.Show($"Total Sales for {date.ToShortDateString()}: {totalSales.ToString("C")}");
-                            }
-                            else
-                            {
-                                MessageBox.Show("No sales found for the specified date.");
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("An error occurred while generating the daily sales report: " + ex.Message);
-                        }
-                        finally
-                        {
-                            connection.Close();
-                        }
+                        // Bind the DataTable to the DataGridView control
+                        sales.DataSource = dataTable;
                     }
-
-                    // Usage: Call this method passing the desired date
-                    DateTime desiredDate = DateTime.Now.Date; // Use any desired date
-                    GenerateDailySalesReport(desiredDate);*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors that occur during the process
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
-        private void dsrrrrr_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-}
+
+      
+    }
+
 
 
 

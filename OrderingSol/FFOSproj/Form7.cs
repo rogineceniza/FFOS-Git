@@ -88,62 +88,10 @@ namespace FFOSproj
             dateToday.Text = DateTime.Now.ToString();
         }
 
-        private void LoadDataIntoDataGridView()
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT * FROM purchased_items";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    dataGridView4.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
+      
 
 
-        /* private void LoadDataPizza()
-         {
-
-             string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-             MySqlConnection connection = new MySqlConnection(connectionString);
-             string query = "SELECT Name, Size, Price FROM (pizza_table)";
-             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-             DataTable table = new DataTable();
-             adapter.Fill(table);
-             merge.DataSource = table;
-
-         }*/
-
-        /*private void LoadDataBeverages()
-        {
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            string query = "SELECT Name, Size, Price FROM beverage_table";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView2.DataSource = table;
-        }*/
-
-        /* private void refresh_btn_Click(object sender, EventArgs e)
-         {
-             LoadDataPizza();
-         }*/
-
-        /* private void refresh2_btn_Click(object sender, EventArgs e)
-         {
-             LoadDataBeverages();
-         }
- */
+     
         private void dateToday_Click(object sender, EventArgs e)
         {
             dateToday.Text = DateTime.Now.ToString();
@@ -167,50 +115,10 @@ namespace FFOSproj
 
         }
 
-        /* private void btn2_Click(object sender, EventArgs e)
-         {
-             foreach (DataGridViewRow row in dataGridView2.SelectedRows)
-             {
-                 string itemName = row.Cells["Name"].Value.ToString();
-                 string itemSize = row.Cells["Size"].Value.ToString();
-                 string itemPrice = row.Cells["Price"].Value.ToString();
-
-                 nameTXT.Text = itemName;
-                 sizeTXT.Text = itemSize;
-                 priceTXT.Text = itemPrice;
-             }
-         }
- */
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+       
         private void addBTN_Click(object sender, EventArgs e)
         {
 
-            /*try
-            {
-
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.purchased_items(Name,Size,Quantity,Price) values('" + this.nameTXT.Text + "','" + this.sizeTXT.Text + "','" + this.quantityTXT.Text + "','" + this.priceTXT.Text + "'); ";
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Successfully Saved!");
-                while (MyReader2.Read())
-                {
-                }
-                MyConn2.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
 
             try
             {
@@ -251,7 +159,26 @@ namespace FFOSproj
 
         }
 
+        private void LoadDataIntoDataGridView()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM purchased_items";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
+                    dataGridView4.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private void displayBTN_Click(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
@@ -380,40 +307,13 @@ namespace FFOSproj
             }
             totalLabel.Text = Total.ToString();
         }
-        private void saveCurrent_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                string textBoxValue = totalLabel.Text;
-                DateTime currentTime = DateTime.Now;
-
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    string insertQuery = $"INSERT INTO {tableName} (TotalSum, DateTime) VALUES (@sum, @time)";
-                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
-                    command.Parameters.AddWithValue("@sum", textBoxValue);
-                    command.Parameters.AddWithValue("@time", currentTime);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-
-
-                MessageBox.Show("Data saved to the database successfully!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while saving data to the database: " + ex.Message);
-            }
-
-        }
+       
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             string searchTerm = txtSearch.Text.Trim();
             SearchItem(searchTerm);
         }
-
 
 
 
@@ -436,6 +336,48 @@ namespace FFOSproj
             }
 
             MessageBox.Show("Item not found.");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void saveCurrent_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string textBoxValue = totalLabel.Text;
+                DateTime currentTime = DateTime.Now;
+                // string itemsData = GetItemsData();
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    string insertQuery = $"INSERT INTO {tableName} (TotalSum, DateTime) VALUES (@sum, @time)";
+                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    command.Parameters.AddWithValue("@sum", textBoxValue);
+                    command.Parameters.AddWithValue("@time", currentTime);
+                    //  command.Parameters.AddWithValue("@items", itemsData);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+
+                MessageBox.Show("Data saved to the database successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while saving data to the database: " + ex.Message);
+            }
         }
     }
 }

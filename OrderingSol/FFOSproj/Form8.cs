@@ -14,56 +14,69 @@ namespace FFOSproj
 {
     public partial class test : Form
     {
-        private DataGridView dataGridView;
+        private MySqlConnection connection;
+        private const string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+
         public test()
         {
             InitializeComponent();
-            LoadData();
+            connection = new MySqlConnection(connectionString);
 
         }
         private void InitializeComponents()
         {
-            dataGridView = new DataGridView();
-            dataGridView.Dock = DockStyle.Fill;
-            Controls.Add(dataGridView);
+
         }
 
-        private void LoadData()
+        private void test_Load(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
+           
+                // Connection string for connecting to MySQL
+                string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
 
-            string query1 = "SELECT * FROM pizza_table";
-
-            string query2 = "SELECT * FROM beverage_table";
-
+            // SQL query to retrieve the daily sales data
+            string query = "SELECT DATE(DateTime) AS Date, SUM(TotalSum) AS TotalSales " +
+                               "FROM total_sum_saved " +
+                               "GROUP BY DATE(DateTime)";
             try
-            {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    connection.Open();
+                    // Create a MySqlConnection using the connection string
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        // Open the database connection
+                        connection.Open();
 
-                    DataTable dataTable = new DataTable();
+                        // Create a MySqlCommand with the query and connection
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            // Create a DataTable to store the results
+                            DataTable dataTable = new DataTable();
 
-                    MySqlCommand command1 = new MySqlCommand(query1, connection);
-                    MySqlDataAdapter adapter1 = new MySqlDataAdapter(command1);
-                    adapter1.Fill(dataTable);
+                            // Load the data from the MySqlCommand into the DataTable
+                            dataTable.Load(command.ExecuteReader());
 
-                    MySqlCommand command2 = new MySqlCommand(query2, connection);
-                    MySqlDataAdapter adapter2 = new MySqlDataAdapter(command2);
-                    adapter2.Fill(dataTable);
-
-                    merge.DataSource = dataTable;
+                            // Bind the DataTable to the DataGridView control
+                            sales.DataSource = dataTable;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the process
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                // Handle any exceptions that occur during the process
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-
 
     }
 }
+
+
+
+
+
+
+
+
+
+
 

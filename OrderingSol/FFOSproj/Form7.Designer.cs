@@ -241,6 +241,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.quantityTXT);
             this.panel2.Controls.Add(this.sizeTXT);
@@ -277,6 +278,7 @@
             // 
             // displayBTN
             // 
+            this.displayBTN.BackColor = System.Drawing.Color.SaddleBrown;
             this.displayBTN.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayBTN.ForeColor = System.Drawing.Color.White;
             this.displayBTN.Location = new System.Drawing.Point(1131, 846);
@@ -289,6 +291,7 @@
             // 
             // clearBTN
             // 
+            this.clearBTN.BackColor = System.Drawing.Color.SaddleBrown;
             this.clearBTN.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearBTN.ForeColor = System.Drawing.Color.White;
             this.clearBTN.Location = new System.Drawing.Point(1028, 846);
@@ -301,6 +304,7 @@
             // 
             // totalllll
             // 
+            this.totalllll.BackColor = System.Drawing.Color.SaddleBrown;
             this.totalllll.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalllll.ForeColor = System.Drawing.Color.White;
             this.totalllll.Location = new System.Drawing.Point(1234, 846);
@@ -314,6 +318,7 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
+            this.totalLabel.BackColor = System.Drawing.Color.SaddleBrown;
             this.totalLabel.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.White;
             this.totalLabel.Location = new System.Drawing.Point(1404, 858);
@@ -324,6 +329,7 @@
             // 
             // saveCurrent
             // 
+            this.saveCurrent.BackColor = System.Drawing.Color.SaddleBrown;
             this.saveCurrent.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveCurrent.ForeColor = System.Drawing.Color.White;
             this.saveCurrent.Location = new System.Drawing.Point(1471, 722);
@@ -369,6 +375,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SaddleBrown;
             this.label3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(1369, 858);
@@ -382,6 +389,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
+            this.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1788, 1072);
             this.Controls.Add(this.label3);

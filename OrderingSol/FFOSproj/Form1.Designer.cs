@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimeLabel = new System.Windows.Forms.Label();
             this.dsrrrrr = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sales = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.dateTimeLabel = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
             this.size_bvrg = new System.Windows.Forms.ComboBox();
             this.bvrg_clear = new System.Windows.Forms.Button();
@@ -47,11 +47,17 @@
             this.priceBox = new System.Windows.Forms.TextBox();
             this.description_txt = new System.Windows.Forms.TextBox();
             this.name_txt = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
             this.description = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pizza_image_picbox = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewBinventory = new System.Windows.Forms.Button();
             this.logOutBTN = new System.Windows.Forms.Button();
@@ -59,15 +65,9 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sales)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pizza_image_picbox)).BeginInit();
@@ -78,7 +78,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(196)))), ((int)(((byte)(170)))));
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
@@ -95,6 +96,36 @@
             this.panel1.Size = new System.Drawing.Size(1237, 841);
             this.panel1.TabIndex = 0;
             // 
+            // dsrrrrr
+            // 
+            this.dsrrrrr.BackColor = System.Drawing.Color.White;
+            this.dsrrrrr.Controls.Add(this.sales);
+            this.dsrrrrr.Controls.Add(this.label5);
+            this.dsrrrrr.Location = new System.Drawing.Point(230, 49);
+            this.dsrrrrr.Name = "dsrrrrr";
+            this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
+            this.dsrrrrr.TabIndex = 2;
+            // 
+            // sales
+            // 
+            this.sales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sales.Location = new System.Drawing.Point(0, 65);
+            this.sales.Name = "sales";
+            this.sales.RowHeadersWidth = 62;
+            this.sales.RowTemplate.Height = 28;
+            this.sales.Size = new System.Drawing.Size(284, 561);
+            this.sales.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(344, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 28);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Daily Sales Report";
+            // 
             // dateTimeLabel
             // 
             this.dateTimeLabel.AutoSize = true;
@@ -105,36 +136,6 @@
             this.dateTimeLabel.Size = new System.Drawing.Size(162, 28);
             this.dateTimeLabel.TabIndex = 1;
             this.dateTimeLabel.Text = "Date and Time";
-            // 
-            // dsrrrrr
-            // 
-            this.dsrrrrr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.dsrrrrr.Controls.Add(this.dataGridView1);
-            this.dsrrrrr.Controls.Add(this.label5);
-            this.dsrrrrr.Location = new System.Drawing.Point(230, 49);
-            this.dsrrrrr.Name = "dsrrrrr";
-            this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
-            this.dsrrrrr.TabIndex = 2;
-            this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(344, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 28);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Daily Sales Report";
             // 
             // inventoryPanel
             // 
@@ -274,6 +275,52 @@
             this.name_txt.Size = new System.Drawing.Size(360, 37);
             this.name_txt.TabIndex = 6;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.pizza_image_picbox);
+            this.panel4.Controls.Add(this.description);
+            this.panel4.Controls.Add(this.name);
+            this.panel4.Location = new System.Drawing.Point(-2, -9);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(911, 383);
+            this.panel4.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label7.Location = new System.Drawing.Point(342, 246);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 32);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Price";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label6.Location = new System.Drawing.Point(342, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 32);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Size";
+            // 
+            // pizza_image_picbox
+            // 
+            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
+            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pizza_image_picbox.Location = new System.Drawing.Point(37, 114);
+            this.pizza_image_picbox.Name = "pizza_image_picbox";
+            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
+            this.pizza_image_picbox.TabIndex = 0;
+            this.pizza_image_picbox.TabStop = false;
+            // 
             // description
             // 
             this.description.AutoSize = true;
@@ -296,30 +343,6 @@
             this.name.TabIndex = 2;
             this.name.Text = "Name";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.pizza_image_picbox);
-            this.panel4.Controls.Add(this.description);
-            this.panel4.Controls.Add(this.name);
-            this.panel4.Location = new System.Drawing.Point(-2, -9);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(911, 383);
-            this.panel4.TabIndex = 0;
-            // 
-            // pizza_image_picbox
-            // 
-            this.pizza_image_picbox.BackgroundImage = global::FFOSproj.Properties.Resources.pizza;
-            this.pizza_image_picbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pizza_image_picbox.Location = new System.Drawing.Point(37, 114);
-            this.pizza_image_picbox.Name = "pizza_image_picbox";
-            this.pizza_image_picbox.Size = new System.Drawing.Size(206, 172);
-            this.pizza_image_picbox.TabIndex = 0;
-            this.pizza_image_picbox.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -333,6 +356,50 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(910, 364);
             this.panel5.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label1.Location = new System.Drawing.Point(342, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 32);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Price";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label2.Location = new System.Drawing.Point(342, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 32);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Size";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto Mono Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label3.Location = new System.Drawing.Point(342, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 29);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Description";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
+            this.label4.Location = new System.Drawing.Point(342, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 32);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Name";
             // 
             // pictureBox3
             // 
@@ -426,72 +493,6 @@
             this.addInventoryBTN.UseVisualStyleBackColor = false;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label6.Location = new System.Drawing.Point(342, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 32);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Size";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label7.Location = new System.Drawing.Point(342, 246);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 32);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Price";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label1.Location = new System.Drawing.Point(342, 210);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 32);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Price";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label2.Location = new System.Drawing.Point(342, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 32);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Size";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Mono Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label3.Location = new System.Drawing.Point(342, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 29);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Description";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto Mono Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(83)))));
-            this.label4.Location = new System.Drawing.Point(342, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 32);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Name";
-            // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
@@ -513,7 +514,7 @@
             this.panel1.PerformLayout();
             this.dsrrrrr.ResumeLayout(false);
             this.dsrrrrr.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sales)).EndInit();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -560,7 +561,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel dsrrrrr;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView sales;
         private System.Windows.Forms.Label dateTimeLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
