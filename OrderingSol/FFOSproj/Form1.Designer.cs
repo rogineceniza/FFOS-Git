@@ -64,7 +64,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
             this.dsrrrrr = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Product = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Quantity = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Sales = new System.Windows.Forms.Label();
+            this.totalSalesTextBox = new System.Windows.Forms.TextBox();
+            this.dsr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -73,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.dsrrrrr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +89,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
@@ -87,7 +97,6 @@
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.addInventoryBTN);
-            this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Location = new System.Drawing.Point(25, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
@@ -448,20 +457,95 @@
             // dsrrrrr
             // 
             this.dsrrrrr.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.dsrrrrr.Controls.Add(this.label5);
+            this.dsrrrrr.Controls.Add(this.dsr);
+            this.dsrrrrr.Controls.Add(this.totalSalesTextBox);
+            this.dsrrrrr.Controls.Add(this.Sales);
+            this.dsrrrrr.Controls.Add(this.numericUpDown1);
+            this.dsrrrrr.Controls.Add(this.Quantity);
+            this.dsrrrrr.Controls.Add(this.comboBox1);
+            this.dsrrrrr.Controls.Add(this.Product);
+            this.dsrrrrr.Controls.Add(this.dateTimePicker1);
+            this.dsrrrrr.Controls.Add(this.Date);
             this.dsrrrrr.Location = new System.Drawing.Point(196, 28);
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(944, 816);
             this.dsrrrrr.TabIndex = 2;
+            this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
             // 
-            // label5
+            // Date
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 376);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Daily Sales Report";
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(99, 67);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(52, 24);
+            this.Date.TabIndex = 1;
+            this.Date.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(104, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // Product
+            // 
+            this.Product.AutoSize = true;
+            this.Product.Location = new System.Drawing.Point(100, 181);
+            this.Product.Name = "Product";
+            this.Product.Size = new System.Drawing.Size(80, 24);
+            this.Product.TabIndex = 3;
+            this.Product.Text = "Product";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(104, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 31);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSize = true;
+            this.Quantity.Location = new System.Drawing.Point(99, 325);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(133, 24);
+            this.Quantity.TabIndex = 5;
+            this.Quantity.Text = "Quantity Sold";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(104, 370);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 32);
+            this.numericUpDown1.TabIndex = 6;
+            // 
+            // Sales
+            // 
+            this.Sales.AutoSize = true;
+            this.Sales.Location = new System.Drawing.Point(100, 456);
+            this.Sales.Name = "Sales";
+            this.Sales.Size = new System.Drawing.Size(106, 24);
+            this.Sales.TabIndex = 7;
+            this.Sales.Text = "Total Sales";
+            // 
+            // totalSalesTextBox
+            // 
+            this.totalSalesTextBox.Location = new System.Drawing.Point(103, 513);
+            this.totalSalesTextBox.Name = "totalSalesTextBox";
+            this.totalSalesTextBox.Size = new System.Drawing.Size(100, 32);
+            this.totalSalesTextBox.TabIndex = 8;
+            // 
+            // dsr
+            // 
+            this.dsr.Location = new System.Drawing.Point(104, 634);
+            this.dsr.Name = "dsr";
+            this.dsr.Size = new System.Drawing.Size(185, 45);
+            this.dsr.TabIndex = 9;
+            this.dsr.Text = "Generate Report";
+            this.dsr.UseVisualStyleBackColor = true;
+            this.dsr.Click += new System.EventHandler(this.dsr_Click);
             // 
             // inventoryManagementForm
             // 
@@ -491,6 +575,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.dsrrrrr.ResumeLayout(false);
             this.dsrrrrr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -535,7 +620,15 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel dsrrrrr;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button dsr;
+        private System.Windows.Forms.TextBox totalSalesTextBox;
+        private System.Windows.Forms.Label Sales;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label Quantity;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label Product;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label Date;
     }
 }
 

@@ -194,8 +194,50 @@ namespace FFOSproj
             // After the login form is closed, close the previous form
             this.Close();
         }
+
+        private void dsrrrrr_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dsr_Click(object sender, EventArgs e)
+        {
+            // Get the selected date
+            DateTime selectedDate = dateTimePicker1.Value;
+
+            // Get the selected product
+            string selectedProduct = comboBox1.SelectedItem.ToString();
+
+            // Get the quantity sold
+            int quantitySold = (int)numericUpDown1.Value;
+
+            // Calculate the total sales (example calculation)
+            decimal totalSales = CalculateTotalSales(selectedProduct, quantitySold);
+
+            // Display the total sales in the TextBox
+            totalSalesTextBox.Text = totalSales.ToString("C");
+        }
+        private decimal CalculateTotalSales(string product, int quantity)
+        {
+            // Perform the actual calculation based on your business logic
+            // Replace this with your own calculation code
+            decimal unitPrice = GetProductUnitPrice(product);
+            decimal totalSales = unitPrice * quantity;
+            return totalSales;
+        }
+
+        private decimal GetProductUnitPrice(string product)
+        {
+            // Retrieve the unit price for the given product from your data source
+            // Replace this with your own code to fetch the unit price
+            // or use any other method to determine the unit price
+            decimal unitPrice = 0.0m; // Replace with actual unit price
+            return unitPrice;
+        }
+
     }
 }
+
 
 
 

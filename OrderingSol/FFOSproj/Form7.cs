@@ -15,15 +15,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using System.Collections;
 
+
 namespace FFOSproj
 {
     public partial class Cashier_Formmmm : Form
     {
-        private MySqlConnection connection = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+        private SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=purchased_items;Integrated Security=True");
         private DataTable dataTable = new DataTable();
-        private string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        private BindingSource bSource = new BindingSource();
+        private string connectionString = ("Data Source=LAPTOP-IJH96CPD;Initial Catalog=purchased_items;Integrated Security=True");
+        private SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+        private BindingSource bindingSource = new BindingSource();
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
         int ID = 0;
@@ -51,13 +52,13 @@ namespace FFOSproj
 
         private void LoadDataIntoDataGridView()
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
                     string query = "SELECT * FROM purchased_items";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
@@ -68,25 +69,27 @@ namespace FFOSproj
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+
         }
         private void LoadDataPizza()
         {
 
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=pizza_table;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
             string query = "SELECT Name, Size, Price FROM pizza_table";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
+
         }
 
         private void LoadDataBeverages()
         {
-            string connectionString = "Server=localhost;Database=pizza_db;Uid=root;Pwd=RteCh_0C#@11;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            string connectionString = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=beverage_table;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
             string query = "SELECT Name, Size, Price FROM beverage_table";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView2.DataSource = table;
@@ -154,18 +157,22 @@ namespace FFOSproj
         {
             try
             {
-                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                string Query = "insert into pizza_db.purchased_items(Name,Size, Price) values('" + this.nameTXT.Text + "','" + this.sizeTXT.Text + "','" + this.priceTXT.Text + "');";
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Successfully Saved!");
-                while (MyReader2.Read())
+                string MyConnection2 = "Data Source=LAPTOP-IJH96CPD;Initial Catalog=purchased_items;Integrated Security=True";
+                string Query = "insert into purchased_items(Name, Size, Price) values(@Name, @Size, @Price)";
+                using (SqlConnection MyConn2 = new SqlConnection(MyConnection2))
                 {
+                    using (SqlCommand MyCommand2 = new SqlCommand(Query, MyConn2))
+                    {
+                        MyCommand2.Parameters.AddWithValue("@Name", this.nameTXT.Text);
+                        MyCommand2.Parameters.AddWithValue("@Size", this.sizeTXT.Text);
+                        MyCommand2.Parameters.AddWithValue("@Price", this.priceTXT.Text);
+
+                        MyConn2.Open();
+                        MyCommand2.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Saved!");
+                    }
                 }
-                MyConn2.Close();
+
             }
             catch (Exception ex)
             {
@@ -184,17 +191,17 @@ namespace FFOSproj
 
             foreach (DataGridViewRow item in this.dataGridView4.SelectedRows)
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11");
-                using (MySqlConnection cs = new MySqlConnection())
+                using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-IJH96CPD;Initial Catalog=purchased_items;Integrated Security=True"))
                 {
-                    MySqlCommand cmd = con.CreateCommand();
+                    SqlCommand cmd = con.CreateCommand();
                     int id = Convert.ToInt32(dataGridView4.SelectedRows[0].Cells[0].Value);
-                    cmd.CommandText = "Delete from purchased_items where id='" + id + "'"; /*current_table*/
+                    cmd.CommandText = "DELETE FROM purchased_items WHERE id='" + id + "'";
 
                     dataGridView4.Rows.RemoveAt(this.dataGridView4.SelectedRows[0].Index);
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
+
             }
         }
 
@@ -222,10 +229,10 @@ namespace FFOSproj
                 string textBoxValue = totalLabel.Text;
                 DateTime currentTime = DateTime.Now;
 
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string insertQuery = $"INSERT INTO {tableName} (TotalSum, DateTime) VALUES (@sum, @time)";
-                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    SqlCommand command = new SqlCommand(insertQuery, connection);
                     command.Parameters.AddWithValue("@sum", textBoxValue);
                     command.Parameters.AddWithValue("@time", currentTime);
 
