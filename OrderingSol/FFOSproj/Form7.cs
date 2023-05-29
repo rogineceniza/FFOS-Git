@@ -119,6 +119,45 @@ namespace FFOSproj
         private void addBTN_Click(object sender, EventArgs e)
         {
 
+            /*
+                        try
+                        {
+                            string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                            string name = nameTXT.Text;
+                            string size = sizeTXT.Text;
+                            int quantity = int.Parse(quantityTXT.Text);
+                            decimal price = decimal.Parse(priceTXT.Text);
+                            decimal totalPrice = price * quantity;
+
+                            string Query = "insert into pizza_db.purchased_items(Name,Size,Quantity,Price) values('" + name + "','" + size + "','" + quantity + "','" + totalPrice + "'); ";
+                            MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                            MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                            MySqlDataReader MyReader2;
+                            MyConn2.Open();
+                            MyReader2 = MyCommand2.ExecuteReader();
+                            MessageBox.Show("Successfully Saved!");
+
+                            nameTXT.Text = "";
+                            sizeTXT.Text = "";
+                            quantityTXT.Text = "1";
+                            priceTXT.Text = "";
+
+                            while (MyReader2.Read())
+                            {
+                            }
+                            MyConn2.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+
+            */
+
+
+
+
 
             try
             {
@@ -129,7 +168,7 @@ namespace FFOSproj
                 decimal price = decimal.Parse(priceTXT.Text);
                 decimal totalPrice = price * quantity;
 
-                string Query = "insert into pizza_db.purchased_items(Name,Size,Quantity,Price) values('" + name + "','" + size + "','" + quantity + "','" + totalPrice + "'); ";
+                string Query = "INSERT INTO pizza_db.purchased_items (Name, Size, Quantity, Price, DateTime) VALUES ('" + name + "','" + size + "','" + quantity + "','" + totalPrice + "', NOW())";
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataReader MyReader2;
@@ -151,6 +190,7 @@ namespace FFOSproj
             {
                 MessageBox.Show(ex.Message);
             }
+
 
 
 

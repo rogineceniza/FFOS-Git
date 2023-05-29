@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dsrrrrr = new System.Windows.Forms.Panel();
+            this.DisplayTotalToday = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.sales = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
             this.size_bvrg = new System.Windows.Forms.ComboBox();
@@ -61,10 +63,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewBinventory = new System.Windows.Forms.Button();
             this.logOutBTN = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.DSRbtn = new System.Windows.Forms.Button();
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales)).BeginInit();
@@ -74,18 +78,19 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.DSRbtn);
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -99,12 +104,46 @@
             // dsrrrrr
             // 
             this.dsrrrrr.BackColor = System.Drawing.Color.White;
+            this.dsrrrrr.Controls.Add(this.panel2);
+            this.dsrrrrr.Controls.Add(this.label10);
+            this.dsrrrrr.Controls.Add(this.label9);
             this.dsrrrrr.Controls.Add(this.sales);
-            this.dsrrrrr.Controls.Add(this.label5);
             this.dsrrrrr.Location = new System.Drawing.Point(230, 49);
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
+            this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
+            // 
+            // DisplayTotalToday
+            // 
+            this.DisplayTotalToday.AutoSize = true;
+            this.DisplayTotalToday.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisplayTotalToday.Location = new System.Drawing.Point(81, 61);
+            this.DisplayTotalToday.Name = "DisplayTotalToday";
+            this.DisplayTotalToday.Size = new System.Drawing.Size(61, 50);
+            this.DisplayTotalToday.TabIndex = 6;
+            this.DisplayTotalToday.Text = "...";
+            this.DisplayTotalToday.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(500, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(392, 29);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Total Sum of Items Sold Today";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(106, 33);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 29);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Sales";
             // 
             // sales
             // 
@@ -112,28 +151,21 @@
             this.sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sales.Location = new System.Drawing.Point(0, 65);
             this.sales.Name = "sales";
+            this.sales.ReadOnly = true;
             this.sales.RowHeadersWidth = 62;
             this.sales.RowTemplate.Height = 28;
-            this.sales.Size = new System.Drawing.Size(284, 561);
+            this.sales.Size = new System.Drawing.Size(322, 681);
             this.sales.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(344, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 28);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Daily Sales Report";
             // 
             // dateTimeLabel
             // 
             this.dateTimeLabel.AutoSize = true;
             this.dateTimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeLabel.ForeColor = System.Drawing.Color.White;
             this.dateTimeLabel.Location = new System.Drawing.Point(971, 18);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(162, 28);
+            this.dateTimeLabel.Size = new System.Drawing.Size(188, 29);
             this.dateTimeLabel.TabIndex = 1;
             this.dateTimeLabel.Text = "Date and Time";
             // 
@@ -439,6 +471,16 @@
             this.logOutBTN.UseVisualStyleBackColor = false;
             this.logOutBTN.Click += new System.EventHandler(this.logOutBTN_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Showcard Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(539, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(338, 40);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Daily Sales Report";
+            // 
             // DSRbtn
             // 
             this.DSRbtn.BackColor = System.Drawing.Color.SaddleBrown;
@@ -493,6 +535,15 @@
             this.addInventoryBTN.UseVisualStyleBackColor = false;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.DisplayTotalToday);
+            this.panel2.Location = new System.Drawing.Point(348, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 183);
+            this.panel2.TabIndex = 7;
+            // 
             // inventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
@@ -524,6 +575,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -569,6 +622,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label DisplayTotalToday;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -32,7 +32,7 @@ namespace FFOSproj
         //int ID = 0;
         private Timer timer;
 
-       
+
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -190,30 +190,55 @@ namespace FFOSproj
                 // Handle any errors that occur during the process
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+
+
+
+
+
+
+
+
+        }
+
+        private void dsrrrrr_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 
 
+        private void label11_Click(object sender, EventArgs e)
+        {
+            LoadDataIntoLabel();
+        }
 
+        private void LoadDataIntoLabel()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
 
+                    // Calculate the total sum for the current day
+                    string query = "SELECT SUM(TotalSum) FROM total_sum_saved WHERE DATE(DateTime) = CURDATE()";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    object result = command.ExecuteScalar();
 
-
-
-
-
-
-
-
-
-
-
-
+                    // Update the label with the total sum
+                    decimal totalSum = result != DBNull.Value ? Convert.ToDecimal(result) : 0;
+                    DisplayTotalToday.Text = "Total Sum for Today: ₱" + totalSum.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
 
 
     }
-
-      
-    }
+}
 
 
 
