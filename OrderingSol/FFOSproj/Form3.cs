@@ -43,12 +43,6 @@ namespace FFOSproj
 
 
 
-        private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-      
 
         private void del_pizza_Click_1(object sender, EventArgs e)
         {
@@ -64,8 +58,6 @@ namespace FFOSproj
                     showPB.Rows.RemoveAt(this.showPB.SelectedRows[0].Index);
                     con.Open();
                     cmd.ExecuteNonQuery();
-
-
                 }
 
             }
@@ -163,6 +155,8 @@ namespace FFOSproj
                 }
             }
         }
+
+       
     }
 }
 

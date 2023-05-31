@@ -90,7 +90,6 @@
             this.label2.Size = new System.Drawing.Size(196, 50);
             this.label2.TabIndex = 3;
             this.label2.Text = "Are you the:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -104,7 +103,6 @@
             this.label3.Size = new System.Drawing.Size(375, 37);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sign in with your username and password.";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox1
             // 

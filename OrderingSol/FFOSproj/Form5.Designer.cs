@@ -92,7 +92,6 @@
             this.password_admin.PasswordChar = '*';
             this.password_admin.Size = new System.Drawing.Size(267, 41);
             this.password_admin.TabIndex = 6;
-            this.password_admin.TextChanged += new System.EventHandler(this.password_admin_TextChanged);
             // 
             // label2
             // 
@@ -124,7 +123,6 @@
             this.username_admin.Name = "username_admin";
             this.username_admin.Size = new System.Drawing.Size(267, 37);
             this.username_admin.TabIndex = 6;
-            this.username_admin.TextChanged += new System.EventHandler(this.username_admin_TextChanged);
             // 
             // pictureBox2
             // 

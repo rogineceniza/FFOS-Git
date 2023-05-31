@@ -131,7 +131,6 @@
             this.merge.RowTemplate.Height = 28;
             this.merge.Size = new System.Drawing.Size(519, 689);
             this.merge.TabIndex = 0;
-            this.merge.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.merge_CellContentClick);
             // 
             // add_btn
             // 

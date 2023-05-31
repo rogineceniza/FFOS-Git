@@ -88,15 +88,11 @@ namespace FFOSproj
             dateToday.Text = DateTime.Now.ToString();
         }
 
-      
-
-
      
         private void dateToday_Click(object sender, EventArgs e)
         {
             dateToday.Text = DateTime.Now.ToString();
         }
-
 
 
         private void btn1_Click(object sender, EventArgs e)
@@ -111,53 +107,11 @@ namespace FFOSproj
                 sizeTXT.Text = itemSize;
                 priceTXT.Text = itemPrice;
             }
-
-
         }
 
        
         private void addBTN_Click(object sender, EventArgs e)
         {
-
-            /*
-                        try
-                        {
-                            string MyConnection2 = "datasource=localhost;port=3306;username=root;password=RteCh_0C#@11";
-                            string name = nameTXT.Text;
-                            string size = sizeTXT.Text;
-                            int quantity = int.Parse(quantityTXT.Text);
-                            decimal price = decimal.Parse(priceTXT.Text);
-                            decimal totalPrice = price * quantity;
-
-                            string Query = "insert into pizza_db.purchased_items(Name,Size,Quantity,Price) values('" + name + "','" + size + "','" + quantity + "','" + totalPrice + "'); ";
-                            MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                            MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                            MySqlDataReader MyReader2;
-                            MyConn2.Open();
-                            MyReader2 = MyCommand2.ExecuteReader();
-                            MessageBox.Show("Successfully Saved!");
-
-                            nameTXT.Text = "";
-                            sizeTXT.Text = "";
-                            quantityTXT.Text = "1";
-                            priceTXT.Text = "";
-
-                            while (MyReader2.Read())
-                            {
-                            }
-                            MyConn2.Close();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-
-
-            */
-
-
-
-
 
             try
             {
@@ -191,22 +145,9 @@ namespace FFOSproj
                 MessageBox.Show(ex.Message);
             }
 
-
-
-
-
-
-
         }
 
-       /* private void displayBTN_Click(object sender, EventArgs e)
-        {
-            LoadDataIntoDataGridView();
-        }
-        private void displayBTN_Click_1(object sender, EventArgs e)
-        {
-            LoadDataIntoDataGridView();
-        }*/
+      
 
         private void clearBTN_Click(object sender, EventArgs e)
         {
@@ -226,10 +167,6 @@ namespace FFOSproj
                 }
             }
         }
-
-
-
-
 
 
         private void totalllll_Click(object sender, EventArgs e)
@@ -270,7 +207,7 @@ namespace FFOSproj
             }
         }
 
-        private void SaveDataToDatabase(string labelValue, string dateTimeString)
+       /* private void SaveDataToDatabase(string labelValue, string dateTimeString)
         {
             try
             {
@@ -298,7 +235,7 @@ namespace FFOSproj
             }
 
         }
-
+*/
        
 
         private void clearBTN_Click_1(object sender, EventArgs e)
@@ -361,17 +298,6 @@ namespace FFOSproj
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         private void saveCurrent_Click_1(object sender, EventArgs e)
         {
             try
@@ -431,11 +357,7 @@ namespace FFOSproj
                 }
             }
         }
-        private void merge_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+      
         private void displayBTN_Click_2(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();

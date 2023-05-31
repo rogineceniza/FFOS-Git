@@ -20,13 +20,8 @@ namespace FFOSproj
         }
 
 
-        public void username_admin_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        public void password_admin_TextChanged(object sender, EventArgs e)
-        {
-        }
+      
+        
         public void login_admin_Click(object sender, EventArgs e)
         {
             var username = username_admin.Text;
@@ -49,7 +44,6 @@ namespace FFOSproj
 
         }
 
-        
 
         private void exit_button_Click(object sender, EventArgs e)
         {

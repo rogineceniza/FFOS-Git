@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(beverageDatagrid));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.del_pizza = new System.Windows.Forms.Button();
-            this.showPB = new System.Windows.Forms.DataGridView();
+            this.refereshhh = new System.Windows.Forms.Button();
+            this.editBTN = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.priceeee = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,11 +42,11 @@
             this.mydes = new System.Windows.Forms.TextBox();
             this.nameee = new System.Windows.Forms.Label();
             this.myname = new System.Windows.Forms.TextBox();
-            this.editBTN = new System.Windows.Forms.Button();
-            this.refereshhh = new System.Windows.Forms.Button();
+            this.del_pizza = new System.Windows.Forms.Button();
+            this.showPB = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showPB)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,31 +62,31 @@
             this.panel1.Size = new System.Drawing.Size(1813, 901);
             this.panel1.TabIndex = 4;
             // 
-            // del_pizza
+            // refereshhh
             // 
-            this.del_pizza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
-            this.del_pizza.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.del_pizza.ForeColor = System.Drawing.Color.White;
-            this.del_pizza.Location = new System.Drawing.Point(855, 763);
-            this.del_pizza.Name = "del_pizza";
-            this.del_pizza.Size = new System.Drawing.Size(183, 90);
-            this.del_pizza.TabIndex = 3;
-            this.del_pizza.Text = "Delete Item";
-            this.del_pizza.UseVisualStyleBackColor = false;
-            this.del_pizza.Click += new System.EventHandler(this.del_pizza_Click_1);
+            this.refereshhh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
+            this.refereshhh.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refereshhh.ForeColor = System.Drawing.Color.White;
+            this.refereshhh.Location = new System.Drawing.Point(1066, 43);
+            this.refereshhh.Name = "refereshhh";
+            this.refereshhh.Size = new System.Drawing.Size(193, 86);
+            this.refereshhh.TabIndex = 7;
+            this.refereshhh.Text = "Refresh";
+            this.refereshhh.UseVisualStyleBackColor = false;
+            this.refereshhh.Click += new System.EventHandler(this.refereshhh_Click);
             // 
-            // showPB
+            // editBTN
             // 
-            this.showPB.BackgroundColor = System.Drawing.Color.SaddleBrown;
-            this.showPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showPB.Location = new System.Drawing.Point(49, 43);
-            this.showPB.Name = "showPB";
-            this.showPB.RowHeadersWidth = 62;
-            this.showPB.RowTemplate.Height = 28;
-            this.showPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.showPB.Size = new System.Drawing.Size(989, 698);
-            this.showPB.TabIndex = 2;
-            this.showPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showPB_CellContentClick);
+            this.editBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
+            this.editBTN.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBTN.ForeColor = System.Drawing.Color.White;
+            this.editBTN.Location = new System.Drawing.Point(1066, 167);
+            this.editBTN.Name = "editBTN";
+            this.editBTN.Size = new System.Drawing.Size(193, 86);
+            this.editBTN.TabIndex = 6;
+            this.editBTN.Text = "Edit";
+            this.editBTN.UseVisualStyleBackColor = false;
+            this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
             // 
             // panel2
             // 
@@ -191,31 +191,30 @@
             this.myname.Size = new System.Drawing.Size(181, 26);
             this.myname.TabIndex = 2;
             // 
-            // editBTN
+            // del_pizza
             // 
-            this.editBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
-            this.editBTN.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBTN.ForeColor = System.Drawing.Color.White;
-            this.editBTN.Location = new System.Drawing.Point(1066, 167);
-            this.editBTN.Name = "editBTN";
-            this.editBTN.Size = new System.Drawing.Size(193, 86);
-            this.editBTN.TabIndex = 6;
-            this.editBTN.Text = "Edit";
-            this.editBTN.UseVisualStyleBackColor = false;
-            this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
+            this.del_pizza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
+            this.del_pizza.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.del_pizza.ForeColor = System.Drawing.Color.White;
+            this.del_pizza.Location = new System.Drawing.Point(855, 763);
+            this.del_pizza.Name = "del_pizza";
+            this.del_pizza.Size = new System.Drawing.Size(183, 90);
+            this.del_pizza.TabIndex = 3;
+            this.del_pizza.Text = "Delete Item";
+            this.del_pizza.UseVisualStyleBackColor = false;
+            this.del_pizza.Click += new System.EventHandler(this.del_pizza_Click_1);
             // 
-            // refereshhh
+            // showPB
             // 
-            this.refereshhh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
-            this.refereshhh.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refereshhh.ForeColor = System.Drawing.Color.White;
-            this.refereshhh.Location = new System.Drawing.Point(1066, 43);
-            this.refereshhh.Name = "refereshhh";
-            this.refereshhh.Size = new System.Drawing.Size(193, 86);
-            this.refereshhh.TabIndex = 7;
-            this.refereshhh.Text = "Refresh";
-            this.refereshhh.UseVisualStyleBackColor = false;
-            this.refereshhh.Click += new System.EventHandler(this.refereshhh_Click);
+            this.showPB.BackgroundColor = System.Drawing.Color.SaddleBrown;
+            this.showPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showPB.Location = new System.Drawing.Point(49, 43);
+            this.showPB.Name = "showPB";
+            this.showPB.RowHeadersWidth = 62;
+            this.showPB.RowTemplate.Height = 28;
+            this.showPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.showPB.Size = new System.Drawing.Size(989, 698);
+            this.showPB.TabIndex = 2;
             // 
             // beverageDatagrid
             // 
@@ -230,9 +229,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VIEW Beverage Inventory";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.showPB)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPB)).EndInit();
             this.ResumeLayout(false);
 
         }

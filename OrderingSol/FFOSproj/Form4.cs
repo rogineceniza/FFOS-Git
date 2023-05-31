@@ -32,15 +32,5 @@ namespace FFOSproj
             myForm4.ShowDialog();
             myForm4.Dispose();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
