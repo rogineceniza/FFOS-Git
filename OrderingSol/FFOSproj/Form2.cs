@@ -22,12 +22,16 @@ namespace FFOSproj
     {
         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=RteCh_0C#@11");
         MySqlCommand command;
-       
+
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         private BindingSource bSource = new BindingSource();
         private DataSet dataSet = new DataSet();
         private DataTable table = new DataTable();
         int ID = 0;
+
+        private string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+       
+
         public pizzaDatagrid()
         {
             InitializeComponent();
@@ -47,13 +51,11 @@ namespace FFOSproj
 
 
 
-        private void datagrid_btn_Click(object sender, EventArgs e)
-        {
-        }
+        
 
         private void del_pizza_Click(object sender, EventArgs e)
         {
-            
+
 
             foreach (DataGridViewRow item in this.showPB.SelectedRows)
             {
@@ -75,48 +77,111 @@ namespace FFOSproj
             }
         }
 
-        private void update_pizza_btn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            //using MySql.Data.MySqlClient; 
 
-            /* string connectionString = "server=localhost;port=3306;database=pizza_db;uid=root;password=RteCh_0C#@11"; 
-
-             MySqlConnection connection = new MySqlConnection(connectionString); 
-
-             string query = "UPDATE pizza_table SET column1=@value1, column2=@value2 WHERE id=@id"; // replace with your own query
-
-             MySqlCommand command = new MySqlCommand(query, connection); // create a new MySqlCommand object
-
-             command.Parameters.AddWithValue("@value1", "new value 1"); // set the parameter values
-             command.Parameters.AddWithValue("@value2", "new value 2");
-             command.Parameters.AddWithValue("@id", 1);
-
-             try
-             {
-                 connection.Open(); // open the connection
-
-                 int rowsAffected = command.ExecuteNonQuery(); // execute the query and get the number of rows affected
-
-                 Console.WriteLine("Rows affected: " + rowsAffected);
-             }
-             catch (MySqlException ex)
-             {
-                 Console.WriteLine("Error: " + ex.Message);
-             }
-             finally
-             {
-                 connection.Close(); // close the connection
-             }*/
-
-            
         }
 
-        private void showPB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+           
+            try
+            {
+                string MyConnection2 = "server=localhost;port=3306;username=root;password=RteCh_0C#@11";
+                string name = myname.Text;
+                string description = mydes.Text;
+                string size = mysize.Text;
+                decimal price = decimal.Parse(myprice.Text);
 
+                string insertQuery = "INSERT INTO pizza_db.pizza_table (Name, Description, Size, Price) VALUES (@name, @description, @size, @price)";
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlCommand insertCommand = new MySqlCommand(insertQuery, MyConn2);
+
+                insertCommand.Parameters.AddWithValue("@name", name);
+                insertCommand.Parameters.AddWithValue("@description", description);
+                insertCommand.Parameters.AddWithValue("@size", size);
+                insertCommand.Parameters.AddWithValue("@price", price);
+
+                MyConn2.Open();
+                insertCommand.ExecuteNonQuery();
+                MessageBox.Show("Successfully Saved!");
+
+                myname.Text = "";
+                mydes.Text = "";
+                mysize.Text = "";
+                myprice.Text = "";
+
+                // Delete the current row from the database
+                int selectedRowIndex = showPB.CurrentRow.Index;
+                int id = Convert.ToInt32(showPB.Rows[selectedRowIndex].Cells["ID"].Value);
+                string deleteQuery = "DELETE FROM pizza_db.pizza_table WHERE ID = @id";
+                MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, MyConn2);
+                deleteCommand.Parameters.AddWithValue("@id", id);
+                deleteCommand.ExecuteNonQuery();
+
+                // Delete the current row from the DataGridView
+                showPB.Rows.RemoveAt(selectedRowIndex);
+
+                MyConn2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+
+
+
+        }
+
+        private void editBTN_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in showPB.SelectedRows)
+            {
+              // string itemID = row.Cells["ID"].Value.ToString();
+                string itemName = row.Cells["Name"].Value.ToString();
+                string itemDes = row.Cells["Description"].Value.ToString();
+                string itemSize = row.Cells["Size"].Value.ToString();
+                string itemPrice = row.Cells["Price"].Value.ToString();
+
+             //  myid.Text = itemID;
+               myname.Text = itemName;
+               mydes.Text = itemDes;
+               mysize.Text = itemSize;
+                myprice.Text = itemPrice;
+            }
+        }
+
+        private void LoadDataIntoDataGridView()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM pizza_table";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                   showPB.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+        private void refereshhh_Click(object sender, EventArgs e)
+        {
+            LoadDataIntoDataGridView();
         }
     }
 }
+
         
         
 

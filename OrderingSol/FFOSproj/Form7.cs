@@ -199,30 +199,14 @@ namespace FFOSproj
 
         }
 
-        private void LoadDataIntoDataGridView()
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT * FROM purchased_items";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    dataGridView4.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-        private void displayBTN_Click(object sender, EventArgs e)
+       /* private void displayBTN_Click(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
         }
+        private void displayBTN_Click_1(object sender, EventArgs e)
+        {
+            LoadDataIntoDataGridView();
+        }*/
 
         private void clearBTN_Click(object sender, EventArgs e)
         {
@@ -315,10 +299,7 @@ namespace FFOSproj
 
         }
 
-        private void displayBTN_Click_1(object sender, EventArgs e)
-        {
-            LoadDataIntoDataGridView();
-        }
+       
 
         private void clearBTN_Click_1(object sender, EventArgs e)
         {
@@ -418,6 +399,46 @@ namespace FFOSproj
             {
                 MessageBox.Show("An error occurred while saving data to the database: " + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void LoadDataIntoDataGridView()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM purchased_items";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dataGridView4.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+        private void merge_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void displayBTN_Click_2(object sender, EventArgs e)
+        {
+            LoadDataIntoDataGridView();
         }
     }
 }

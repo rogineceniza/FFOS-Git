@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dsrrrrr = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.DisplayTotalToday = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,9 +69,10 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -78,7 +80,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +107,7 @@
             // dsrrrrr
             // 
             this.dsrrrrr.BackColor = System.Drawing.Color.White;
+            this.dsrrrrr.Controls.Add(this.button1);
             this.dsrrrrr.Controls.Add(this.panel2);
             this.dsrrrrr.Controls.Add(this.label10);
             this.dsrrrrr.Controls.Add(this.label9);
@@ -115,6 +117,15 @@
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
             this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.DisplayTotalToday);
+            this.panel2.Location = new System.Drawing.Point(348, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 183);
+            this.panel2.TabIndex = 7;
             // 
             // DisplayTotalToday
             // 
@@ -539,14 +550,18 @@
             this.addInventoryBTN.UseVisualStyleBackColor = false;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
             // 
-            // panel2
+            // button1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.DisplayTotalToday);
-            this.panel2.Location = new System.Drawing.Point(348, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 183);
-            this.panel2.TabIndex = 7;
+            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(750, 263);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 67);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Generate PDF";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // inventoryManagementForm
             // 
@@ -569,6 +584,8 @@
             this.panel1.PerformLayout();
             this.dsrrrrr.ResumeLayout(false);
             this.dsrrrrr.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales)).EndInit();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
@@ -579,8 +596,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -630,6 +645,7 @@
         private System.Windows.Forms.Label DisplayTotalToday;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
