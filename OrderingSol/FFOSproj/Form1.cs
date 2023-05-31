@@ -16,6 +16,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using MySqlX.XDevAPI.Relational;
 using System.Security.Cryptography;
+using System.Xml.Linq;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
+
+
 
 namespace FFOSproj
 {
@@ -165,45 +172,27 @@ namespace FFOSproj
 
             try
             {
-                // Create a MySqlConnection using the connection string
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    // Open the database connection
                     connection.Open();
 
-                    // Create a MySqlCommand with the query and connection
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Create a DataTable to store the results
                         DataTable dataTable = new DataTable();
 
-                        // Load the data from the MySqlCommand into the DataTable
                         dataTable.Load(command.ExecuteReader());
 
-                        // Bind the DataTable to the DataGridView control
                         sales.DataSource = dataTable;
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Handle any errors that occur during the process
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-
-
-
-
-
-
-
-
         }
 
-        private void dsrrrrr_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
 
 
@@ -236,12 +225,85 @@ namespace FFOSproj
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
+            ExportToPDF();
+        }
+
+        private void ExportToPDF()
+        {
+            // Create a SaveFileDialog to choose the save location
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+            saveFileDialog.Title = "Save PDF";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                // Create the PDF document and table
+                Document document = new Document();
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+                document.Open();
+
+                PdfPTable pdfTable = new PdfPTable(sales.Columns.Count);
+                pdfTable.DefaultCell.Padding = 3;
+                pdfTable.WidthPercentage = 100;
+                pdfTable.DefaultCell.BorderWidth = 1;
+
+                // Add headers from DataGridView to PDF table
+                foreach (DataGridViewColumn column in sales.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                    pdfTable.AddCell(cell);
+                }
+
+               
+
+                foreach (DataGridViewRow row in sales.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null) // Check if the cell has a value
+                        {
+                            pdfTable.AddCell(cell.Value.ToString());
+                        }
+                        else
+                        {
+                            pdfTable.AddCell(string.Empty); // Add an empty cell if the value is null
+                        }
+                    }
+                }
+
+
+                document.Add(pdfTable);
+                document.Close();
+                writer.Close();
+
+                MessageBox.Show("PDF file saved successfully.");
+            }
+        }
+
+        private void sales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ExportToPDF();
         }
     }
 }
+    
+
+
+
+
+
+
+
+
+    
+
 
 
 

@@ -49,8 +49,6 @@ namespace FFOSproj
             mysqlCon.Close();
         }
 
-
-
         
 
         private void del_pizza_Click(object sender, EventArgs e)
@@ -77,10 +75,7 @@ namespace FFOSproj
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -128,11 +123,6 @@ namespace FFOSproj
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
-
 
 
         }

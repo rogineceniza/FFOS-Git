@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryManagementForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dsrrrrr = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DisplayTotalToday = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addInventoryBTN = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.dsrrrrr.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,7 +102,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 841);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dsrrrrr
             // 
@@ -116,7 +115,20 @@
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
-            this.dsrrrrr.Paint += new System.Windows.Forms.PaintEventHandler(this.dsrrrrr_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(750, 263);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 67);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Generate PDF";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -169,6 +181,7 @@
             this.sales.RowTemplate.Height = 28;
             this.sales.Size = new System.Drawing.Size(322, 681);
             this.sales.TabIndex = 1;
+            this.sales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sales_CellContentClick);
             // 
             // dateTimeLabel
             // 
@@ -549,19 +562,6 @@
             this.addInventoryBTN.Text = "ADD Inventory";
             this.addInventoryBTN.UseVisualStyleBackColor = false;
             this.addInventoryBTN.Click += new System.EventHandler(this.addInventoryBTN_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(750, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 67);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Generate PDF";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // inventoryManagementForm
             // 
