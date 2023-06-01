@@ -162,7 +162,7 @@ namespace FFOSproj
         }
         private void DSRbtn_Click(object sender, EventArgs e)
         {
-
+            //dsrrrr is the panel
             dsrrrrr.Visible = true;
             inventoryPanel.Visible = false;
 

@@ -210,6 +210,7 @@
             this.showPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showPB.Location = new System.Drawing.Point(49, 43);
             this.showPB.Name = "showPB";
+            this.showPB.ReadOnly = true;
             this.showPB.RowHeadersWidth = 62;
             this.showPB.RowTemplate.Height = 28;
             this.showPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

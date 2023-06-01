@@ -85,6 +85,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
@@ -111,7 +112,7 @@
             this.dsrrrrr.Controls.Add(this.label10);
             this.dsrrrrr.Controls.Add(this.label9);
             this.dsrrrrr.Controls.Add(this.sales);
-            this.dsrrrrr.Location = new System.Drawing.Point(230, 56);
+            this.dsrrrrr.Location = new System.Drawing.Point(230, 58);
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
