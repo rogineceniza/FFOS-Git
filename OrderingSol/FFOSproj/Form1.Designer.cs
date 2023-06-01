@@ -85,7 +85,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
@@ -102,6 +101,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 841);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dsrrrrr
             // 
@@ -111,7 +111,7 @@
             this.dsrrrrr.Controls.Add(this.label10);
             this.dsrrrrr.Controls.Add(this.label9);
             this.dsrrrrr.Controls.Add(this.sales);
-            this.dsrrrrr.Location = new System.Drawing.Point(230, 49);
+            this.dsrrrrr.Location = new System.Drawing.Point(230, 56);
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
             this.dsrrrrr.TabIndex = 2;
@@ -220,6 +220,9 @@
             // 
             this.size_bvrg.AllowDrop = true;
             this.size_bvrg.FormattingEnabled = true;
+            this.size_bvrg.Items.AddRange(new object[] {
+            "Regular",
+            "Large"});
             this.size_bvrg.Location = new System.Drawing.Point(503, 537);
             this.size_bvrg.Name = "size_bvrg";
             this.size_bvrg.Size = new System.Drawing.Size(360, 36);
@@ -278,6 +281,10 @@
             // sizeBox
             // 
             this.sizeBox.FormattingEnabled = true;
+            this.sizeBox.Items.AddRange(new object[] {
+            "Small",
+            "Regular",
+            "Large"});
             this.sizeBox.Location = new System.Drawing.Point(503, 191);
             this.sizeBox.Name = "sizeBox";
             this.sizeBox.Size = new System.Drawing.Size(360, 36);
