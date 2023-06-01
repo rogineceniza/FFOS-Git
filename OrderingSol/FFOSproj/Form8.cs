@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFOSproj
 {
@@ -30,48 +31,89 @@ namespace FFOSproj
 
         private void test_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
            
-                // Connection string for connecting to MySQL
-                string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+                string username = textBox4.Text;
+                string currentPassword = textBox1.Text;
 
-            // SQL query to retrieve the daily sales data
-            string query = "SELECT DATE(DateTime) AS Date, SUM(TotalSum) AS TotalSales " +
-                               "FROM total_sum_saved " +
-                               "GROUP BY DATE(DateTime)";
-            try
+                // Verify username and current password from the database
+                if (VerifyCredentials(username, currentPassword))
                 {
-                    // Create a MySqlConnection using the connection string
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    if (textBox2.Text == textBox3.Text)
                     {
-                        // Open the database connection
-                        connection.Open();
+                        string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+                    string updateQuery = "UPDATE password SET Password = @password WHERE Username = @username";
 
-                        // Create a MySqlCommand with the query and connection
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        using (MySqlConnection connection = new MySqlConnection(connectionString))
                         {
-                            // Create a DataTable to store the results
-                            DataTable dataTable = new DataTable();
+                            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                            command.Parameters.AddWithValue("@password", HashPassword(textBox3.Text));
+                            command.Parameters.AddWithValue("@username", username);
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Password reset successfully!");
 
-                            // Load the data from the MySqlCommand into the DataTable
-                            dataTable.Load(command.ExecuteReader());
+                                this.Hide();
 
-                            // Bind the DataTable to the DataGridView control
-                            sales.DataSource = dataTable;
+                                var changePassword = new adminLogin();
+                                changePassword.ShowDialog();
+
+                                changePassword.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Could not reset password for user " + username);
+                            }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Passwords do not match. Please enter the same password in both fields.");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    // Handle any errors that occur during the process
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    MessageBox.Show("Invalid username or current password.");
                 }
             }
 
+            private bool VerifyCredentials(string username, string currentPassword)
+            {
+                string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
+            string selectQuery = "SELECT COUNT(*) FROM Password WHERE Username = @username AND @password = @currentPassword";
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand command = new MySqlCommand(selectQuery, connection);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@currentPassword", HashPassword(currentPassword));
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+
+
+        private string HashPassword(string password)
+        {
+            // TODO: Implement password hashing algorithm (e.g. SHA256)
+            return password;
+        }
     }
-}
+    }
+      
+       
+       
 
 
 
+ 
 
 
 

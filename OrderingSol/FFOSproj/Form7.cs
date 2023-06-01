@@ -265,31 +265,55 @@ namespace FFOSproj
             }
             totalLabel.Text = Total.ToString();
         }
-       
+
+      
+
+           /* private void SearchByName(string keyword)
+        {
+            // Clear the selection before performing the search
+            merge.ClearSelection();
+
+            // Loop through the rows and search for the keyword in the "Name" column
+            foreach (DataGridViewRow row in merge.Rows)
+            {
+                string name = row.Cells["Name"].Value.ToString();
+                if (name.Contains(keyword))
+                {
+                    row.Selected = true;
+                    // Scroll to the selected row if needed
+                    merge.FirstDisplayedScrollingRowIndex = row.Index;
+                    break; // Stop searching after the first match
+                }
+            }
+        }*/
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             string searchTerm = txtSearch.Text.Trim();
             SearchItem(searchTerm);
+          
+
         }
+
+       
+           
 
 
 
         private void SearchItem(string searchTerm)
         {
+            merge.ClearSelection();
 
             merge.ClearSelection();
 
             foreach (DataGridViewRow row in merge.Rows)
             {
-                foreach (DataGridViewCell cell in row.Cells)
+                DataGridViewCell nameCell = row.Cells["Name"];
+                if (nameCell != null && nameCell.Value != null && nameCell.Value.ToString().IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
-                    if (cell.Value != null && cell.Value.ToString().Contains(searchTerm))
-                    {
-                        row.Selected = true;
-                        merge.FirstDisplayedScrollingRowIndex = row.Index;
-                        return;
-                    }
+                    row.Selected = true;
+                    merge.FirstDisplayedScrollingRowIndex = row.Index;
+                    return;
                 }
             }
 
@@ -361,6 +385,11 @@ namespace FFOSproj
         private void displayBTN_Click_2(object sender, EventArgs e)
         {
             LoadDataIntoDataGridView();
+        }
+
+        private void quantityTXT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
