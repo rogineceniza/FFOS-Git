@@ -37,6 +37,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.sales = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
             this.size_bvrg = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.viewBinventory = new System.Windows.Forms.Button();
             this.logOutBTN = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.DSRbtn = new System.Windows.Forms.Button();
             this.viewInventoryBTN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -85,6 +85,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
@@ -186,6 +187,18 @@
             this.sales.Size = new System.Drawing.Size(322, 571);
             this.sales.TabIndex = 1;
             this.sales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sales_CellContentClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Showcard Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(5, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(338, 40);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Daily Sales Report";
             // 
             // dateTimeLabel
             // 
@@ -507,18 +520,6 @@
             this.logOutBTN.Text = "Logout";
             this.logOutBTN.UseVisualStyleBackColor = false;
             this.logOutBTN.Click += new System.EventHandler(this.logOutBTN_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Showcard Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(5, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(338, 40);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Daily Sales Report";
             // 
             // DSRbtn
             // 
