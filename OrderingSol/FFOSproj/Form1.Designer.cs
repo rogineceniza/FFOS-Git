@@ -85,14 +85,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.BackgroundImage = global::FFOSproj.Properties.Resources.wood;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dsrrrrr);
             this.panel1.Controls.Add(this.dateTimeLabel);
             this.panel1.Controls.Add(this.inventoryPanel);
             this.panel1.Controls.Add(this.viewBinventory);
             this.panel1.Controls.Add(this.logOutBTN);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.DSRbtn);
             this.panel1.Controls.Add(this.viewInventoryBTN);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -112,6 +110,7 @@
             this.dsrrrrr.Controls.Add(this.label10);
             this.dsrrrrr.Controls.Add(this.label9);
             this.dsrrrrr.Controls.Add(this.sales);
+            this.dsrrrrr.Controls.Add(this.label5);
             this.dsrrrrr.Location = new System.Drawing.Point(230, 58);
             this.dsrrrrr.Name = "dsrrrrr";
             this.dsrrrrr.Size = new System.Drawing.Size(962, 746);
@@ -119,10 +118,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(750, 263);
+            this.button1.Location = new System.Drawing.Point(749, 380);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 67);
@@ -133,9 +132,10 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.DisplayTotalToday);
-            this.panel2.Location = new System.Drawing.Point(348, 65);
+            this.panel2.Location = new System.Drawing.Point(358, 156);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 183);
             this.panel2.TabIndex = 7;
@@ -144,6 +144,7 @@
             // 
             this.DisplayTotalToday.AutoSize = true;
             this.DisplayTotalToday.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisplayTotalToday.ForeColor = System.Drawing.Color.White;
             this.DisplayTotalToday.Location = new System.Drawing.Point(81, 61);
             this.DisplayTotalToday.Name = "DisplayTotalToday";
             this.DisplayTotalToday.Size = new System.Drawing.Size(61, 50);
@@ -155,32 +156,34 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(500, 33);
+            this.label10.Location = new System.Drawing.Point(456, 124);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(392, 29);
             this.label10.TabIndex = 5;
             this.label10.Text = "Total Sum of Items Sold Today";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(106, 33);
+            this.label9.Location = new System.Drawing.Point(143, 124);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 29);
             this.label9.TabIndex = 4;
             this.label9.Text = "Sales";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // sales
             // 
-            this.sales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.sales.BackgroundColor = System.Drawing.Color.SaddleBrown;
             this.sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sales.Location = new System.Drawing.Point(0, 65);
+            this.sales.Location = new System.Drawing.Point(21, 156);
             this.sales.Name = "sales";
             this.sales.ReadOnly = true;
             this.sales.RowHeadersWidth = 62;
             this.sales.RowTemplate.Height = 28;
-            this.sales.Size = new System.Drawing.Size(322, 681);
+            this.sales.Size = new System.Drawing.Size(322, 571);
             this.sales.TabIndex = 1;
             this.sales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sales_CellContentClick);
             // 
@@ -510,8 +513,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Showcard Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(539, 13);
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(5, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(338, 40);
             this.label5.TabIndex = 0;

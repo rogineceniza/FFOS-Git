@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.exit_button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.changePass = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -190,13 +191,24 @@
             this.label4.Size = new System.Drawing.Size(147, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Change Password?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // changePass
+            // 
+            this.changePass.AutoSize = true;
+            this.changePass.BackColor = System.Drawing.Color.White;
+            this.changePass.Location = new System.Drawing.Point(324, 377);
+            this.changePass.Name = "changePass";
+            this.changePass.Size = new System.Drawing.Size(147, 20);
+            this.changePass.TabIndex = 13;
+            this.changePass.Text = "Change Password?";
+            this.changePass.Click += new System.EventHandler(this.changePass_Click);
             // 
             // adminLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SaddleBrown;
             this.ClientSize = new System.Drawing.Size(547, 620);
+            this.Controls.Add(this.changePass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.label3);
@@ -236,5 +248,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exit_button;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label changePass;
     }
 }

@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cashierLogin));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.changePass = new System.Windows.Forms.Label();
             this.password_cashier = new System.Windows.Forms.TextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.username_cashier = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.username_cashier = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cLogin = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -51,23 +52,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.changePass);
             this.panel3.Controls.Add(this.password_cashier);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(143, 378);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(422, 117);
+            this.panel3.Size = new System.Drawing.Size(422, 134);
             this.panel3.TabIndex = 7;
             // 
-            // pictureBox4
+            // changePass
             // 
-            this.pictureBox4.BackgroundImage = global::FFOSproj.Properties.Resources.unlock;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(29, 44);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 28);
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
+            this.changePass.AutoSize = true;
+            this.changePass.BackColor = System.Drawing.Color.White;
+            this.changePass.Location = new System.Drawing.Point(271, 100);
+            this.changePass.Name = "changePass";
+            this.changePass.Size = new System.Drawing.Size(147, 20);
+            this.changePass.TabIndex = 17;
+            this.changePass.Text = "Change Password?";
+            this.changePass.Click += new System.EventHandler(this.changePass_Click);
             // 
             // password_cashier
             // 
@@ -78,6 +81,16 @@
             this.password_cashier.PasswordChar = '*';
             this.password_cashier.Size = new System.Drawing.Size(319, 48);
             this.password_cashier.TabIndex = 8;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::FFOSproj.Properties.Resources.unlock;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(29, 44);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 28);
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
             // 
             // label2
             // 
@@ -100,15 +113,6 @@
             this.panel2.Size = new System.Drawing.Size(422, 105);
             this.panel2.TabIndex = 6;
             // 
-            // username_cashier
-            // 
-            this.username_cashier.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_cashier.Location = new System.Drawing.Point(89, 49);
-            this.username_cashier.Multiline = true;
-            this.username_cashier.Name = "username_cashier";
-            this.username_cashier.Size = new System.Drawing.Size(319, 48);
-            this.username_cashier.TabIndex = 6;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::FFOSproj.Properties.Resources.user;
@@ -118,6 +122,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(32, 28);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // username_cashier
+            // 
+            this.username_cashier.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_cashier.Location = new System.Drawing.Point(89, 49);
+            this.username_cashier.Multiline = true;
+            this.username_cashier.Name = "username_cashier";
+            this.username_cashier.Size = new System.Drawing.Size(319, 48);
+            this.username_cashier.TabIndex = 6;
             // 
             // label1
             // 
@@ -140,16 +153,6 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Login";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::FFOSproj.Properties.Resources.Picture2;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(102, 188);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(530, 505);
-            this.pictureBox5.TabIndex = 14;
-            this.pictureBox5.TabStop = false;
             // 
             // button1
             // 
@@ -176,6 +179,16 @@
             this.cLogin.Text = "Login";
             this.cLogin.UseVisualStyleBackColor = false;
             this.cLogin.Click += new System.EventHandler(this.cLogin_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::FFOSproj.Properties.Resources.Picture2;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(102, 188);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(530, 505);
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
             // 
             // cashierLogin
             // 
@@ -218,5 +231,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button cLogin;
+        private System.Windows.Forms.Label changePass;
     }
 }

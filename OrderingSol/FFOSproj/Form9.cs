@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,35 +7,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFOSproj
 {
-    public partial class test : Form
+    public partial class cashierChangePass : Form
     {
         private MySqlConnection connection;
         private const string connectionString = ("server=localhost;database=pizza_db;user=root;password=RteCh_0C#@11;");
-
-        public test()
+        public cashierChangePass()
         {
             InitializeComponent();
-            connection = new MySqlConnection(connectionString);
-
         }
-        private void InitializeComponents()
-        {
-
-        }
-
-        private void test_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void reset_Click(object sender, EventArgs e)
         {
@@ -44,7 +28,7 @@ namespace FFOSproj
             string oldPassword = txtOldPassword.Text;
             string newPassword = txtNewPassword.Text;
 
-            string query = "UPDATE password SET Username = @newUsername, Password = @newPassword WHERE Username = @oldUsername AND Password = @oldPassword";
+            string query = "UPDATE password_cashier SET Username = @newUsername, Password = @newPassword WHERE Username = @oldUsername AND Password = @oldPassword";
 
             using (connection = new MySqlConnection(connectionString))
             {
@@ -69,22 +53,6 @@ namespace FFOSproj
                 }
             }
         }
-
-       
     }
-}
-      
-       
-       
-
-
-
- 
-
-
-
-
-
-
-
+    }
 
